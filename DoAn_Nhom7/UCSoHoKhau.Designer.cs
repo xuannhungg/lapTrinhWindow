@@ -159,6 +159,7 @@
             // 
             // dtgvSoHoKhau
             // 
+            this.dtgvSoHoKhau.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvSoHoKhau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvSoHoKhau.Location = new System.Drawing.Point(13, 37);
             this.dtgvSoHoKhau.Name = "dtgvSoHoKhau";
@@ -225,7 +226,8 @@
             // 
             // pnThanhvien
             // 
-            this.pnThanhvien.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnThanhvien.BackColor = System.Drawing.Color.LightBlue;
+            this.pnThanhvien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnThanhvien.Controls.Add(this.btnThemTv);
             this.pnThanhvien.Controls.Add(this.btnXoaTv);
             this.pnThanhvien.Controls.Add(this.btnSuaTv);
@@ -271,6 +273,7 @@
             // 
             // dtgvThanhVienShk
             // 
+            this.dtgvThanhVienShk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvThanhVienShk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvThanhVienShk.Location = new System.Drawing.Point(16, 37);
             this.dtgvThanhVienShk.Name = "dtgvThanhVienShk";
@@ -283,7 +286,8 @@
             // 
             // pnSoHoKhau
             // 
-            this.pnSoHoKhau.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnSoHoKhau.BackColor = System.Drawing.Color.LightBlue;
+            this.pnSoHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnSoHoKhau.Controls.Add(this.dtgvSoHoKhau);
             this.pnSoHoKhau.Controls.Add(this.lblMaKhuVuc);
             this.pnSoHoKhau.Controls.Add(this.btnThem);
