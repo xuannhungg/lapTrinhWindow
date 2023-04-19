@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DoAn_Nhom7
+{
+    public class CongDanDAO
+    {
+        SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
+        DBConnection dbconnection = new DBConnection();
+        public void Them(CongDan cd)
+        {
+            string sqlStr = string.Format("INSERT INTO CongDan( hoTen , ngayThangNamSinh , gioiTinh , cmnd , danToc , tinhTrangHonNhan , noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,tamTru,noiCapCMND,ngayCap,soLanKetHon)  VALUES ('{0}', '{1}','{2}', '{3}','{4}', '{5}','{6}','{7}','{8}','{9}','{10}', '{11}', '{12}', '{13}', '{14}', '{15}')", cd.HoTen,cd.NgayThangNamSinh,cd.GioiTinh,cd.CMND,cd.DanToc,cd.TinhTrangHonNhan,cd.NoiDangKiKhaiSinh,cd.QueQuan,cd.NoiThuongTru,cd.TrinhDoHocVan,cd.NgheNghiep, cd.Luong,cd.tamTru,cd.noiCapCMND,cd.NgayCap,cd.soLanKetHon);
+            dbconnection.XuLy(sqlStr);
+        }
+        public void Sua(CongDan cd)
+        {
+            string sqlStr = string.Format("UPDATE CongDan SET hoTen ='{12}',  ngayThangNamSinh = '{0}', gioiTinh= '{1}' , cmnd = '{2}', danToc= '{3}', tinhTrangHonNhan='{4}', noiDangKiKhaiSinh= '{5}', queQuan='{6}', noiThuongTru= '{7}', trinhDoHocVan= '{8}', luong = '{9}', ngheNghiep='{10}', tamTru = '{13}', noiCapCMND = '{14}', ngayCap = '{15}', soLanKetHon = '{16}' WHERE cmnd = '{11}'",  cd.NgayThangNamSinh, cd.GioiTinh, cd.CMND, cd.DanToc, cd.TinhTrangHonNhan, cd.NoiDangKiKhaiSinh, cd.QueQuan, cd.NoiThuongTru, cd.TrinhDoHocVan, cd.Luong, cd.NgheNghiep,cd.CMND,cd.HoTen,cd.tamTru,cd.noiCapCMND,cd.NgayCap,cd.soLanKetHon);
+            dbconnection.XuLy(sqlStr);
+        }
+        public void Xoa(CongDan cd)
+        {
+            string sqlStr = string.Format("DELETE FROM CongDan WHERE cmnd = '{0}'", cd.CMND);
+            dbconnection.XuLy(sqlStr);
+        }
+        public DataTable DanhSach()
+        {
+            string sqlStr ="select * from CongDan";
+            return dbconnection.DanhSach(sqlStr);
+        }
+        public void CapNhatLyHon(CongDan cd)
+        {
+            string sqlStr = string.Format("UPDATE CongDan SET  tinhTrangHonNhan='Doc Than' WHERE CMND = '{0}'", cd.CMND);
+            dbconnection.XuLy(sqlStr);
+        }
+        public void CapNhatTamTru(CongDan cd)
+        {
+            string n = "";
+            conn.Open();
+            string a = "Select * from CongDan where cmnd = '" + cd.cmnd + "'";
+            SqlCommand cmd = new SqlCommand(a, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            while (dta.Read())
+            {
+                n = n+Convert.ToString(dta["tamTru"]);
+            }
+            conn.Close();
+            string sqlStr = string.Format("UPDATE CongDan SET tamTru = '{0} {1}\n{2}' WHERE CMND ='{3}'", cd.tamTru, cd.ngayCap,n, cd.CMND); 
+            dbconnection.XuLy(sqlStr);
+        }
+        public void CapNhatKetHon(CongDan nam,CongDan nu)
+        {
+            string sqlStr = string.Format("UPDATE CongDan SET  tinhTrangHonNhan='Da Ket Hon Voi Nguoi Co CMND La " + nu.CMND + "' WHERE CMND = '{0}'", nam.CMND);
+            dbconnection.XuLy(sqlStr);
+            string sqlStr1 = string.Format("UPDATE CongDan SET  tinhTrangHonNhan='Da Ket Hon Voi Nguoi Co CMND La " + nam.CMND + "' WHERE CMND = '{0}'", nu.CMND);
+            dbconnection.XuLy(sqlStr1);
+        }
+        public DataSet TimCongDanDaKetHon(DataGridView dtgv)
+        {
+            string sqlStr = "SELECT * from CongDan WHERE tinhTrangHonNhan != 'Doc Than'";
+            return dbconnection.TimCongDanDaKetHon(sqlStr, dtgv);
+        }
+        public DataSet TimCongDanDocThan(DataGridView dtgv)
+        {
+            string sqlStr = "SELECT * from CongDan WHERE tinhTrangHonNhan = 'Doc Than'";
+            return dbconnection.TimCongDanDaKetHon(sqlStr, dtgv);
+        }
+        public DataSet TimCongDanTheoCCCD(string cccd, DataGridView dtgv)
+        {
+            string sqlStr = "SELECT * from CongDan WHERE cmnd = '" + cccd + "'";
+            return dbconnection.TimCongDanTheoCCCD(sqlStr, dtgv);
+        }
+    }
+}
