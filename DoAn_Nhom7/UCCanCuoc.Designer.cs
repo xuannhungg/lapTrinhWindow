@@ -329,7 +329,7 @@
             this.panel2.Controls.Add(this.txtTamTru);
             this.panel2.Location = new System.Drawing.Point(12, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 631);
+            this.panel2.Size = new System.Drawing.Size(1129, 529);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 

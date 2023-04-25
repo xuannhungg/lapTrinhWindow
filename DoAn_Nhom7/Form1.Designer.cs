@@ -105,6 +105,7 @@
             // 
             // pnHienThi
             // 
+            this.pnHienThi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.pnHienThi.Location = new System.Drawing.Point(9, 4);
             this.pnHienThi.Name = "pnHienThi";
@@ -142,6 +143,7 @@
             this.btnKhaiTu.TabIndex = 8;
             this.btnKhaiTu.Text = "Khai tu";
             this.btnKhaiTu.UseVisualStyleBackColor = false;
+            this.btnKhaiTu.Click += new System.EventHandler(this.btnKhaiTu_Click);
             // 
             // btnKhaiSinh
             // 
@@ -168,6 +170,7 @@
             this.btnHonNhan.TabIndex = 6;
             this.btnHonNhan.Text = "Hon nhan";
             this.btnHonNhan.UseVisualStyleBackColor = false;
+            this.btnHonNhan.Click += new System.EventHandler(this.btnHonNhan_Click);
             // 
             // btnThongKe
             // 
@@ -181,6 +184,7 @@
             this.btnThongKe.TabIndex = 5;
             this.btnThongKe.Text = "Thong ke dan so";
             this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // comboBox1
             // 
@@ -224,6 +228,7 @@
             this.btnTamTru.TabIndex = 3;
             this.btnTamTru.Text = "Tam tru tam vang";
             this.btnTamTru.UseVisualStyleBackColor = false;
+            this.btnTamTru.Click += new System.EventHandler(this.btnTamTru_Click);
             // 
             // btnSoHoKhau
             // 

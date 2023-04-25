@@ -140,11 +140,35 @@
     <Compile Include="UCCanCuoc.Designer.cs">
       <DependentUpon>UCCanCuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCHonNhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCHonNhan.Designer.cs">
+      <DependentUpon>UCHonNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCKhaiTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCKhaiTu.Designer.cs">
+      <DependentUpon>UCKhaiTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCSoHoKhau.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCSoHoKhau.Designer.cs">
       <DependentUpon>UCSoHoKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTamTruTamVang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTamTruTamVang.Designer.cs">
+      <DependentUpon>UCTamTruTamVang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCThongKeDanSo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThongKeDanSo.Designer.cs">
+      <DependentUpon>UCThongKeDanSo.cs</DependentUpon>
     </Compile>
     <Compile Include="UCThue.cs">
       <SubType>UserControl</SubType>
@@ -201,8 +225,20 @@
     <EmbeddedResource Include="UCCanCuoc.resx">
       <DependentUpon>UCCanCuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCHonNhan.resx">
+      <DependentUpon>UCHonNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCKhaiTu.resx">
+      <DependentUpon>UCKhaiTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCSoHoKhau.resx">
       <DependentUpon>UCSoHoKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTamTruTamVang.resx">
+      <DependentUpon>UCTamTruTamVang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThongKeDanSo.resx">
+      <DependentUpon>UCThongKeDanSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCThue.resx">
       <DependentUpon>UCThue.cs</DependentUpon>
