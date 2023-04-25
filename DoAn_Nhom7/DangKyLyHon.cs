@@ -44,6 +44,8 @@ namespace DoAn_Nhom7
                 txtCMNDB.Text = dbconnection.CMNDVoChong(txtCMNDA.Text);
                 if (txtCMNDB.Text != "")
                     dbconnection.LapDayThongTinLyHon(txtCMNDB.Text, txtTenB, txtNamSinhB, txtCuTruB);
+                else
+                    MessageBox.Show("Khong co nguoi yeu");
             }
         }
         private void DangKyLyHon_Load(object sender, EventArgs e)
