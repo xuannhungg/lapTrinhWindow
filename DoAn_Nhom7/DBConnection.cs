@@ -149,12 +149,7 @@ namespace DoAn_Nhom7
             if (dr.Read())
             {
                 string a = Convert.ToString(dr["tinhTrangHonNhan"]);
-                if (a == "chua ket hon")
-                {
-                    conn.Close();
-                    return true;
-                }
-                else if (a == "Doc Than")
+                if (a == "Doc Than")
                 {
                     conn.Close();
                     return true;
@@ -162,6 +157,36 @@ namespace DoAn_Nhom7
             }
             conn.Close();
             return false;
+        }
+        public bool KiemTraVoChong(string sqlStr,string a,string b)
+        {
+            conn.Open();
+            //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                a = Convert.ToString(dr["tinhTrangHonNhan"]);
+                string cmnd = a.Substring(32);
+                if (cmnd == b )
+                {
+                    conn.Close();
+                    return true;
+                }
+            }
+            conn.Close();
+            return false;
+        }
+        public int SoLuongThanhVien(string cmnd)
+        {
+            string a= timMaSHK(cmnd);
+            conn.Open();
+            string sqlStr = "SELECT COUNT(*) FROM ThanhVienSoHoKhau WHERE maShk = '" + a + "'";
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            int k= (int)cmd.ExecuteScalar();
+            MessageBox.Show("a"+k);
+            conn.Close();
+            return k;
         }
         public void LapDayThongTinLyHon(string cmnd, TextBox a, TextBox b, TextBox f)
         {
@@ -260,6 +285,24 @@ namespace DoAn_Nhom7
             }
             conn.Close();
         }
+        public string timMaSHK(string cmnd)
+        {
+            conn.Open();
+            string sqlStr = "select maSoHoKhau from SoHoKhau where CMND = '" + cmnd + "'";
+
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            while (dta.Read())
+            {
+                
+                string a= Convert.ToString(dta["maSoHoKhau"]);
+                conn.Close();
+                return a;
+            }
+            conn.Close();
+            return null;
+        }
+
         public bool KiemTraTaiKhoanTonTai(string input)
         {
             conn.Open();

@@ -115,6 +115,17 @@ namespace DoAn_Nhom7
             this.NgayCap = ngayCap;
 
         }
+        public CongDan(string Cmnd, string hoTen, string ngayThangNamSinh, string gioiTinh, string danToc, string queQuan, string noiDangKiKhaiSinh)
+        {
+            this.HoTen = hoTen;
+            this.NgayThangNamSinh = ngayThangNamSinh;
+            this.GioiTinh = gioiTinh;
+            this.cmnd = Cmnd;
+            this.DanToc = danToc;
+            this.NoiDangKiKhaiSinh = noiDangKiKhaiSinh;
+            this.QueQuan = queQuan;
+
+        }
         public CongDan(string Cmnd,string HoTen) 
         {            
             this.cmnd = Cmnd;

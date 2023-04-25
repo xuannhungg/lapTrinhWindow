@@ -84,19 +84,21 @@ namespace DoAn_Nhom7
                 if (!row.IsNewRow)
                 {                
                     string date = (string)row.Cells["tamTru"].Value;
-                    string[] lines = date.Split('\n');
-                    string dateStart = lines[0].Substring(lines[0].Length - 10);
-                    DateTime dateTime = DateTime.ParseExact(dateStart, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    DateTime toDate = DateTime.Now;
-                    TimeSpan duration = toDate.Subtract(dateTime);
-                    int months = (int)duration.TotalDays / 30;
-                    if (months > 24)
-                    {
-                        DataGridViewCell cell = row.Cells[13];
-                        cell.ErrorText = "Số tháng tạm trú vượt quá 24 : "+months;
-                        row.ErrorText = "Có lỗi về ngày tạm trú";
+                    if (date.Length >1 )
+                    { string[] lines = date.Split('\n');
+                        string dateStart = lines[0].Substring(lines[0].Length - 10);
+                        DateTime dateTime = DateTime.ParseExact(dateStart, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                        DateTime toDate = DateTime.Now;
+                        TimeSpan duration = toDate.Subtract(dateTime);
+                        int months = (int)duration.TotalDays / 30;
+                        if (months > 24)
+                        {
+                            DataGridViewCell cell = row.Cells[13];
+                            cell.ErrorText = "Số tháng tạm trú vượt quá 24 : " + months;
+                            row.ErrorText = "Có lỗi về ngày tạm trú";
 
-                    }    
+                        } 
+                    }
                 }
             }
 

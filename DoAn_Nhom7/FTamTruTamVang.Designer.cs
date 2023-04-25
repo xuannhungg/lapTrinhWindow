@@ -183,6 +183,7 @@
             this.btnXacNhan.TabIndex = 68;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // txtCongAn3
             // 

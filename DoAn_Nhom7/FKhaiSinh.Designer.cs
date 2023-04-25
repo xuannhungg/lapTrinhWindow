@@ -35,7 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtXaPhuong = new System.Windows.Forms.TextBox();
             this.txtHuyenQuan = new System.Windows.Forms.TextBox();
             this.txtTinhThanhPho = new System.Windows.Forms.TextBox();
@@ -63,7 +62,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CMNDMe = new System.Windows.Forms.TextBox();
+            this.txtCMNDMe = new System.Windows.Forms.TextBox();
             this.txtCMNDCha = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -163,16 +162,6 @@
             this.label26.Size = new System.Drawing.Size(240, 32);
             this.label26.TabIndex = 25;
             this.label26.Text = "GIẤY KHAI SINH";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1115, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtXaPhuong
             // 
@@ -441,7 +430,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.CMNDMe);
+            this.panel3.Controls.Add(this.txtCMNDMe);
             this.panel3.Controls.Add(this.txtCMNDCha);
             this.panel3.Controls.Add(this.label29);
             this.panel3.Controls.Add(this.label28);
@@ -462,13 +451,14 @@
             this.panel3.Size = new System.Drawing.Size(638, 249);
             this.panel3.TabIndex = 89;
             // 
-            // CMNDMe
+            // txtCMNDMe
             // 
-            this.CMNDMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.CMNDMe.Location = new System.Drawing.Point(464, 128);
-            this.CMNDMe.Name = "CMNDMe";
-            this.CMNDMe.Size = new System.Drawing.Size(155, 30);
-            this.CMNDMe.TabIndex = 108;
+            this.txtCMNDMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtCMNDMe.Location = new System.Drawing.Point(464, 128);
+            this.txtCMNDMe.Name = "txtCMNDMe";
+            this.txtCMNDMe.Size = new System.Drawing.Size(155, 30);
+            this.txtCMNDMe.TabIndex = 108;
+            this.txtCMNDMe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCMNDMe_KeyDown);
             // 
             // txtCMNDCha
             // 
@@ -477,6 +467,7 @@
             this.txtCMNDCha.Name = "txtCMNDCha";
             this.txtCMNDCha.Size = new System.Drawing.Size(170, 30);
             this.txtCMNDCha.TabIndex = 107;
+            this.txtCMNDCha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCMNDCha_KeyDown);
             // 
             // label29
             // 
@@ -651,6 +642,7 @@
             this.btnDangKy.TabIndex = 71;
             this.btnDangKy.Text = "ĐĂNG KÝ";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // label21
             // 
@@ -680,7 +672,6 @@
             this.ClientSize = new System.Drawing.Size(1420, 775);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -713,7 +704,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtXaPhuong;
         private System.Windows.Forms.TextBox txtHuyenQuan;
         private System.Windows.Forms.TextBox txtTinhThanhPho;
@@ -741,7 +731,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox CMNDMe;
+        private System.Windows.Forms.TextBox txtCMNDMe;
         private System.Windows.Forms.TextBox txtCMNDCha;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;

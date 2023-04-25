@@ -140,6 +140,7 @@
             this.btnThem.TabIndex = 77;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -151,6 +152,7 @@
             this.btnSua.TabIndex = 76;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -162,6 +164,7 @@
             this.btnXoa.TabIndex = 75;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtLuong
             // 
@@ -412,6 +415,7 @@
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(208, 30);
             this.txtCMND.TabIndex = 54;
+            this.txtCMND.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCCCD_KeyDown);
             // 
             // txtDanToc
             // 

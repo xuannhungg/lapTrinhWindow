@@ -49,6 +49,7 @@ namespace DoAn_Nhom7
                 thueDao.XoaDoiTuong(thue);
                 CongDan cd = new CongDan(txtCCCD.Text);
                 cdDao.Xoa(cd);
+
             }
             else
                 MessageBox.Show("Vui long xac nhan!");
