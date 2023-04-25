@@ -514,7 +514,7 @@
             this.Controls.Add(this.pnThanhvien);
             this.Controls.Add(this.pnSoHoKhau);
             this.Name = "UCSoHoKhau";
-            this.Size = new System.Drawing.Size(999, 580);
+            this.Size = new System.Drawing.Size(958, 562);
             this.Load += new System.EventHandler(this.UCSoHoKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSoHoKhau)).EndInit();
             this.pnThanhvien.ResumeLayout(false);

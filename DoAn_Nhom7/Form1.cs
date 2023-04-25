@@ -181,5 +181,37 @@ namespace DoAn_Nhom7
             pnHienThi.Controls.Clear();
             pnHienThi.Controls.Add(uc);
         }
+
+        private void btnTamTru_Click(object sender, EventArgs e)
+        {
+            UCTamTruTamVang uc = new UCTamTruTamVang();
+            uc.Dock = DockStyle.Fill;
+            pnHienThi.Controls.Clear();
+            pnHienThi.Controls.Add(uc);
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            UCThongKeDanSo uc = new UCThongKeDanSo();
+            uc.Dock = DockStyle.Fill;
+            pnHienThi.Controls.Clear();
+            pnHienThi.Controls.Add(uc);
+        }
+
+        private void btnHonNhan_Click(object sender, EventArgs e)
+        {
+            UCHonNhan uc = new UCHonNhan();
+            uc.Dock = DockStyle.Fill;
+            pnHienThi.Controls.Clear();
+            pnHienThi.Controls.Add(uc);
+        }
+
+        private void btnKhaiTu_Click(object sender, EventArgs e)
+        {
+            UCKhaiTu uc = new UCKhaiTu();
+            uc.Dock = DockStyle.Fill;
+            pnHienThi.Controls.Clear();
+            pnHienThi.Controls.Add(uc);
+        }
     }
 }
