@@ -51,5 +51,10 @@ namespace DoAn_Nhom7
                 dbconnection.LapDayThongTinCD(txtCMND, txtHoTen, dTPNgaySinh, txtGioiTinh, txtDanToc, txtHonNhan, txtKhaiSinh, txtQueQuan, txtThuongTru, txtHocVan, txtNgheNghiep, txtLuong, txtSoLanKetHon, txtTamTru, txtNoiCapCMND, dTPNgayCap);
             }
         }
+
+        private void UCCanCuoc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

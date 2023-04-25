@@ -40,20 +40,15 @@ namespace DoAn_Nhom7
         {              
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.LapDayThongTinLyHon(txtCMNDA.Text, txtTenA, txtNamSinhA, txtCuTruA);
+                hnDao.LapDayThongTin_LyHon(txtCMNDA.Text, txtTenA, txtNamSinhA, txtCuTruA);
                 txtCMNDB.Text = dbconnection.CMNDVoChong(txtCMNDA.Text);
                 if (txtCMNDB.Text != "")
-                    dbconnection.LapDayThongTinLyHon(txtCMNDB.Text, txtTenB, txtNamSinhB, txtCuTruB);
+                    hnDao.LapDayThongTin_LyHon(txtCMNDB.Text, txtTenB, txtNamSinhB, txtCuTruB);
                 else
                     MessageBox.Show("Khong co nguoi yeu");
             }
         }
         private void DangKyLyHon_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCMNDA_TextChanged(object sender, EventArgs e)
         {
 
         }

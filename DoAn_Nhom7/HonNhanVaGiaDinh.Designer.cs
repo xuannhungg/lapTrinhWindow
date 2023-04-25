@@ -48,7 +48,7 @@
             this.Controls.Add(this.ucHonNhan1);
             this.Name = "HonNhanVaGiaDinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HonNhanVaGiaDinh";
+            this.Text = "HÔN NHÂN VÀ GIA ĐÌNH";
             this.Load += new System.EventHandler(this.HonNhanVaGiaDinh_Load);
             this.ResumeLayout(false);
 

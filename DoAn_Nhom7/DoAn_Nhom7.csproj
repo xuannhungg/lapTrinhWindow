@@ -124,14 +124,17 @@
     <Compile Include="HonNhanVaGiaDinh.Designer.cs">
       <DependentUpon>HonNhanVaGiaDinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhaiTuDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoHoKhau.cs" />
     <Compile Include="SoHoKhauDAO.cs" />
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="TaiKhoanDAO.cs" />
+    <Compile Include="TamTruTamVangDAO.cs" />
     <Compile Include="ThanhVienShk.cs" />
     <Compile Include="ThanhVienShkDAO.cs" />
+    <Compile Include="ThongKeDAO.cs" />
     <Compile Include="Thue.cs" />
     <Compile Include="ThueDAO.cs" />
     <Compile Include="UCCanCuoc.cs">

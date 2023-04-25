@@ -39,14 +39,14 @@
             this.txtHoTenNam = new System.Windows.Forms.TextBox();
             this.txtNgaySinhNam = new System.Windows.Forms.TextBox();
             this.txtDanTocNam = new System.Windows.Forms.TextBox();
-            this.txtQuocTichNam = new System.Windows.Forms.TextBox();
+            this.txtQueQuanNam = new System.Windows.Forms.TextBox();
             this.txtNoiCuTruNam = new System.Windows.Forms.TextBox();
             this.txtGiayToTuyThanNam = new System.Windows.Forms.TextBox();
             this.txtLanKetHonNam = new System.Windows.Forms.TextBox();
             this.txtLanKetHonNu = new System.Windows.Forms.TextBox();
             this.txtGiayToTuyThanNu = new System.Windows.Forms.TextBox();
             this.txtNoiCuTruNu = new System.Windows.Forms.TextBox();
-            this.txtQuocTichNu = new System.Windows.Forms.TextBox();
+            this.txtQueQuanNu = new System.Windows.Forms.TextBox();
             this.txtDanTocNu = new System.Windows.Forms.TextBox();
             this.txtNgaySinhNu = new System.Windows.Forms.TextBox();
             this.txtHoTenNu = new System.Windows.Forms.TextBox();
@@ -97,9 +97,9 @@
             this.lblQuocTich.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblQuocTich.Location = new System.Drawing.Point(65, 341);
             this.lblQuocTich.Name = "lblQuocTich";
-            this.lblQuocTich.Size = new System.Drawing.Size(103, 25);
+            this.lblQuocTich.Size = new System.Drawing.Size(99, 25);
             this.lblQuocTich.TabIndex = 3;
-            this.lblQuocTich.Text = "Quốc Tịch";
+            this.lblQuocTich.Text = "Quê quán";
             // 
             // lblNoiCuTru
             // 
@@ -155,13 +155,13 @@
             this.txtDanTocNam.Size = new System.Drawing.Size(173, 30);
             this.txtDanTocNam.TabIndex = 9;
             // 
-            // txtQuocTichNam
+            // txtQueQuanNam
             // 
-            this.txtQuocTichNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtQuocTichNam.Location = new System.Drawing.Point(297, 336);
-            this.txtQuocTichNam.Name = "txtQuocTichNam";
-            this.txtQuocTichNam.Size = new System.Drawing.Size(173, 30);
-            this.txtQuocTichNam.TabIndex = 10;
+            this.txtQueQuanNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtQueQuanNam.Location = new System.Drawing.Point(297, 336);
+            this.txtQueQuanNam.Name = "txtQueQuanNam";
+            this.txtQueQuanNam.Size = new System.Drawing.Size(173, 30);
+            this.txtQueQuanNam.TabIndex = 10;
             // 
             // txtNoiCuTruNam
             // 
@@ -178,7 +178,6 @@
             this.txtGiayToTuyThanNam.Name = "txtGiayToTuyThanNam";
             this.txtGiayToTuyThanNam.Size = new System.Drawing.Size(173, 30);
             this.txtGiayToTuyThanNam.TabIndex = 12;
-            this.txtGiayToTuyThanNam.TextChanged += new System.EventHandler(this.txtGiayToTuyThanNam_TextChanged);
             this.txtGiayToTuyThanNam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGiayToTuyThanNam_KeyDown);
             // 
             // txtLanKetHonNam
@@ -214,13 +213,13 @@
             this.txtNoiCuTruNu.Size = new System.Drawing.Size(171, 30);
             this.txtNoiCuTruNu.TabIndex = 18;
             // 
-            // txtQuocTichNu
+            // txtQueQuanNu
             // 
-            this.txtQuocTichNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtQuocTichNu.Location = new System.Drawing.Point(541, 338);
-            this.txtQuocTichNu.Name = "txtQuocTichNu";
-            this.txtQuocTichNu.Size = new System.Drawing.Size(171, 30);
-            this.txtQuocTichNu.TabIndex = 17;
+            this.txtQueQuanNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtQueQuanNu.Location = new System.Drawing.Point(541, 338);
+            this.txtQueQuanNu.Name = "txtQueQuanNu";
+            this.txtQueQuanNu.Size = new System.Drawing.Size(171, 30);
+            this.txtQueQuanNu.TabIndex = 17;
             // 
             // txtDanTocNu
             // 
@@ -322,18 +321,18 @@
             this.panel1.Controls.Add(this.lblLanKetHon);
             this.panel1.Controls.Add(this.txtNoiCuTruNu);
             this.panel1.Controls.Add(this.txtHoTenNam);
-            this.panel1.Controls.Add(this.txtQuocTichNu);
+            this.panel1.Controls.Add(this.txtQueQuanNu);
             this.panel1.Controls.Add(this.txtNgaySinhNam);
             this.panel1.Controls.Add(this.txtDanTocNu);
             this.panel1.Controls.Add(this.txtDanTocNam);
             this.panel1.Controls.Add(this.txtNgaySinhNu);
-            this.panel1.Controls.Add(this.txtQuocTichNam);
+            this.panel1.Controls.Add(this.txtQueQuanNam);
             this.panel1.Controls.Add(this.txtHoTenNu);
             this.panel1.Controls.Add(this.txtNoiCuTruNam);
             this.panel1.Controls.Add(this.txtLanKetHonNam);
             this.panel1.Location = new System.Drawing.Point(12, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1167, 605);
+            this.panel1.Size = new System.Drawing.Size(1167, 589);
             this.panel1.TabIndex = 26;
             // 
             // pictureBox1
@@ -356,7 +355,7 @@
             this.Controls.Add(this.lblMucDe);
             this.Name = "DangKyKetHon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangKyKetHon";
+            this.Text = "ĐĂNG KÝ KẾT HÔN";
             this.Load += new System.EventHandler(this.DangKyKetHon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -378,14 +377,14 @@
         private System.Windows.Forms.TextBox txtHoTenNam;
         private System.Windows.Forms.TextBox txtNgaySinhNam;
         private System.Windows.Forms.TextBox txtDanTocNam;
-        private System.Windows.Forms.TextBox txtQuocTichNam;
+        private System.Windows.Forms.TextBox txtQueQuanNam;
         private System.Windows.Forms.TextBox txtNoiCuTruNam;
         private System.Windows.Forms.TextBox txtGiayToTuyThanNam;
         private System.Windows.Forms.TextBox txtLanKetHonNam;
         private System.Windows.Forms.TextBox txtLanKetHonNu;
         private System.Windows.Forms.TextBox txtGiayToTuyThanNu;
         private System.Windows.Forms.TextBox txtNoiCuTruNu;
-        private System.Windows.Forms.TextBox txtQuocTichNu;
+        private System.Windows.Forms.TextBox txtQueQuanNu;
         private System.Windows.Forms.TextBox txtDanTocNu;
         private System.Windows.Forms.TextBox txtNgaySinhNu;
         private System.Windows.Forms.TextBox txtHoTenNu;

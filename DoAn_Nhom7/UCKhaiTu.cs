@@ -13,10 +13,9 @@ namespace DoAn_Nhom7
 {
     public partial class UCKhaiTu : UserControl
     {
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.conStr);
         CongDanDAO cdDao = new CongDanDAO();
         ThueDAO thueDao = new ThueDAO();
-        DBConnection dbC = new DBConnection();
+        KhaiTuDAO ktDao = new KhaiTuDAO();
         public UCKhaiTu()
         {
             InitializeComponent();
@@ -34,10 +33,14 @@ namespace DoAn_Nhom7
             else
                 MessageBox.Show("Vui long xac nhan!");
         }
-
         private void txtCCCD_KeyDown(object sender, KeyEventArgs e)
         {
-            dbC.KhaiTu_KeyDown(txtCCCD, txtTen, txtNgaySinh, txtHonNhan, txtThuongTru, txtGioiTinh, txtDanToc, txtQuocTich, txtQueQuan, txtNgheNghiep);
+            ktDao.KhaiTu_KeyDown(txtCCCD, txtTen, txtNgaySinh, txtHonNhan, txtThuongTru, txtGioiTinh, txtDanToc, txtQuocTich, txtQueQuan, txtNgheNghiep);
+        }
+
+        private void UCKhaiTu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -494,6 +494,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "UCKhaiTu";
             this.Size = new System.Drawing.Size(1023, 643);
+            this.Load += new System.EventHandler(this.UCKhaiTu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

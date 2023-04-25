@@ -77,5 +77,10 @@ namespace DoAn_Nhom7
         {
 
         }
+
+        private void FKhaiSinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

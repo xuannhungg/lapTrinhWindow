@@ -46,7 +46,7 @@ namespace DoAn_Nhom7
                 SqlDataReader dta = cmd.ExecuteReader();
                 if (dta.Read() == true)
                 {
-                    Form1 form1 = new Form1();
+                    FTrangChu form1 = new FTrangChu();
                     form1.ShowDialog();
                 }
                 else

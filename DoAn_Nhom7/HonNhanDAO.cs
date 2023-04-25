@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAn_Nhom7
 {
@@ -30,6 +31,16 @@ namespace DoAn_Nhom7
             if (KiemTraHonNhan(cmndNam) == false && KiemTraHonNhan(cmndNu) == false)
                 return true;
             else return false;
+        }
+        public void LapDayThongTin_KetHon(TextBox cmnd, TextBox hoTen, TextBox ngaySinh, TextBox danToc, TextBox queQuan, TextBox thuongTru)
+        {
+            string sqlStr = String.Format("Select * from CongDan where cmnd = '" + cmnd.Text + "'");
+            dbc.LapDayThongTin(sqlStr, cmnd, hoTen, ngaySinh, danToc, queQuan, thuongTru);
+        }
+        public void LapDayThongTin_LyHon( string cmnd, TextBox hoTen, TextBox ngaySinh, TextBox thuongTru)
+        {
+            string sqlStr = String.Format("Select * from CongDan where cmnd = '" + cmnd + "'");
+            dbc.LapDayThongTinLyHon(sqlStr, cmnd, hoTen, ngaySinh, thuongTru);
         }
     }
 }

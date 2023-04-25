@@ -13,9 +13,8 @@ namespace DoAn_Nhom7
 {
     public partial class UCTamTruTamVang : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
-        DBConnection dbconnection = new DBConnection();
         CongDanDAO cddao = new CongDanDAO();
+        TamTruTamVangDAO tttvDao = new TamTruTamVangDAO();
         public UCTamTruTamVang()
         {
             InitializeComponent();
@@ -25,12 +24,11 @@ namespace DoAn_Nhom7
         {
 
         }
-
         private void txtCMND_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.LapDayThongTinTamTru(txtCMND, txtHoTen, txtNgaySinh, txtCongAn1, txtThuongTru);
+                tttvDao.LapDayThongTinTamTru(txtCMND, txtHoTen, txtNgaySinh, txtCongAn1, txtThuongTru);
             }
         }
 
@@ -38,7 +36,7 @@ namespace DoAn_Nhom7
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.dienGiong(txtCongAn.Text, txtCongAn2, txtCongAn3);
+                tttvDao.dienGiong_CongAn(txtCongAn.Text, txtCongAn2, txtCongAn3);
             }
         }
 

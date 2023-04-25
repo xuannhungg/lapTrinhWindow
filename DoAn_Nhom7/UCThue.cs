@@ -13,18 +13,11 @@ namespace DoAn_Nhom7
 {
     public partial class UCThue : UserControl
     {
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.conStr);
         ThueDAO thueDao = new ThueDAO();
         public UCThue()
         {
             InitializeComponent();
         }
-
-        private void txtLuong_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void UCThue_Load(object sender, EventArgs e)
         {
             LayDanhSach();
@@ -34,42 +27,9 @@ namespace DoAn_Nhom7
             this.dGVThue.DataSource = thueDao.DanhSach();
             this.dGVChinhSuaDanhSach.DataSource = thueDao.DanhSach();
         }
-        public void LayThongTinCongDan()
+        public void LayThongTinCongDan() //lay thong tin de truyen vao datagridview (dGVCongDan)
         {
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM CongDan WHERE cmnd = '" + txtCCCD.Text + "'", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "CCCD");
-            if (ds.Tables["CCCD"].Rows.Count > 0)
-                dGVCongDan.DataSource = ds.Tables["CCCD"];
-
-            txtLuong.Text = ds.Tables["CCCD"].Rows[0][11].ToString();
-            txtTen.Text = ds.Tables["CCCD"].Rows[0][0].ToString();
-            txtNgheNghiep.Text = ds.Tables["CCCD"].Rows[0][10].ToString();
-
-            con.Close();
-        }
-
-        private void dGVThue_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = new DataGridViewRow();
-            row = dGVThue.Rows[e.RowIndex];
-            txtCCCD.Text = row.Cells[0].Value.ToString();
-            txtLoaiThue.Text = row.Cells[1].Value.ToString();
-            txtMucThue.Text = row.Cells[2].Value.ToString();
-            if (row.Cells[3].Value.ToString() == "Chua dong")
-            {
-                cbChuaDong.Checked = true;
-                cbDaDong.Checked = false;
-            }
-            else if (row.Cells[3].Value.ToString() == "Da dong")
-            {
-                cbDaDong.Checked = true;
-                cbChuaDong.Checked = false;
-            }
-
-            tinhSoTienCanDong();
-            LayThongTinCongDan();
+            thueDao.LayThongTinCongDan(txtCCCD.Text, this.dGVCongDan, txtLuong, txtTen, txtNgheNghiep);
         }
         private void tinhSoTienCanDong()
         {
@@ -89,7 +49,6 @@ namespace DoAn_Nhom7
                 txtSoTienCanDong.Text = "0";
             }
         }
-
         private void btnDongTien_Click(object sender, EventArgs e)
         {
             if (cbDaDong.Checked == true)
@@ -104,29 +63,45 @@ namespace DoAn_Nhom7
                 LayDanhSach();
             }
         }
-
         private void btnThemDoiTuong_Click(object sender, EventArgs e)
         {
             Thue thue = new Thue(txtCCCD2.Text, txtLoaiThue2.Text, Convert.ToDouble(txtMucThue2.Text), txtTinhTrang2.Text);
             thueDao.ThemDoiTuong(thue);
             LayDanhSach();
         }
-
         private void btnSuaDoiTuong_Click(object sender, EventArgs e)
         {
             Thue thue = new Thue(txtCCCD2.Text, txtLoaiThue2.Text, Convert.ToDouble(txtMucThue2.Text), txtTinhTrang2.Text);
             thueDao.SuaDoiTuong(thue);
             LayDanhSach();
         }
-
         private void btnXoaDoiTuong_Click(object sender, EventArgs e)
         {
             Thue thue = new Thue(txtCCCD2.Text, txtLoaiThue2.Text, Convert.ToDouble(txtMucThue2.Text), txtTinhTrang2.Text);
             thueDao.XoaDoiTuong(thue);
             LayDanhSach();
         }
-
-        private void dGVChinhSuaDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dGVThue_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dGVThue.Rows[e.RowIndex];
+            txtCCCD.Text = row.Cells[0].Value.ToString();
+            txtLoaiThue.Text = row.Cells[1].Value.ToString();
+            txtMucThue.Text = row.Cells[2].Value.ToString();
+            if (row.Cells[3].Value.ToString() == "Chua dong")
+            {
+                cbChuaDong.Checked = true;
+                cbDaDong.Checked = false;
+            }
+            else if (row.Cells[3].Value.ToString() == "Da dong")
+            {
+                cbDaDong.Checked = true;
+                cbChuaDong.Checked = false;
+            }
+            tinhSoTienCanDong();
+            LayThongTinCongDan();
+        }
+        private void dGVChinhSuaDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
             row = dGVThue.Rows[e.RowIndex];
