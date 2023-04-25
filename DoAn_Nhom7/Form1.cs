@@ -14,11 +14,11 @@ using System.Windows.Forms;
 namespace DoAn_Nhom7
 {
 
-    public partial class Form1 : Form
+    public partial class FTrangChu : Form
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
         CongDanDAO congdandao = new CongDanDAO();
-        public Form1()
+        public FTrangChu()
         {
             InitializeComponent();        }
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)

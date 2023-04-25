@@ -36,14 +36,14 @@
             this.lblKhongTaiKhoan = new System.Windows.Forms.Label();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnSignUp = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbDongY = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.txtUsername_Dk = new System.Windows.Forms.TextBox();
             this.txtPass_Dk = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnLogin.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -146,6 +146,20 @@
             this.pnLogin.TabIndex = 8;
             this.pnLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(435, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 41);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
@@ -204,23 +218,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(32, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 39);
+            this.label2.Size = new System.Drawing.Size(162, 38);
             this.label2.TabIndex = 0;
             this.label2.Text = "Welcome!";
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(435, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 41);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnSignUp
             // 
@@ -234,19 +234,19 @@
             this.pnSignUp.TabIndex = 9;
             this.pnSignUp.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button2
+            // button3
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(435, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(39, 41);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(27, 371);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(479, 40);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Login";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel6
             // 
@@ -325,19 +325,19 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "User name (CCCD/CMND):";
             // 
-            // button3
+            // button2
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(27, 371);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(479, 40);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Login";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(435, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(39, 41);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmDangNhap
             // 
@@ -354,7 +354,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangNhap";
+            this.Text = "ĐĂNG NHẬP";
             this.Load += new System.EventHandler(this.DangNhap_Load);
             this.pnLogin.ResumeLayout(false);
             this.panel5.ResumeLayout(false);

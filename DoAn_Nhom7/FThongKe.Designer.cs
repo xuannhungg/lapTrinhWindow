@@ -47,7 +47,7 @@
             this.Controls.Add(this.ucThongKeDanSo1);
             this.Name = "FThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FThongKe";
+            this.Text = "THỐNG KÊ ";
             this.Load += new System.EventHandler(this.FThongKe_Load);
             this.ResumeLayout(false);
 

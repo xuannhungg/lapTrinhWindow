@@ -114,7 +114,7 @@
             this.dGVThue.RowTemplate.Height = 24;
             this.dGVThue.Size = new System.Drawing.Size(316, 190);
             this.dGVThue.TabIndex = 0;
-            this.dGVThue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVThue_CellContentClick);
+            this.dGVThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVThue_CellClick);
             // 
             // tabPage2
             // 
@@ -252,7 +252,7 @@
             this.dGVChinhSuaDanhSach.RowTemplate.Height = 24;
             this.dGVChinhSuaDanhSach.Size = new System.Drawing.Size(327, 317);
             this.dGVChinhSuaDanhSach.TabIndex = 1;
-            this.dGVChinhSuaDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVChinhSuaDanhSach_CellContentClick);
+            this.dGVChinhSuaDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVChinhSuaDanhSach_CellClick);
             // 
             // lblCCCD
             // 
@@ -398,7 +398,6 @@
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(143, 27);
             this.txtLuong.TabIndex = 13;
-            this.txtLuong.TextChanged += new System.EventHandler(this.txtLuong_TextChanged);
             // 
             // lblSoTienCanDong
             // 

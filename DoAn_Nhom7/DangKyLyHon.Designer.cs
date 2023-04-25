@@ -59,13 +59,13 @@
             this.txtTaiSanChung = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMucDe
@@ -238,7 +238,6 @@
             this.txtCMNDA.Name = "txtCMNDA";
             this.txtCMNDA.Size = new System.Drawing.Size(161, 30);
             this.txtCMNDA.TabIndex = 17;
-            this.txtCMNDA.TextChanged += new System.EventHandler(this.txtCMNDA_TextChanged);
             this.txtCMNDA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCMNDA_KeyDown);
             // 
             // txtTenB
@@ -358,23 +357,15 @@
             this.panel1.Size = new System.Drawing.Size(1268, 572);
             this.panel1.TabIndex = 30;
             // 
-            // panel2
+            // pictureBox1
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.txtTenA);
-            this.panel2.Controls.Add(this.txtCMNDA);
-            this.panel2.Controls.Add(this.txtCuTruA);
-            this.panel2.Controls.Add(this.lblTenA);
-            this.panel2.Controls.Add(this.txtNamSinhA);
-            this.panel2.Controls.Add(this.lblCuTruA);
-            this.panel2.Controls.Add(this.lblNamSinhA);
-            this.panel2.Controls.Add(this.txtNgayNoiCapA);
-            this.panel2.Controls.Add(this.lblNgayVaNoiCapCMNDA);
-            this.panel2.Controls.Add(this.lblCMNDA);
-            this.panel2.Location = new System.Drawing.Point(28, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 177);
-            this.panel2.TabIndex = 30;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(862, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(390, 419);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -394,15 +385,23 @@
             this.panel3.Size = new System.Drawing.Size(807, 171);
             this.panel3.TabIndex = 31;
             // 
-            // pictureBox1
+            // panel2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(862, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(390, 419);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.txtTenA);
+            this.panel2.Controls.Add(this.txtCMNDA);
+            this.panel2.Controls.Add(this.txtCuTruA);
+            this.panel2.Controls.Add(this.lblTenA);
+            this.panel2.Controls.Add(this.txtNamSinhA);
+            this.panel2.Controls.Add(this.lblCuTruA);
+            this.panel2.Controls.Add(this.lblNamSinhA);
+            this.panel2.Controls.Add(this.txtNgayNoiCapA);
+            this.panel2.Controls.Add(this.lblNgayVaNoiCapCMNDA);
+            this.panel2.Controls.Add(this.lblCMNDA);
+            this.panel2.Location = new System.Drawing.Point(28, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(807, 177);
+            this.panel2.TabIndex = 30;
             // 
             // DangKyLyHon
             // 
@@ -415,15 +414,15 @@
             this.Controls.Add(this.lblMucDe);
             this.Name = "DangKyLyHon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangKyLyHon";
+            this.Text = "ĐĂNG KÝ LY HÔN";
             this.Load += new System.EventHandler(this.DangKyLyHon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

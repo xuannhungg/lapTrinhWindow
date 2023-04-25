@@ -49,7 +49,7 @@
             this.Controls.Add(this.ucThue1);
             this.Name = "FThue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FThue";
+            this.Text = "THUẾ";
             this.Load += new System.EventHandler(this.FThue_Load);
             this.ResumeLayout(false);
 
