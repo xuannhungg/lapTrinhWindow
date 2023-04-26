@@ -14,11 +14,6 @@ namespace DoAn_Nhom7
         {
             string sqlStr = String.Format("Select * from CongDan where cmnd = '" + cmnd.Text + "'");
             dbC.LapDayThongTinTamTru(sqlStr,cmnd,hoTen, ngaySinh, queQuan, thuongTru);
-        }
-        public void dienGiong_CongAn(string congAn, TextBox congAn2, TextBox congAn3)
-        {
-            congAn2.Text = congAn;
-            congAn3.Text = congAn;
-        }
+        }       
     }
 }

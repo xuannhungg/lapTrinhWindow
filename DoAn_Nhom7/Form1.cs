@@ -215,5 +215,6 @@ namespace DoAn_Nhom7
             pnHienThi.Controls.Clear();
             pnHienThi.Controls.Add(uc);
         }
+
     }
 }
