@@ -97,6 +97,8 @@ namespace DoAn_Nhom7
         private void btnXoaTv_Click(object sender, EventArgs e)
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
+            tvDao.XoaThanhVien(tv);
+            LayDanhSachThanhVien();
         }
 
         private void btnSuaTv_Click(object sender, EventArgs e)

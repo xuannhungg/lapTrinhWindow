@@ -31,12 +31,17 @@ namespace DoAn_Nhom7
                 tttvDao.LapDayThongTinTamTru(txtCMND, txtHoTen, txtNgaySinh, txtCongAn1, txtThuongTru);
             }
         }
+        public void dienGiong_CongAn(string congAn, TextBox congAn2, TextBox congAn3)
+        {
+            congAn2.Text = congAn;
+            congAn3.Text = congAn;
+        }
 
         private void txtCongAn_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                tttvDao.dienGiong_CongAn(txtCongAn.Text, txtCongAn2, txtCongAn3);
+                dienGiong_CongAn(txtCongAn.Text, txtCongAn2, txtCongAn3);
             }
         }
 
