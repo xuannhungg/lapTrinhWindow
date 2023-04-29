@@ -498,7 +498,7 @@
             this.Controls.Add(this.pnThanhvien);
             this.Name = "FSoHoKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FSoHoKhau";
+            this.Text = "SỔ HỘ KHẨU";
             this.Load += new System.EventHandler(this.FSoHoKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThanhVienShk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSoHoKhau)).EndInit();

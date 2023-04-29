@@ -9,6 +9,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DoAn_Nhom7
 {
@@ -60,41 +61,66 @@ namespace DoAn_Nhom7
             conn.Close();
             return dts;
         }
-        public void LapDayThongTin(TextBox cmnd,TextBox a,TextBox b,TextBox c,TextBox d,TextBox f)
+        public void LapDayThongTin(string sqlStr, TextBox cmnd, TextBox hoTen, TextBox ngaySinh, TextBox danToc, TextBox queQuan, TextBox thuongTru)
         {
             conn.Open();
-            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd.Text + "'";
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())
             {
-                a.Text = Convert.ToString(dta["hoTen"]);
-                b.Text = Convert.ToString(dta["ngayThangNamSinh"]); ;
-                c.Text = Convert.ToString(dta["danToc"]);
-                d.Text = Convert.ToString(dta["queQuan"]);
-                f.Text = Convert.ToString(dta["noiThuongTru"]);
+                hoTen.Text = Convert.ToString(dta["hoTen"]);
+                ngaySinh.Text = Convert.ToString(dta["ngayThangNamSinh"]); ;
+                danToc.Text = Convert.ToString(dta["danToc"]);
+                queQuan.Text = Convert.ToString(dta["queQuan"]);
+                thuongTru.Text = Convert.ToString(dta["noiThuongTru"]);
             }
             conn.Close();
         }
-        public void dienGiong(string x,TextBox a,TextBox b)
+        public void LapDayThongTinTamTru(string sqlStr, TextBox cmnd, TextBox hoTen, TextBox ngaySinh, TextBox queQuan, TextBox thuongTru)
         {
-            a.Text = x;
-            b.Text = x;
-        }
-        public void LapDayThongTinTamTru(TextBox cmnd, TextBox a, TextBox b, TextBox d, TextBox f)
-        {
-            conn.Open();
-            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd.Text + "'";
-            SqlCommand cmd = new SqlCommand(sqlStr, conn);
-            SqlDataReader dta = cmd.ExecuteReader();
-            while (dta.Read())
+            try
             {
-                a.Text = Convert.ToString(dta["hoTen"]);
-                b.Text = Convert.ToString(dta["ngayThangNamSinh"]); ;
-                d.Text = Convert.ToString(dta["queQuan"]);
-                f.Text = Convert.ToString(dta["noiThuongTru"]);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                while (dta.Read())
+                {
+                    hoTen.Text = Convert.ToString(dta["hoTen"]);
+                    ngaySinh.Text = Convert.ToString(dta["ngayThangNamSinh"]); ;
+                    queQuan.Text = Convert.ToString(dta["queQuan"]);
+                    thuongTru.Text = Convert.ToString(dta["noiThuongTru"]);
+                }
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public string CapNhatTamTru(string sqlStr, string n)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                while (dta.Read())
+                {
+                    n = n + Convert.ToString(dta["tamTru"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return n;
         }
         public void LapDayThongTinCD(TextBox cmnd, TextBox a,DateTimePicker dt, TextBox b, TextBox d, TextBox f,TextBox g,TextBox j,TextBox k, TextBox x, TextBox y, TextBox z,TextBox i,TextBox t,TextBox n,DateTimePicker m)
         {
@@ -188,19 +214,28 @@ namespace DoAn_Nhom7
             conn.Close();
             return k;
         }
-        public void LapDayThongTinLyHon(string cmnd, TextBox a, TextBox b, TextBox f)
+        public void LapDayThongTinLyHon(string sqlStr, string cmnd, TextBox hoTen, TextBox ngaySinh, TextBox thuongTru)
         {
-            conn.Open();
-            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
-            SqlCommand cmd = new SqlCommand(sqlStr, conn);
-            SqlDataReader dta = cmd.ExecuteReader();
-            while (dta.Read())
+            try
             {
-                a.Text = Convert.ToString(dta["hoTen"]);
-                b.Text = Convert.ToString(dta["ngayThangNamSinh"]);
-                f.Text = Convert.ToString(dta["noiThuongTru"]);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                while (dta.Read())
+                {
+                    hoTen.Text = Convert.ToString(dta["hoTen"]);
+                    ngaySinh.Text = Convert.ToString(dta["ngayThangNamSinh"]);
+                    thuongTru.Text = Convert.ToString(dta["noiThuongTru"]);
+                }
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
         public DataSet TimCongDanDaKetHon(string sqlStr, DataGridView dtgv)
         {
@@ -250,10 +285,9 @@ namespace DoAn_Nhom7
             conn.Close();
             return tuoi;           
         }
-        public void KhaiTu_KeyDown(TextBox cmnd, TextBox ten, TextBox ngsinh, TextBox honNhan, TextBox noiThuongTru, TextBox gioiTinh, TextBox danToc, TextBox quocTich, TextBox queQuan, TextBox ngheNghiep)
+        public void KhaiTu_KeyDown(string sqlStr, TextBox cmnd, TextBox ten, TextBox ngsinh, TextBox honNhan, TextBox noiThuongTru, TextBox gioiTinh, TextBox danToc, TextBox quocTich, TextBox queQuan, TextBox ngheNghiep)
         {
             conn.Open();
-            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd.Text + "'";
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())
@@ -366,6 +400,53 @@ namespace DoAn_Nhom7
             }
             conn.Close();
             return null;
+        //thue
+        public void LayThongTinCongDan_Thue(string sqlStr, DataGridView dtgv, TextBox luong, TextBox ten, TextBox nghe)
+        {
+            try
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sqlStr, conn);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "CCCD");
+                if (ds.Tables["CCCD"].Rows.Count > 0)
+                    dtgv.DataSource = ds.Tables["CCCD"];
+
+                luong.Text = ds.Tables["CCCD"].Rows[0][11].ToString();
+                ten.Text = ds.Tables["CCCD"].Rows[0][0].ToString();
+                nghe.Text = ds.Tables["CCCD"].Rows[0][10].ToString();            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void XuLyThongKeDanSo(string sqlStr, Chart chartTyLeNamNu)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataAdapter ad = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                ad.Fill(ds);
+                chartTyLeNamNu.DataSource = ds;
+                chartTyLeNamNu.Series["Tỷ Lệ Nam Nữ"].XValueMember = "gioiTinh";
+                chartTyLeNamNu.Series["Tỷ Lệ Nam Nữ"].YValueMembers = "soLuong";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
     }
 }

@@ -42,17 +42,10 @@ namespace DoAn_Nhom7
         public void CapNhatTamTru(CongDan cd)
         {
             string n = "";
-            conn.Open();
-            string a = "Select * from CongDan where cmnd = '" + cd.cmnd + "'";
-            SqlCommand cmd = new SqlCommand(a, conn);
-            SqlDataReader dta = cmd.ExecuteReader();
-            while (dta.Read())
-            {
-                n = n+Convert.ToString(dta["tamTru"]);
-            }
-            conn.Close();
-            string sqlStr = string.Format("UPDATE CongDan SET tamTru = '{0} {1}\n{2}' WHERE CMND ='{3}'", cd.tamTru, cd.ngayCap,n, cd.CMND); 
-            dbconnection.XuLy(sqlStr);
+            string sqlStr = string.Format("Select * from CongDan where cmnd = '" + cd.cmnd + "'");
+            n = dbconnection.CapNhatTamTru(sqlStr, n);
+            string sqlStr2 = string.Format("UPDATE CongDan SET tamTru = '{0} {1}\n{2}' WHERE CMND ='{3}'", cd.tamTru, cd.ngayCap, n, cd.CMND);
+            dbconnection.XuLy(sqlStr2);
         }
         public void CapNhatKetHon(CongDan nam,CongDan nu)
         {

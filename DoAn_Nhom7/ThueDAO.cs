@@ -44,5 +44,10 @@ namespace DoAn_Nhom7
             string sqlStr = string.Format("DELETE FROM Thue WHERE CCCD = '{0}'", thue.CCCD);
             dbconnection.XuLy(sqlStr);
         }
+        public void LayThongTinCongDan(string cccd, DataGridView dtgv, TextBox luong, TextBox ten, TextBox nghe)
+        {
+            string sqlStr = string.Format("SELECT * FROM CongDan WHERE cmnd = '" + cccd + "'");
+            dbconnection.LayThongTinCongDan_Thue(sqlStr, dtgv, luong, ten, nghe);
+        }
     }
 }

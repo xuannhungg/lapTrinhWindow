@@ -13,9 +13,7 @@ namespace DoAn_Nhom7
 {
     public partial class UCThongKeDanSo : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
-        CongDanDAO cddao = new CongDanDAO();
-        DBConnection dbconnection = new DBConnection();
+        ThongKeDAO tkDao = new ThongKeDAO();
         public UCThongKeDanSo()
         {
             InitializeComponent();
@@ -23,16 +21,7 @@ namespace DoAn_Nhom7
 
         private void UCThongKeDanSo_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            string sqlStr = "Select gioiTinh, count(*) as soLuong from CongDan group by gioiTinh";
-            SqlCommand cmd = new SqlCommand(sqlStr, conn);
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            ad.Fill(ds);
-            chartTyLeNamNu.DataSource = ds;
-            chartTyLeNamNu.Series["Tỷ Lệ Nam Nữ"].XValueMember = "gioiTinh";
-            chartTyLeNamNu.Series["Tỷ Lệ Nam Nữ"].YValueMembers = "soLuong";
-            conn.Close();
+            tkDao.XuLy(chartTyLeNamNu);
         }
     }
 }

@@ -512,6 +512,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCCanCuoc";
             this.Size = new System.Drawing.Size(1158, 662);
+            this.Load += new System.EventHandler(this.UCCanCuoc_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

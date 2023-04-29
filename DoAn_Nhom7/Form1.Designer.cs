@@ -1,6 +1,6 @@
 ﻿namespace DoAn_Nhom7
 {
-    partial class Form1
+    partial class FTrangChu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FTrangChu));
             this.tclChucNang = new System.Windows.Forms.TabControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.pnDichVu = new System.Windows.Forms.Panel();
-            this.pnHienThi = new System.Windows.Forms.Panel();
-            this.pnMenu = new System.Windows.Forms.Panel();
-            this.btnKhaiTu = new System.Windows.Forms.Button();
-            this.btnKhaiSinh = new System.Windows.Forms.Button();
-            this.btnHonNhan = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnTamTru = new System.Windows.Forms.Button();
-            this.btnSoHoKhau = new System.Windows.Forms.Button();
-            this.btnThue = new System.Windows.Forms.Button();
-            this.btnCCCD = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.pnTimKiem = new System.Windows.Forms.Panel();
@@ -59,14 +46,26 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.lblCCCD = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pnDichVu = new System.Windows.Forms.Panel();
+            this.pnHienThi = new System.Windows.Forms.Panel();
+            this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnKhaiTu = new System.Windows.Forms.Button();
+            this.btnKhaiSinh = new System.Windows.Forms.Button();
+            this.btnHonNhan = new System.Windows.Forms.Button();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnTamTru = new System.Windows.Forms.Button();
+            this.btnSoHoKhau = new System.Windows.Forms.Button();
+            this.btnThue = new System.Windows.Forms.Button();
+            this.btnCCCD = new System.Windows.Forms.Button();
             this.tclChucNang.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.pnDichVu.SuspendLayout();
-            this.pnMenu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnTimKiem.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSach)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.pnDichVu.SuspendLayout();
+            this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tclChucNang
@@ -80,197 +79,6 @@
             this.tclChucNang.SelectedIndex = 0;
             this.tclChucNang.Size = new System.Drawing.Size(1420, 712);
             this.tclChucNang.TabIndex = 0;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.pnDichVu);
-            this.tabPage5.Controls.Add(this.pnMenu);
-            this.tabPage5.Location = new System.Drawing.Point(4, 31);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1412, 677);
-            this.tabPage5.TabIndex = 7;
-            this.tabPage5.Text = "Dich vu";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // pnDichVu
-            // 
-            this.pnDichVu.BackColor = System.Drawing.Color.LightBlue;
-            this.pnDichVu.Controls.Add(this.pnHienThi);
-            this.pnDichVu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnDichVu.Location = new System.Drawing.Point(239, 3);
-            this.pnDichVu.Name = "pnDichVu";
-            this.pnDichVu.Size = new System.Drawing.Size(1170, 671);
-            this.pnDichVu.TabIndex = 1;
-            // 
-            // pnHienThi
-            // 
-            this.pnHienThi.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pnHienThi.Location = new System.Drawing.Point(9, 4);
-            this.pnHienThi.Name = "pnHienThi";
-            this.pnHienThi.Size = new System.Drawing.Size(1158, 662);
-            this.pnHienThi.TabIndex = 0;
-            // 
-            // pnMenu
-            // 
-            this.pnMenu.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pnMenu.Controls.Add(this.btnKhaiTu);
-            this.pnMenu.Controls.Add(this.btnKhaiSinh);
-            this.pnMenu.Controls.Add(this.btnHonNhan);
-            this.pnMenu.Controls.Add(this.btnThongKe);
-            this.pnMenu.Controls.Add(this.comboBox1);
-            this.pnMenu.Controls.Add(this.btnTamTru);
-            this.pnMenu.Controls.Add(this.btnSoHoKhau);
-            this.pnMenu.Controls.Add(this.btnThue);
-            this.pnMenu.Controls.Add(this.btnCCCD);
-            this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnMenu.Location = new System.Drawing.Point(3, 3);
-            this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(238, 671);
-            this.pnMenu.TabIndex = 0;
-            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btnKhaiTu
-            // 
-            this.btnKhaiTu.BackColor = System.Drawing.Color.Transparent;
-            this.btnKhaiTu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhaiTu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnKhaiTu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKhaiTu.Location = new System.Drawing.Point(25, 600);
-            this.btnKhaiTu.Name = "btnKhaiTu";
-            this.btnKhaiTu.Size = new System.Drawing.Size(189, 43);
-            this.btnKhaiTu.TabIndex = 8;
-            this.btnKhaiTu.Text = "Khai tu";
-            this.btnKhaiTu.UseVisualStyleBackColor = false;
-            this.btnKhaiTu.Click += new System.EventHandler(this.btnKhaiTu_Click);
-            // 
-            // btnKhaiSinh
-            // 
-            this.btnKhaiSinh.BackColor = System.Drawing.Color.Transparent;
-            this.btnKhaiSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhaiSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnKhaiSinh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKhaiSinh.Location = new System.Drawing.Point(25, 529);
-            this.btnKhaiSinh.Name = "btnKhaiSinh";
-            this.btnKhaiSinh.Size = new System.Drawing.Size(189, 43);
-            this.btnKhaiSinh.TabIndex = 7;
-            this.btnKhaiSinh.Text = "Khai sinh";
-            this.btnKhaiSinh.UseVisualStyleBackColor = false;
-            // 
-            // btnHonNhan
-            // 
-            this.btnHonNhan.BackColor = System.Drawing.Color.Transparent;
-            this.btnHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHonNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHonNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHonNhan.Location = new System.Drawing.Point(25, 462);
-            this.btnHonNhan.Name = "btnHonNhan";
-            this.btnHonNhan.Size = new System.Drawing.Size(189, 43);
-            this.btnHonNhan.TabIndex = 6;
-            this.btnHonNhan.Text = "Hon nhan";
-            this.btnHonNhan.UseVisualStyleBackColor = false;
-            this.btnHonNhan.Click += new System.EventHandler(this.btnHonNhan_Click);
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Transparent;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKe.Location = new System.Drawing.Point(25, 394);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(189, 43);
-            this.btnThongKe.TabIndex = 5;
-            this.btnThongKe.Text = "Thong ke dan so";
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "Can cuoc cong dan",
-            "Thue",
-            "So ho khau",
-            "Tam tru, tam vang",
-            "Thong ke dan so",
-            "Hon nhan va gia dinh",
-            "Khai sinh",
-            "Khai tu"});
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Can cuoc cong dan",
-            "Thue",
-            "So ho khau",
-            "Tam tru, tam vang",
-            "Thong ke dan so",
-            "Hon nhan va gia dinh",
-            "Khai sinh",
-            "Khai tu"});
-            this.comboBox1.Location = new System.Drawing.Point(25, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 30);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // btnTamTru
-            // 
-            this.btnTamTru.BackColor = System.Drawing.Color.Transparent;
-            this.btnTamTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTamTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTamTru.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTamTru.Location = new System.Drawing.Point(25, 322);
-            this.btnTamTru.Name = "btnTamTru";
-            this.btnTamTru.Size = new System.Drawing.Size(189, 43);
-            this.btnTamTru.TabIndex = 3;
-            this.btnTamTru.Text = "Tam tru tam vang";
-            this.btnTamTru.UseVisualStyleBackColor = false;
-            this.btnTamTru.Click += new System.EventHandler(this.btnTamTru_Click);
-            // 
-            // btnSoHoKhau
-            // 
-            this.btnSoHoKhau.BackColor = System.Drawing.Color.Transparent;
-            this.btnSoHoKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSoHoKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSoHoKhau.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSoHoKhau.Location = new System.Drawing.Point(25, 254);
-            this.btnSoHoKhau.Name = "btnSoHoKhau";
-            this.btnSoHoKhau.Size = new System.Drawing.Size(189, 43);
-            this.btnSoHoKhau.TabIndex = 2;
-            this.btnSoHoKhau.Text = "So ho khau";
-            this.btnSoHoKhau.UseVisualStyleBackColor = false;
-            this.btnSoHoKhau.Click += new System.EventHandler(this.btnSoHoKhau_Click);
-            // 
-            // btnThue
-            // 
-            this.btnThue.BackColor = System.Drawing.Color.Transparent;
-            this.btnThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThue.Location = new System.Drawing.Point(25, 182);
-            this.btnThue.Name = "btnThue";
-            this.btnThue.Size = new System.Drawing.Size(189, 43);
-            this.btnThue.TabIndex = 1;
-            this.btnThue.Text = "Thue";
-            this.btnThue.UseVisualStyleBackColor = false;
-            this.btnThue.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnCCCD
-            // 
-            this.btnCCCD.BackColor = System.Drawing.Color.Transparent;
-            this.btnCCCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCCCD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCCCD.Location = new System.Drawing.Point(25, 110);
-            this.btnCCCD.Name = "btnCCCD";
-            this.btnCCCD.Size = new System.Drawing.Size(189, 43);
-            this.btnCCCD.TabIndex = 0;
-            this.btnCCCD.Text = "CCCD/CMND";
-            this.btnCCCD.UseVisualStyleBackColor = false;
-            this.btnCCCD.Click += new System.EventHandler(this.btnCCCD_Click);
             // 
             // tabPage1
             // 
@@ -500,7 +308,167 @@
             this.lblCCCD.TabIndex = 0;
             this.lblCCCD.Text = "CCCD/CMND:";
             // 
-            // Form1
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.pnDichVu);
+            this.tabPage5.Controls.Add(this.pnMenu);
+            this.tabPage5.Location = new System.Drawing.Point(4, 31);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1412, 677);
+            this.tabPage5.TabIndex = 7;
+            this.tabPage5.Text = "Dich vu";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // pnDichVu
+            // 
+            this.pnDichVu.BackColor = System.Drawing.Color.LightBlue;
+            this.pnDichVu.Controls.Add(this.pnHienThi);
+            this.pnDichVu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnDichVu.Location = new System.Drawing.Point(239, 3);
+            this.pnDichVu.Name = "pnDichVu";
+            this.pnDichVu.Size = new System.Drawing.Size(1170, 671);
+            this.pnDichVu.TabIndex = 1;
+            // 
+            // pnHienThi
+            // 
+            this.pnHienThi.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.pnHienThi.Location = new System.Drawing.Point(9, 4);
+            this.pnHienThi.Name = "pnHienThi";
+            this.pnHienThi.Size = new System.Drawing.Size(1158, 662);
+            this.pnHienThi.TabIndex = 0;
+            // 
+            // pnMenu
+            // 
+            this.pnMenu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnMenu.Controls.Add(this.btnKhaiTu);
+            this.pnMenu.Controls.Add(this.btnKhaiSinh);
+            this.pnMenu.Controls.Add(this.btnHonNhan);
+            this.pnMenu.Controls.Add(this.btnThongKe);
+            this.pnMenu.Controls.Add(this.btnTamTru);
+            this.pnMenu.Controls.Add(this.btnSoHoKhau);
+            this.pnMenu.Controls.Add(this.btnThue);
+            this.pnMenu.Controls.Add(this.btnCCCD);
+            this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnMenu.Location = new System.Drawing.Point(3, 3);
+            this.pnMenu.Name = "pnMenu";
+            this.pnMenu.Size = new System.Drawing.Size(238, 671);
+            this.pnMenu.TabIndex = 0;
+            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnKhaiTu
+            // 
+            this.btnKhaiTu.BackColor = System.Drawing.Color.Transparent;
+            this.btnKhaiTu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhaiTu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhaiTu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnKhaiTu.Location = new System.Drawing.Point(25, 591);
+            this.btnKhaiTu.Name = "btnKhaiTu";
+            this.btnKhaiTu.Size = new System.Drawing.Size(189, 43);
+            this.btnKhaiTu.TabIndex = 8;
+            this.btnKhaiTu.Text = "Khai tu";
+            this.btnKhaiTu.UseVisualStyleBackColor = false;
+            this.btnKhaiTu.Click += new System.EventHandler(this.btnKhaiTu_Click);
+            // 
+            // btnKhaiSinh
+            // 
+            this.btnKhaiSinh.BackColor = System.Drawing.Color.Transparent;
+            this.btnKhaiSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhaiSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhaiSinh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnKhaiSinh.Location = new System.Drawing.Point(25, 520);
+            this.btnKhaiSinh.Name = "btnKhaiSinh";
+            this.btnKhaiSinh.Size = new System.Drawing.Size(189, 43);
+            this.btnKhaiSinh.TabIndex = 7;
+            this.btnKhaiSinh.Text = "Khai sinh";
+            this.btnKhaiSinh.UseVisualStyleBackColor = false;
+            // 
+            // btnHonNhan
+            // 
+            this.btnHonNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHonNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHonNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHonNhan.Location = new System.Drawing.Point(25, 453);
+            this.btnHonNhan.Name = "btnHonNhan";
+            this.btnHonNhan.Size = new System.Drawing.Size(189, 43);
+            this.btnHonNhan.TabIndex = 6;
+            this.btnHonNhan.Text = "Hon nhan";
+            this.btnHonNhan.UseVisualStyleBackColor = false;
+            this.btnHonNhan.Click += new System.EventHandler(this.btnHonNhan_Click);
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.Transparent;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThongKe.Location = new System.Drawing.Point(25, 385);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(189, 43);
+            this.btnThongKe.TabIndex = 5;
+            this.btnThongKe.Text = "Thong ke dan so";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnTamTru
+            // 
+            this.btnTamTru.BackColor = System.Drawing.Color.Transparent;
+            this.btnTamTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTamTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTamTru.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTamTru.Location = new System.Drawing.Point(25, 313);
+            this.btnTamTru.Name = "btnTamTru";
+            this.btnTamTru.Size = new System.Drawing.Size(189, 43);
+            this.btnTamTru.TabIndex = 3;
+            this.btnTamTru.Text = "Tam tru tam vang";
+            this.btnTamTru.UseVisualStyleBackColor = false;
+            this.btnTamTru.Click += new System.EventHandler(this.btnTamTru_Click);
+            // 
+            // btnSoHoKhau
+            // 
+            this.btnSoHoKhau.BackColor = System.Drawing.Color.Transparent;
+            this.btnSoHoKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSoHoKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSoHoKhau.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSoHoKhau.Location = new System.Drawing.Point(25, 245);
+            this.btnSoHoKhau.Name = "btnSoHoKhau";
+            this.btnSoHoKhau.Size = new System.Drawing.Size(189, 43);
+            this.btnSoHoKhau.TabIndex = 2;
+            this.btnSoHoKhau.Text = "So ho khau";
+            this.btnSoHoKhau.UseVisualStyleBackColor = false;
+            this.btnSoHoKhau.Click += new System.EventHandler(this.btnSoHoKhau_Click);
+            // 
+            // btnThue
+            // 
+            this.btnThue.BackColor = System.Drawing.Color.Transparent;
+            this.btnThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThue.Location = new System.Drawing.Point(25, 173);
+            this.btnThue.Name = "btnThue";
+            this.btnThue.Size = new System.Drawing.Size(189, 43);
+            this.btnThue.TabIndex = 1;
+            this.btnThue.Text = "Thue";
+            this.btnThue.UseVisualStyleBackColor = false;
+            this.btnThue.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnCCCD
+            // 
+            this.btnCCCD.BackColor = System.Drawing.Color.Transparent;
+            this.btnCCCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCCCD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCCCD.Location = new System.Drawing.Point(25, 101);
+            this.btnCCCD.Name = "btnCCCD";
+            this.btnCCCD.Size = new System.Drawing.Size(189, 43);
+            this.btnCCCD.TabIndex = 0;
+            this.btnCCCD.Text = "CCCD/CMND";
+            this.btnCCCD.UseVisualStyleBackColor = false;
+            this.btnCCCD.Click += new System.EventHandler(this.btnCCCD_Click);
+            // 
+            // FTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -508,14 +476,11 @@
             this.ClientSize = new System.Drawing.Size(1423, 713);
             this.Controls.Add(this.tclChucNang);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Form1";
+            this.Name = "FTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trang chu";
+            this.Text = "TRANG CHỦ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tclChucNang.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.pnDichVu.ResumeLayout(false);
-            this.pnMenu.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.pnTimKiem.ResumeLayout(false);
@@ -523,6 +488,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSach)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.pnDichVu.ResumeLayout(false);
+            this.pnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -551,7 +519,6 @@
         private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Button btnCCCD;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnTamTru;
         private System.Windows.Forms.Button btnSoHoKhau;
         private System.Windows.Forms.Button btnThue;

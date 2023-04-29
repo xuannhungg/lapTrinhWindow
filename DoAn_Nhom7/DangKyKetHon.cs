@@ -13,8 +13,6 @@ namespace DoAn_Nhom7
 {
     public partial class DangKyKetHon : Form
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
-        DBConnection dbconnection = new DBConnection();
         CongDanDAO cddao = new CongDanDAO();
         HonNhanDAO hnDao = new HonNhanDAO();
         public DangKyKetHon()
@@ -37,7 +35,7 @@ namespace DoAn_Nhom7
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.LapDayThongTin(txtGiayToTuyThanNam, txtHoTenNam, txtNgaySinhNam, txtDanTocNam, txtQuocTichNam, txtNoiCuTruNam);
+                hnDao.LapDayThongTin_KetHon(txtGiayToTuyThanNam, txtHoTenNam, txtNgaySinhNam, txtDanTocNam, txtQueQuanNam, txtNoiCuTruNam);
             }
         }
 
@@ -45,7 +43,7 @@ namespace DoAn_Nhom7
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.LapDayThongTin(txtGiayToTuyThanNu, txtHoTenNu, txtNgaySinhNu,txtDanTocNu, txtQuocTichNu, txtNoiCuTruNu);
+                hnDao.LapDayThongTin_KetHon(txtGiayToTuyThanNu, txtHoTenNu, txtNgaySinhNu,txtDanTocNu, txtQueQuanNu, txtNoiCuTruNu);
             }
         }
 
@@ -54,9 +52,5 @@ namespace DoAn_Nhom7
 
         }
 
-        private void txtGiayToTuyThanNam_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

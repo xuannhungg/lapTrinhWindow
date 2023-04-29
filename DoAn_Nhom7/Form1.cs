@@ -14,11 +14,11 @@ using System.Windows.Forms;
 namespace DoAn_Nhom7
 {
 
-    public partial class Form1 : Form
+    public partial class FTrangChu : Form
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
         CongDanDAO congdandao = new CongDanDAO();
-        public Form1()
+        public FTrangChu()
         {
             InitializeComponent();        }
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
@@ -216,6 +216,7 @@ namespace DoAn_Nhom7
             pnHienThi.Controls.Add(uc);
         }
 
+
         private void dGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string cmnd = dGVDanhSach.Rows[e.RowIndex].Cells["cmnd"].Value.ToString();
@@ -224,5 +225,6 @@ namespace DoAn_Nhom7
             Form hi = new FThongTinCongDancs(cmnd);
             hi.ShowDialog();
         }
+
     }
 }
