@@ -133,6 +133,16 @@ namespace DoAn_Nhom7.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap giay_khai_sinh_ban_chinh_1 {
+            get {
+                object obj = ResourceManager.GetObject("giay-khai-sinh-ban-chinh-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_creative_recruitment_and_job_search_background_vector_picture_image_1590382 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-creative-recruitment-and-job-search-background-vector-picture-image_15903" +

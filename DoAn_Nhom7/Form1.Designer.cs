@@ -272,6 +272,7 @@
             this.dGVDanhSach.RowTemplate.Height = 24;
             this.dGVDanhSach.Size = new System.Drawing.Size(1250, 496);
             this.dGVDanhSach.TabIndex = 3;
+            this.dGVDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellClick);
             this.dGVDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellContentClick);
             // 
             // btnTimKiem

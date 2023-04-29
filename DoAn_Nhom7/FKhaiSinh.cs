@@ -29,6 +29,7 @@ namespace DoAn_Nhom7
             if (KiemTraHonNhan(txtCMNDCha.Text))
             {
                 string cmndcon = txtCMNDCha.Text + "-con "+dbconnection.SoLuongThanhVien(txtCMNDCha.Text)+"";
+
                 ThanhVienShk tv = new ThanhVienShk(dbconnection.timMaSHK(txtCMNDCha.Text), cmndcon, "con " + GioiTinh(txtGioiTinh.Text));
                 CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text, txtGioiTinh.Text, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
                 cdDao.Them(congDan);

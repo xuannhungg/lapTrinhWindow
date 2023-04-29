@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,8 +22,7 @@ namespace DoAn_Nhom7
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                if (cmd.ExecuteNonQuery() > 0)
-                    MessageBox.Show("Thanh cong");
+
             }
             catch (Exception ex)
             {
@@ -370,6 +370,36 @@ namespace DoAn_Nhom7
             conn.Close();
             return true;
         }
+        public void LapDayThongTinKhaiSinhBoMe(string cmnd,Label a1,Label a2,Label a3,Label a4,Label a5)
+        {
+            conn.Open();
+            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            while (dta.Read())
+            {
+                a1.Text = Convert.ToString(dta["hoTen"]);
+                a2.Text = Convert.ToString(dta["ngayThangNamSinh"]); ;
+                a3.Text = Convert.ToString(dta["danToc"]);
+                a4.Text = Convert.ToString(dta["queQuan"]);
+                a5.Text = Convert.ToString(dta["noiThuongTru"]);
+            }
+            conn.Close();
+        }
+        public string timCMNDBo(string maSHK)
+        {
+            conn.Open();
+            string sqlStr = string.Format("select shk.maSoHoKhau,cd.cmnd, cd.hoten ,cd.gioiTinh,'chu ho' AS QuanHe  FROM CongDan cd INNER JOIN SoHoKhau shk ON cd.cmnd = shk.CMND where shk.maSoHoKhau = '" + maSHK + "'");
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            while (dta.Read())
+            {
+                string a = Convert.ToString(dta["cd.cmnd"]);
+                conn.Close();
+                return a;
+            }
+            conn.Close();
+            return null;
         //thue
         public void LayThongTinCongDan_Thue(string sqlStr, DataGridView dtgv, TextBox luong, TextBox ten, TextBox nghe)
         {
@@ -416,6 +446,7 @@ namespace DoAn_Nhom7
             {
                 conn.Close();
             }
+
         }
     }
 }
