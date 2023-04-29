@@ -1,4 +1,4 @@
-use hihil;
+use ahihi;
 create table Thue (
 CCCD varchar(100) NOT NULL,
 LoaiThue nvarchar(100),

@@ -22,7 +22,8 @@ namespace DoAn_Nhom7
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-
+                if (cmd.ExecuteNonQuery() > 0)
+                    MessageBox.Show("thanh cong");
             }
             catch (Exception ex)
             {
@@ -122,7 +123,7 @@ namespace DoAn_Nhom7
             }
             return n;
         }
-        public void LapDayThongTinCD(TextBox cmnd, TextBox a,DateTimePicker dt, TextBox b, TextBox d, TextBox f,TextBox g,TextBox j,TextBox k, TextBox x, TextBox y, TextBox z,TextBox i,TextBox t,TextBox n,DateTimePicker m)
+        public void LapDayThongTinCD(TextBox cmnd, TextBox a, DateTimePicker dt, RadioButton b,RadioButton b1, TextBox d, TextBox f, TextBox g, TextBox j, TextBox k, TextBox x, TextBox y, TextBox z, TextBox i, TextBox t, TextBox n, DateTimePicker m,TextBox p)
         {
             conn.Open();
             string sqlStr = "Select * from CongDan where cmnd = '" + cmnd.Text + "'";
@@ -132,7 +133,10 @@ namespace DoAn_Nhom7
             {
                 a.Text = Convert.ToString(dta["hoTen"]);
                 dt.Text = Convert.ToString(dta["ngayThangNamSinh"]);
-                b.Text = Convert.ToString(dta["gioiTinh"]);
+                if (Convert.ToString(dta["gioiTinh"]) == "nu")
+                    b.Checked=true;
+                else
+                    b1.Checked=true;
                 d.Text = Convert.ToString(dta["danToc"]);
                 f.Text = Convert.ToString(dta["tinhTrangHonNhan"]);
                 g.Text = Convert.ToString(dta["noiDangKiKhaiSinh"]);
@@ -145,7 +149,7 @@ namespace DoAn_Nhom7
                 t.Text = Convert.ToString(dta["tamTru"]);
                 n.Text = Convert.ToString(dta["noiCapCMND"]);
                 m.Text = Convert.ToString(dta["ngayCap"]);
-
+                p.Text = Convert.ToString(dta["QuocTich"]);
             }
             conn.Close();
         }
@@ -184,7 +188,7 @@ namespace DoAn_Nhom7
             conn.Close();
             return false;
         }
-        public bool KiemTraVoChong(string sqlStr,string a,string b)
+        public bool KiemTraVoChong(string sqlStr, string a, string b)
         {
             conn.Open();
             //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
@@ -194,7 +198,7 @@ namespace DoAn_Nhom7
             {
                 a = Convert.ToString(dr["tinhTrangHonNhan"]);
                 string cmnd = a.Substring(32);
-                if (cmnd == b )
+                if (cmnd == b)
                 {
                     conn.Close();
                     return true;
@@ -205,12 +209,12 @@ namespace DoAn_Nhom7
         }
         public int SoLuongThanhVien(string cmnd)
         {
-            string a= timMaSHK(cmnd);
+            string a = timMaSHK(cmnd);
             conn.Open();
-            string sqlStr = "SELECT COUNT(*) FROM ThanhVienSoHoKhau WHERE maShk = '" + a + "'";
+            string sqlStr = "SELECT COUNT(*) FROM ThanhVienSoHoKhau WHERE maSoHoKhau = '" + a + "'";
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
-            int k= (int)cmd.ExecuteScalar();
-            MessageBox.Show("a"+k);
+            int k = (int)cmd.ExecuteScalar();
+            MessageBox.Show("a" + k);
             conn.Close();
             return k;
         }
@@ -240,7 +244,7 @@ namespace DoAn_Nhom7
         public DataSet TimCongDanDaKetHon(string sqlStr, DataGridView dtgv)
         {
             conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter(sqlStr, conn) ;
+            SqlDataAdapter da = new SqlDataAdapter(sqlStr, conn);
             DataSet ds = new DataSet();
             da.Fill(ds, "tinhTrangHonNhan");
             if (ds.Tables["tinhTrangHonNhan"].Rows.Count > 0)
@@ -281,9 +285,9 @@ namespace DoAn_Nhom7
             {
                 tuoi = Convert.ToInt32(dr["Tuoi"].ToString());
                 MessageBox.Show("Tinh tuoi thanh cong");
-            }           
+            }
             conn.Close();
-            return tuoi;           
+            return tuoi;
         }
         public void KhaiTu_KeyDown(string sqlStr, TextBox cmnd, TextBox ten, TextBox ngsinh, TextBox honNhan, TextBox noiThuongTru, TextBox gioiTinh, TextBox danToc, TextBox quocTich, TextBox queQuan, TextBox ngheNghiep)
         {
@@ -304,7 +308,7 @@ namespace DoAn_Nhom7
             }
             conn.Close();
         }
-        public void KhaiSinh_KeyDown(TextBox cmnd,TextBox ten,TextBox danToc)
+        public void KhaiSinh_KeyDown(TextBox cmnd, TextBox ten, TextBox danToc,TextBox quocTich)
         {
             conn.Open();
             string sqlStr = "Select * from CongDan where cmnd = '" + cmnd.Text + "'";
@@ -313,23 +317,22 @@ namespace DoAn_Nhom7
             while (dta.Read())
             {
                 ten.Text = Convert.ToString(dta["hoTen"]);
-               
                 danToc.Text = Convert.ToString(dta["danToc"]);
-            
+                quocTich.Text = Convert.ToString(dta["quocTich"]);
             }
             conn.Close();
         }
         public string timMaSHK(string cmnd)
         {
             conn.Open();
-            string sqlStr = "select maSoHoKhau from SoHoKhau where CMND = '" + cmnd + "'";
+            string sqlStr = "SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo = '" + cmnd + "'";
 
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())
             {
-                
-                string a= Convert.ToString(dta["maSoHoKhau"]);
+
+                string a = Convert.ToString(dta["maSoHoKhau"]);
                 conn.Close();
                 return a;
             }
@@ -355,12 +358,12 @@ namespace DoAn_Nhom7
         {
             conn.Open();
             //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
-            string sqlStr = " SELECT cd.* FROM CongDan cd JOIN ThanhVienSoHoKhau tvshk ON cd.cmnd = tvshk.cccd_ThanhVien JOIN SoHoKhau shk ON tvshk.maShk = shk.maSoHoKhau where cd.cmnd = '" + cmnd + "'";
+            string sqlStr = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                string a = Convert.ToString(dr["hoTen"]);
+                string a = Convert.ToString(dr["maSoHoKhau"]);
                 if (a != null)
                 {
                     conn.Close();
@@ -370,7 +373,7 @@ namespace DoAn_Nhom7
             conn.Close();
             return true;
         }
-        public void LapDayThongTinKhaiSinhBoMe(string cmnd,Label a1,Label a2,Label a3,Label a4,Label a5)
+        public void LapDayThongTinKhaiSinhBoMe(string cmnd, Label a1, Label a2, Label a3, Label a4, Label a5)
         {
             conn.Open();
             string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
@@ -400,7 +403,8 @@ namespace DoAn_Nhom7
             }
             conn.Close();
             return null;
-        //thue
+        }
+            //thue
         public void LayThongTinCongDan_Thue(string sqlStr, DataGridView dtgv, TextBox luong, TextBox ten, TextBox nghe)
         {
             try
@@ -414,7 +418,7 @@ namespace DoAn_Nhom7
 
                 luong.Text = ds.Tables["CCCD"].Rows[0][11].ToString();
                 ten.Text = ds.Tables["CCCD"].Rows[0][0].ToString();
-                nghe.Text = ds.Tables["CCCD"].Rows[0][10].ToString();            
+                nghe.Text = ds.Tables["CCCD"].Rows[0][10].ToString();
             }
             catch (Exception ex)
             {
@@ -448,5 +452,6 @@ namespace DoAn_Nhom7
             }
 
         }
+        
     }
 }

@@ -28,19 +28,46 @@ namespace DoAn_Nhom7
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, txtGioiTinh.Text, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text);
+            string GioiTinh;
+            if (rDNam.Checked)
+            {
+                GioiTinh = "nam"; 
+            }
+            else
+            {
+                GioiTinh = "nu"; 
+            }
+            CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, GioiTinh, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text,txtQuocTich.Text);
             cddao.Them(cd);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, txtGioiTinh.Text, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text);
+            string GioiTinh;
+            if (rDNam.Checked)
+            {
+                GioiTinh = "nam";
+            }
+            else
+            {
+                GioiTinh = "nu";
+            }
+            CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, GioiTinh, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text, txtQuocTich.Text);
             cddao.Xoa(cd);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, txtGioiTinh.Text, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text);
+            string GioiTinh;
+            if (rDNam.Checked)
+            {
+                GioiTinh = "nam";
+            }
+            else
+            {
+                GioiTinh = "nu";
+            }
+            CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, GioiTinh, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text, txtQuocTich.Text);
             cddao.Sua(cd);
         }
 
@@ -48,7 +75,7 @@ namespace DoAn_Nhom7
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.LapDayThongTinCD(txtCMND, txtHoTen, dTPNgaySinh, txtGioiTinh, txtDanToc, txtHonNhan, txtKhaiSinh, txtQueQuan, txtThuongTru, txtHocVan, txtNgheNghiep, txtLuong, txtSoLanKetHon, txtTamTru, txtNoiCapCMND, dTPNgayCap);
+                dbconnection.LapDayThongTinCD(txtCMND, txtHoTen, dTPNgaySinh, rDNu,rDNam, txtDanToc, txtHonNhan, txtKhaiSinh, txtQueQuan, txtThuongTru, txtHocVan, txtNgheNghiep, txtLuong, txtSoLanKetHon, txtTamTru, txtNoiCapCMND, dTPNgayCap,txtQuocTich);
             }
         }
 

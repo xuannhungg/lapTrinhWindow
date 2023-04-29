@@ -39,7 +39,6 @@
             this.txtLuong = new System.Windows.Forms.TextBox();
             this.txtThuongTru = new System.Windows.Forms.TextBox();
             this.txtNgheNghiep = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -72,6 +71,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtQuocTich = new System.Windows.Forms.TextBox();
+            this.rDNam = new System.Windows.Forms.RadioButton();
+            this.rDNu = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -126,7 +129,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(779, 417);
+            this.btnThem.Location = new System.Drawing.Point(779, 455);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 77;
@@ -136,7 +139,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(677, 417);
+            this.btnSua.Location = new System.Drawing.Point(689, 455);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 76;
@@ -146,7 +149,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(584, 417);
+            this.btnXoa.Location = new System.Drawing.Point(599, 455);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 75;
@@ -177,14 +180,6 @@
             this.txtNgheNghiep.Name = "txtNgheNghiep";
             this.txtNgheNghiep.Size = new System.Drawing.Size(155, 22);
             this.txtNgheNghiep.TabIndex = 72;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.BackColor = System.Drawing.Color.White;
-            this.txtGioiTinh.Location = new System.Drawing.Point(699, 92);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(100, 22);
-            this.txtGioiTinh.TabIndex = 71;
             // 
             // label20
             // 
@@ -287,6 +282,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.rDNu);
+            this.panel2.Controls.Add(this.rDNam);
+            this.panel2.Controls.Add(this.txtQuocTich);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
@@ -298,7 +297,6 @@
             this.panel2.Controls.Add(this.txtLuong);
             this.panel2.Controls.Add(this.txtThuongTru);
             this.panel2.Controls.Add(this.txtNgheNghiep);
-            this.panel2.Controls.Add(this.txtGioiTinh);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
@@ -462,7 +460,7 @@
             // lblTamTru
             // 
             this.lblTamTru.AutoSize = true;
-            this.lblTamTru.Location = new System.Drawing.Point(271, 361);
+            this.lblTamTru.Location = new System.Drawing.Point(268, 396);
             this.lblTamTru.Name = "lblTamTru";
             this.lblTamTru.Size = new System.Drawing.Size(55, 16);
             this.lblTamTru.TabIndex = 44;
@@ -471,7 +469,7 @@
             // txtTamTru
             // 
             this.txtTamTru.BackColor = System.Drawing.Color.White;
-            this.txtTamTru.Location = new System.Drawing.Point(441, 358);
+            this.txtTamTru.Location = new System.Drawing.Point(441, 396);
             this.txtTamTru.Name = "txtTamTru";
             this.txtTamTru.Size = new System.Drawing.Size(155, 22);
             this.txtTamTru.TabIndex = 43;
@@ -504,6 +502,44 @@
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 47;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(272, 361);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 16);
+            this.label13.TabIndex = 83;
+            this.label13.Text = "Quốc Tịch";
+            // 
+            // txtQuocTich
+            // 
+            this.txtQuocTich.Location = new System.Drawing.Point(441, 358);
+            this.txtQuocTich.Name = "txtQuocTich";
+            this.txtQuocTich.Size = new System.Drawing.Size(155, 22);
+            this.txtQuocTich.TabIndex = 84;
+            // 
+            // rDNam
+            // 
+            this.rDNam.AutoSize = true;
+            this.rDNam.Location = new System.Drawing.Point(699, 95);
+            this.rDNam.Name = "rDNam";
+            this.rDNam.Size = new System.Drawing.Size(57, 20);
+            this.rDNam.TabIndex = 85;
+            this.rDNam.TabStop = true;
+            this.rDNam.Text = "Nam";
+            this.rDNam.UseVisualStyleBackColor = true;
+            // 
+            // rDNu
+            // 
+            this.rDNu.AutoSize = true;
+            this.rDNu.Location = new System.Drawing.Point(779, 93);
+            this.rDNu.Name = "rDNu";
+            this.rDNu.Size = new System.Drawing.Size(45, 20);
+            this.rDNu.TabIndex = 86;
+            this.rDNu.TabStop = true;
+            this.rDNu.Text = "Nữ";
+            this.rDNu.UseVisualStyleBackColor = true;
+            // 
             // UCCanCuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -534,7 +570,6 @@
         private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.TextBox txtThuongTru;
         private System.Windows.Forms.TextBox txtNgheNghiep;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -567,5 +602,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtQuocTich;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton rDNu;
+        private System.Windows.Forms.RadioButton rDNam;
     }
 }

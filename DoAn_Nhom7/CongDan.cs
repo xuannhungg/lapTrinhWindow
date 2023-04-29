@@ -33,30 +33,64 @@ namespace DoAn_Nhom7
         public string tamTru;
         public string noiCapCMND;
         public string ngayCap;
-        public string tenMoiQuanHe; //cha, me, con,... cua nguoi khac
+        public string quocTich;
         public List<Thue> listThue;       
         public string HoTen
-        { get { return hoTen; } set { hoTen = value; } }
+        { 
+            get { return hoTen; } 
+            set { hoTen = value; } 
+        }
         public string NgayThangNamSinh
-        { get { return this.ngayThangNamSinh; } set { this.ngayThangNamSinh = value; } }
+        { 
+            get { return this.ngayThangNamSinh; } 
+            set { this.ngayThangNamSinh = value; }
+        }
         public string GioiTinh
-        { get { return this.gioiTinh; } set { this.gioiTinh = value; } }
+        { 
+            get 
+            { return this.gioiTinh; } 
+            set { this.gioiTinh = value; } 
+        }
         public string CMND
-        { get { return this.cmnd; } set { this.cmnd = value; } }
+        { get 
+            { return this.cmnd; } 
+            set { this.cmnd = value; }
+        }
         public string DanToc
-        { get { return this.danToc; } set { this.danToc = value; } }
+        { 
+            get { return this.danToc; }
+            set { this.danToc = value; } 
+        }
         public string TinhTrangHonNhan
-        { get { return this.tinhTrangHonNhan; } set { this.tinhTrangHonNhan = value; } }
+        { 
+            get { return this.tinhTrangHonNhan; }
+            set { this.tinhTrangHonNhan = value; } 
+        }
         public string NoiDangKiKhaiSinh
-        { get { return this.noiDangKiKhaiSinh; } set { this.noiDangKiKhaiSinh = value; } }
+        { 
+            get { return this.noiDangKiKhaiSinh; } 
+            set { this.noiDangKiKhaiSinh = value; } 
+        }
         public string QueQuan
-        { get { return this.queQuan; } set { this.queQuan = value; } }
+        { 
+            get { return this.queQuan; } 
+            set { this.queQuan = value; } 
+        }
         public string NoiThuongTru
-        { get { return this.noiThuongTru; } set { this.noiThuongTru = value; } }
+        { 
+            get { return this.noiThuongTru; } 
+            set { this.noiThuongTru = value; } 
+        }
         public string TrinhDoHocVan
-        { get { return this.trinhDoHocVan; } set { this.trinhDoHocVan = value; } }
+        { 
+            get { return this.trinhDoHocVan; } 
+            set { this.trinhDoHocVan = value; } 
+        }
         public string NgheNghiep
-        { get { return this.ngheNghiep; } set { this.ngheNghiep = value; } }
+        { 
+            get { return this.ngheNghiep; } 
+            set { this.ngheNghiep = value; } 
+        }
 
         public string Luong
         {
@@ -69,7 +103,10 @@ namespace DoAn_Nhom7
             set { this.soLanKetHon = value; }
         }
         public string TamTru
-        { get { return this.tamTru; } set { this.tamTru = value; } }
+        { 
+            get { return this.tamTru; } 
+            set { this.tamTru = value; } 
+        }
         public string NoiCapCMND
         {
             get { return this.noiCapCMND; }
@@ -80,22 +117,22 @@ namespace DoAn_Nhom7
             get { return this.ngayCap; }
             set { this.ngayCap = value; }
         }
+        public string QuocTich
+        {
+            get { return this.quocTich; }
+            set { this.quocTich = value; }
+        }
         public List<Thue> ListThue
         {
             get { return this.listThue; }
             set { this.listThue = value; }
-        }
-        public string TenMoiQuanHe
-        {
-            get { return this.tenMoiQuanHe; }
-            set { this.tenMoiQuanHe = value; }
         }
 
         public CongDan()
         {
 
         }
-        public CongDan(string hoTen, string ngayThangNamSinh, string gioiTinh, string Cmnd, string danToc, string tinhTrangHonNhan, string noiDangKiKhaiSinh, string queQuan, string noiThuongTru, string trinhDoHocVan, string ngheNghiep, string luong,string soLanKetHon,string tamTru, string noiCapCMND, string ngayCap)
+        public CongDan(string hoTen, string ngayThangNamSinh, string gioiTinh, string Cmnd, string danToc, string tinhTrangHonNhan, string noiDangKiKhaiSinh, string queQuan, string noiThuongTru, string trinhDoHocVan, string ngheNghiep, string luong,string soLanKetHon,string tamTru, string noiCapCMND, string ngayCap,string quocTich)
         {
             this.HoTen = hoTen;
             this.NgayThangNamSinh = ngayThangNamSinh;
@@ -113,7 +150,7 @@ namespace DoAn_Nhom7
             this.TamTru = tamTru;
             this.NoiCapCMND = noiCapCMND;
             this.NgayCap = ngayCap;
-
+            this.QuocTich = quocTich;
         }
         public CongDan(string Cmnd, string hoTen, string ngayThangNamSinh, string gioiTinh, string danToc, string queQuan, string noiDangKiKhaiSinh)
         {

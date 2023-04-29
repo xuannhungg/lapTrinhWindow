@@ -9,20 +9,24 @@ namespace DoAn_Nhom7
     public class ThanhVienShk
     {
         private string maShk;
-        private string cmnd;
+        private string cmndChuHo;
+        private string cmndThanhVien;
         private string quanHe;
         public string MaShk { get => maShk; set => maShk = value; }
-        public string Cmnd { get => cmnd; set => cmnd = value; }
+        public string CmndChuHo { get => cmndChuHo; set => cmndChuHo = value; }
+        public string CmndThanhVien { get => cmndThanhVien; set => cmndThanhVien = value; }
         public string QuanHe { get => quanHe; set => quanHe = value; }
         public ThanhVienShk()
         {
 
         }
-        public ThanhVienShk(string maShk, string cmnd, string quanHe)
+        public ThanhVienShk(string maShk,  string cmndChuHo, string cmndThanhVien, string quanHe)
         {
+
             MaShk = maShk;
-            Cmnd = cmnd;
+            CmndThanhVien = cmndThanhVien;
             QuanHe = quanHe;
+            CmndChuHo = cmndChuHo;
         }
         ~ThanhVienShk()
         {
