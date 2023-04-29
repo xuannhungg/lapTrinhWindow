@@ -67,7 +67,7 @@ namespace DoAn_Nhom7
 
         private void btnThemTv_Click(object sender, EventArgs e)
         {
-            ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
+            ThanhVienShk tv = new ThanhVienShk(txtMaSoHoKhau.Text,txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
 
             if (db.KiemTraSHK(txtCmnd_tv.Text))
             {
@@ -81,14 +81,14 @@ namespace DoAn_Nhom7
 
         private void btnXoaTv_Click(object sender, EventArgs e)
         {
-            ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
+            ThanhVienShk tv = new ThanhVienShk(txtMaSoHoKhau.Text,txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
             tvDao.XoaThanhVien(tv);
             LayDanhSachThanhVien();
         }
 
         private void btnSuaTv_Click(object sender, EventArgs e)
         {
-            ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
+            ThanhVienShk tv = new ThanhVienShk(txtMaSoHoKhau.Text,txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
             tvDao.SuaThanhVien(tv);
             LayDanhSachThanhVien();
         }

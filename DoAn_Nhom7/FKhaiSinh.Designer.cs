@@ -52,7 +52,6 @@
             this.txtQuocTich = new System.Windows.Forms.TextBox();
             this.txtDanToc = new System.Windows.Forms.TextBox();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -85,6 +84,8 @@
             this.btnDangKy = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.rDNam = new System.Windows.Forms.RadioButton();
+            this.rDNu = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -282,12 +283,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Controls.Add(this.rDNu);
+            this.panel4.Controls.Add(this.rDNam);
             this.panel4.Controls.Add(this.tpNgSinh);
             this.panel4.Controls.Add(this.txtQueQuan);
             this.panel4.Controls.Add(this.txtQuocTich);
             this.panel4.Controls.Add(this.txtDanToc);
             this.panel4.Controls.Add(this.txtNoiSinh);
-            this.panel4.Controls.Add(this.txtGioiTinh);
             this.panel4.Controls.Add(this.txtTen);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label12);
@@ -340,14 +342,6 @@
             this.txtNoiSinh.Name = "txtNoiSinh";
             this.txtNoiSinh.Size = new System.Drawing.Size(197, 30);
             this.txtNoiSinh.TabIndex = 97;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtGioiTinh.Location = new System.Drawing.Point(163, 67);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(197, 30);
-            this.txtGioiTinh.TabIndex = 96;
             // 
             // txtTen
             // 
@@ -664,6 +658,28 @@
             this.label20.TabIndex = 65;
             this.label20.Text = "Họ tên người đi khai sinh";
             // 
+            // rDNam
+            // 
+            this.rDNam.AutoSize = true;
+            this.rDNam.Location = new System.Drawing.Point(163, 79);
+            this.rDNam.Name = "rDNam";
+            this.rDNam.Size = new System.Drawing.Size(57, 20);
+            this.rDNam.TabIndex = 102;
+            this.rDNam.TabStop = true;
+            this.rDNam.Text = "Nam";
+            this.rDNam.UseVisualStyleBackColor = true;
+            // 
+            // rDNu
+            // 
+            this.rDNu.AutoSize = true;
+            this.rDNu.Location = new System.Drawing.Point(261, 79);
+            this.rDNu.Name = "rDNu";
+            this.rDNu.Size = new System.Drawing.Size(45, 20);
+            this.rDNu.TabIndex = 103;
+            this.rDNu.TabStop = true;
+            this.rDNu.Text = "Nữ";
+            this.rDNu.UseVisualStyleBackColor = true;
+            // 
             // FKhaiSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -722,7 +738,6 @@
         private System.Windows.Forms.TextBox txtQuocTich;
         private System.Windows.Forms.TextBox txtDanToc;
         private System.Windows.Forms.TextBox txtNoiSinh;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -755,5 +770,7 @@
         private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.RadioButton rDNu;
+        private System.Windows.Forms.RadioButton rDNam;
     }
 }

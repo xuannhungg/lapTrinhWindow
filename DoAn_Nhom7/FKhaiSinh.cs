@@ -29,22 +29,24 @@ namespace DoAn_Nhom7
             if (KiemTraHonNhan(txtCMNDCha.Text))
             {
                 string cmndcon = txtCMNDCha.Text + "-con "+dbconnection.SoLuongThanhVien(txtCMNDCha.Text)+"";
-
-                ThanhVienShk tv = new ThanhVienShk(dbconnection.timMaSHK(txtCMNDCha.Text), cmndcon, "con " + GioiTinh(txtGioiTinh.Text));
-                CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text, txtGioiTinh.Text, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
+                string GioiTinh;
+                if (rDNam.Checked)
+                {
+                    GioiTinh = "nam";
+                }
+                else
+                {
+                    GioiTinh = "nu";
+                }
+                ThanhVienShk tv = new ThanhVienShk(txtCMNDCha.Text, dbconnection.timMaSHK(txtCMNDCha.Text), cmndcon, "con " + GioiTinh);
+                CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text,GioiTinh, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
                 cdDao.Them(congDan);
                 mem.ThemThanhVien(tv);
             }
             else
                 MessageBox.Show("2 nguoi chua ket hon");
         }
-        public string GioiTinh(string gioiTinh)
-        {
-            if (gioiTinh == "nu")
-                return "gai";
-            else
-                return "nam";
-        }
+
         private void txtCCCD_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -65,10 +67,10 @@ namespace DoAn_Nhom7
 
             if (e.KeyCode == Keys.Enter)
             {
-                dbconnection.KhaiSinh_KeyDown(txtCMNDCha, txtTenCha, txtDanTocCha);
+                dbconnection.KhaiSinh_KeyDown(txtCMNDCha, txtTenCha, txtDanTocCha,txtQuocTichCha);
                 txtCMNDMe.Text = dbconnection.CMNDVoChong(txtCMNDCha.Text);
                 if (txtCMNDMe.Text != "")
-                    dbconnection.KhaiSinh_KeyDown(txtCMNDMe, txtTenMe, txtDanTocMe);
+                    dbconnection.KhaiSinh_KeyDown(txtCMNDMe, txtTenMe, txtDanTocMe,txtQuocTichMe);
                 else
                     MessageBox.Show("Khong tim thay nguoi yeu");
             }

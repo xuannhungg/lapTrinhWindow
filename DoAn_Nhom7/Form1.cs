@@ -79,12 +79,12 @@ namespace DoAn_Nhom7
         }
         public void KiemTraTamTruTamVang()
         {
-            foreach (DataGridViewRow row  in dGVDanhSach.Rows)
+           foreach (DataGridViewRow row  in dGVDanhSach.Rows)
             {
                 if (!row.IsNewRow)
                 {                
                     string date = (string)row.Cells["tamTru"].Value;
-                    if (date.Length >1 )
+                    if (date.Length >11 )
                     { string[] lines = date.Split('\n');
                         string dateStart = lines[0].Substring(lines[0].Length - 10);
                         DateTime dateTime = DateTime.ParseExact(dateStart, "dd/MM/yyyy", CultureInfo.InvariantCulture);
