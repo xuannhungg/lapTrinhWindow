@@ -1,4 +1,4 @@
-﻿use ahihi
+use ahihi
 CREATE TABLE CongDan (
  hoTen varchar(100),
  ngayThangNamSinh varchar(255),
@@ -32,3 +32,75 @@ VALUES ('nva5', '3/3/2000', 'nam','5','kinh','chua ket hon','nghe an','nghe an',
 select * from CongDan
 
 
+use ahihi;
+GO
+CREATE TABLE QuanHe (
+    CMND1 varchar(100),
+    CMND2 varchar(100),
+    quanHeVoiCMND1 NVARCHAR(50),
+	quanHeVoiCMND2 NVARCHAR(50),
+    PRIMARY KEY (CMND1, CMND2),
+    FOREIGN KEY (CMND1) REFERENCES CongDan(CMND),
+    FOREIGN KEY (CMND2) REFERENCES CongDan(CMND)
+);
+INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
+VALUES ('1' , '2' , 'Vo','Chong');
+INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
+VALUES  ('1' , '3' , 'Bo','Con');
+INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
+VALUES ('1' , '4' , 'Bo','Con');
+INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
+VALUES ('3' , '4' , 'Anh','Em');
+
+select * from QuanHe
+
+use ahihi;
+CREATE TABLE SoHoKhau(
+	maSoHoKhau varchar (200) NOT NULL,
+	CMNDChuHo varchar (100)  not null,
+	maKV varchar (100)not null,
+	xaPhuong varchar (100),
+	quanHuyen varchar (100),
+	tinhTP varchar (100),		
+	diaChi varchar (100),
+	ngayLap varchar (100),
+	primary key (maSoHoKhau, CMNDChuHo),
+
+	CONSTRAINT pk_soHoKhau_congDan
+	FOREIGN KEY (CMNDChuHo)
+	REFERENCES CongDan (cmnd)
+
+);
+INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,ngayLap)
+Values('1','1','2NT','Long Dinh','Can Duoc','Long An','Ap 3','1993/2/1')
+INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,ngayLap)
+Values('2','5','1','Linh Xuan','Thu Duc','TPHCM','Duong so 5','1990/2/1')
+
+
+
+select * from SoHoKhau
+
+use ahihi;
+CREATE TABLE ThanhVienSoHoKhau(
+	maSoHoKhau varchar(200) not null ,
+	CMNDChuHo varchar (100) NOT NULL ,
+	CMNDThanhVien varchar (100) NOT NULL,
+	quanHeVoiChuHo varchar(100) not null,
+	CONSTRAINT fk_thanhVienSoHoKhau_soHoKhau
+	FOREIGN KEY (maSoHoKhau,CMNDChuHo)
+	REFERENCES SoHoKhau (maSoHoKhau,CMNDChuHo),
+	CONSTRAINT pk_thanhVien_congDan
+	FOREIGN KEY (CMNDThanhVien)
+	REFERENCES CongDan (cmnd),
+	CONSTRAINT fk_thanhVien_quanHe
+	FOREIGN KEY (CmndChuHo, CMNDThanhVien)
+	REFERENCES QuanHe (CMND1, CMND2)
+
+);
+
+insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChuHo)
+values ('1','1','3','Con gai');
+insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien, quanHeVoiChuHo)
+values ('1','1','4','Con trai');
+
+select * from ThanhVienSoHoKhau

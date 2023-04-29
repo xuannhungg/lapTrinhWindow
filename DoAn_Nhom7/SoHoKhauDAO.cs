@@ -19,7 +19,9 @@ namespace DoAn_Nhom7
         }
         public DataTable DanhSachThanhVien(string maShk)
         {
-            string sqlStr = string.Format("SELECT shk.maSoHoKhau, cd.cmnd, cd.hoTen, cd.gioiTinh, tv.quanHeVoiChuHo FROM ThanhVienSoHoKhau tv, SoHoKhau shk, CongDan cd WHERE tv.maShk = shk.maSoHoKhau and cd.cmnd = tv.cccd_ThanhVien and shk.maSoHoKhau = '" + maShk + "'");
+            string sqlStr1 = string.Format("select shk.maSoHoKhau,cd.cmnd, cd.hoten ,cd.gioiTinh,'chu ho' AS QuanHe  FROM CongDan cd INNER JOIN SoHoKhau shk ON cd.cmnd = shk.CMND where shk.maSoHoKhau = '" + maShk + "'");
+            string sqlStr2 = string.Format("SELECT shk.maSoHoKhau, cd.cmnd, cd.hoTen, cd.gioiTinh, tv.quanHeVoiChuHo FROM ThanhVienSoHoKhau tv, SoHoKhau shk, CongDan cd WHERE tv.maShk = shk.maSoHoKhau and cd.cmnd = tv.cccd_ThanhVien and shk.maSoHoKhau = '" + maShk + "'");
+            string sqlStr = sqlStr1 + " UNION " + sqlStr2;
             return dbconnection.DanhSach(sqlStr);
         }
         public void ThemSoHoKhau(SoHoKhau hk)
