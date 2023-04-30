@@ -354,11 +354,13 @@ namespace DoAn_Nhom7
             conn.Close();
             return false;
         }
-        public bool KiemTraSHK(string cmnd)
+        public bool KiemTraSHK(string cmnd,string cmnd1)
         {
             conn.Open();
             //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
-            string sqlStr = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
+            string sqlStr1 = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
+            string sqlStr2 = " SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo= '" + cmnd1 + "'";
+            string sqlStr = sqlStr2 + "UNION" + sqlStr1;
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())

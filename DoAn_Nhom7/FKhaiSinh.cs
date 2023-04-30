@@ -38,9 +38,12 @@ namespace DoAn_Nhom7
                 {
                     GioiTinh = "nu";
                 }
-                ThanhVienShk tv = new ThanhVienShk(txtCMNDCha.Text, dbconnection.timMaSHK(txtCMNDCha.Text), cmndcon, "con " + GioiTinh);
+
+                ThanhVienShk tv = new ThanhVienShk(dbconnection.timMaSHK(txtCMNDCha.Text),txtCMNDCha.Text, cmndcon, "Con");
+
                 CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text,GioiTinh, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
                 cdDao.Them(congDan);
+                mem.ThietLapMoiQuanHe(tv);
                 mem.ThemThanhVien(tv);
             }
             else

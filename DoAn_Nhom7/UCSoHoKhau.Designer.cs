@@ -146,6 +146,7 @@
             this.txtCmnd_tv.Name = "txtCmnd_tv";
             this.txtCmnd_tv.Size = new System.Drawing.Size(141, 27);
             this.txtCmnd_tv.TabIndex = 30;
+            this.txtCmnd_tv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCmnd_tv_KeyDown);
             // 
             // lblmaShk_tv
             // 
