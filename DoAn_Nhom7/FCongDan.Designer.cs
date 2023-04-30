@@ -33,14 +33,12 @@
             // 
             // ucCanCuoc1
             // 
-            this.ucCanCuoc1.AutoSize = true;
             this.ucCanCuoc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ucCanCuoc1.Location = new System.Drawing.Point(12, 12);
+            this.ucCanCuoc1.Location = new System.Drawing.Point(7, 13);
             this.ucCanCuoc1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucCanCuoc1.Name = "ucCanCuoc1";
-            this.ucCanCuoc1.Size = new System.Drawing.Size(1430, 812);
+            this.ucCanCuoc1.Size = new System.Drawing.Size(1176, 650);
             this.ucCanCuoc1.TabIndex = 0;
-            this.ucCanCuoc1.Load += new System.EventHandler(this.ucCanCuoc1_Load);
             // 
             // FCongDan
             // 
@@ -54,7 +52,6 @@
             this.Text = "CÔNG DÂN";
             this.Load += new System.EventHandler(this.FCongDan_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

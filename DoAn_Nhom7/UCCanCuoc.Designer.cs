@@ -51,6 +51,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rDNu = new System.Windows.Forms.RadioButton();
+            this.rDNam = new System.Windows.Forms.RadioButton();
+            this.txtQuocTich = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.txtKhaiSinh = new System.Windows.Forms.TextBox();
@@ -71,10 +75,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtQuocTich = new System.Windows.Forms.TextBox();
-            this.rDNam = new System.Windows.Forms.RadioButton();
-            this.rDNu = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -281,7 +281,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.rDNu);
             this.panel2.Controls.Add(this.rDNam);
             this.panel2.Controls.Add(this.txtQuocTich);
@@ -330,6 +330,44 @@
             this.panel2.Size = new System.Drawing.Size(1129, 529);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // rDNu
+            // 
+            this.rDNu.AutoSize = true;
+            this.rDNu.Location = new System.Drawing.Point(779, 93);
+            this.rDNu.Name = "rDNu";
+            this.rDNu.Size = new System.Drawing.Size(45, 20);
+            this.rDNu.TabIndex = 86;
+            this.rDNu.TabStop = true;
+            this.rDNu.Text = "Nữ";
+            this.rDNu.UseVisualStyleBackColor = true;
+            // 
+            // rDNam
+            // 
+            this.rDNam.AutoSize = true;
+            this.rDNam.Location = new System.Drawing.Point(699, 95);
+            this.rDNam.Name = "rDNam";
+            this.rDNam.Size = new System.Drawing.Size(57, 20);
+            this.rDNam.TabIndex = 85;
+            this.rDNam.TabStop = true;
+            this.rDNam.Text = "Nam";
+            this.rDNam.UseVisualStyleBackColor = true;
+            // 
+            // txtQuocTich
+            // 
+            this.txtQuocTich.Location = new System.Drawing.Point(441, 358);
+            this.txtQuocTich.Name = "txtQuocTich";
+            this.txtQuocTich.Size = new System.Drawing.Size(155, 22);
+            this.txtQuocTich.TabIndex = 84;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(272, 361);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 16);
+            this.label13.TabIndex = 83;
+            this.label13.Text = "Quốc Tịch";
             // 
             // label5
             // 
@@ -501,44 +539,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 47;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(272, 361);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 16);
-            this.label13.TabIndex = 83;
-            this.label13.Text = "Quốc Tịch";
-            // 
-            // txtQuocTich
-            // 
-            this.txtQuocTich.Location = new System.Drawing.Point(441, 358);
-            this.txtQuocTich.Name = "txtQuocTich";
-            this.txtQuocTich.Size = new System.Drawing.Size(155, 22);
-            this.txtQuocTich.TabIndex = 84;
-            // 
-            // rDNam
-            // 
-            this.rDNam.AutoSize = true;
-            this.rDNam.Location = new System.Drawing.Point(699, 95);
-            this.rDNam.Name = "rDNam";
-            this.rDNam.Size = new System.Drawing.Size(57, 20);
-            this.rDNam.TabIndex = 85;
-            this.rDNam.TabStop = true;
-            this.rDNam.Text = "Nam";
-            this.rDNam.UseVisualStyleBackColor = true;
-            // 
-            // rDNu
-            // 
-            this.rDNu.AutoSize = true;
-            this.rDNu.Location = new System.Drawing.Point(779, 93);
-            this.rDNu.Name = "rDNu";
-            this.rDNu.Size = new System.Drawing.Size(45, 20);
-            this.rDNu.TabIndex = 86;
-            this.rDNu.TabStop = true;
-            this.rDNu.Text = "Nữ";
-            this.rDNu.UseVisualStyleBackColor = true;
             // 
             // UCCanCuoc
             // 

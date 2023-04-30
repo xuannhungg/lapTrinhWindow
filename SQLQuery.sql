@@ -1,4 +1,6 @@
-use ahihi
+use project_LTWD
+
+--CONG DAN--
 CREATE TABLE CongDan (
  hoTen varchar(100),
  ngayThangNamSinh varchar(255),
@@ -19,20 +21,19 @@ CREATE TABLE CongDan (
  quocTich varchar (100)
 );
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva', '1/1/2003', 'nam','1','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '1000000','1','ki tuc xa','nghe An','2/2/2021','Viet Nam');
+VALUES ('nva', '1/1/2003', 'nam','1','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '1000000','1','ki tuc xa 01/01/2019','nghe An','2/2/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva1', '2/2/2003', 'nam','2','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '2200000','2','nha tro','Nghe An','3/3/2021','Viet Nam');
+VALUES ('nva1', '2/2/2003', 'nam','2','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '2200000','2','nha tro 02/02/2020','Nghe An','3/3/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva2', '3/3/2003', 'nam','3','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro','Nghe an','4/4/2021','Viet Nam');
+VALUES ('nva2', '3/3/2003', 'nam','3','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 03/03/2021','Nghe an','4/4/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva4', '3/3/2006', 'nu','4','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro','Nghe an','4/4/2021','Viet Nam');
+VALUES ('nva4', '3/3/2006', 'nu','4','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 04/04/2022','Nghe an','4/4/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva5', '3/3/2000', 'nam','5','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro','Nghe an','4/4/2021','Viet Nam');
+VALUES ('nva5', '3/3/2000', 'nam','5','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 05/02/2023','Nghe an','4/4/2021','Viet Nam');
 
 select * from CongDan
 
-
-use ahihi;
+--QUAN HE--
 GO
 CREATE TABLE QuanHe (
     CMND1 varchar(100),
@@ -43,6 +44,7 @@ CREATE TABLE QuanHe (
     FOREIGN KEY (CMND1) REFERENCES CongDan(CMND),
     FOREIGN KEY (CMND2) REFERENCES CongDan(CMND)
 );
+
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
 VALUES ('1' , '2' , 'Vo','Chong');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
@@ -54,7 +56,7 @@ VALUES ('3' , '4' , 'Anh','Em');
 
 select * from QuanHe
 
-use ahihi;
+--SO HO KHAU--
 CREATE TABLE SoHoKhau(
 	maSoHoKhau varchar (200) NOT NULL,
 	CMNDChuHo varchar (100)  not null,
@@ -69,18 +71,16 @@ CREATE TABLE SoHoKhau(
 	CONSTRAINT pk_soHoKhau_congDan
 	FOREIGN KEY (CMNDChuHo)
 	REFERENCES CongDan (cmnd)
-
 );
+
 INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,ngayLap)
 Values('1','1','2NT','Long Dinh','Can Duoc','Long An','Ap 3','1993/2/1')
 INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,ngayLap)
 Values('2','5','1','Linh Xuan','Thu Duc','TPHCM','Duong so 5','1990/2/1')
 
-
-
 select * from SoHoKhau
 
-use ahihi;
+--THANH VIEN SO HO KHAU--
 CREATE TABLE ThanhVienSoHoKhau(
 	maSoHoKhau varchar(200) not null ,
 	CMNDChuHo varchar (100) NOT NULL ,
@@ -95,16 +95,49 @@ CREATE TABLE ThanhVienSoHoKhau(
 	CONSTRAINT fk_thanhVien_quanHe
 	FOREIGN KEY (CmndChuHo, CMNDThanhVien)
 	REFERENCES QuanHe (CMND1, CMND2)
-
 );
 
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChuHo)
 values ('1','1','3','Con gai');
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien, quanHeVoiChuHo)
 values ('1','1','4','Con trai');
+
 select * from ThanhVienSoHoKhau
 
 SELECT CongDan.hoTen, CongDan.gioiTinh, QuanHe.quanHeVoiCMND1 
 FROM QuanHe 
 JOIN CongDan ON CongDan.CMND = QuanHe.CMND2
 WHERE QuanHe.CMND1 = '1' AND QuanHe.CMND2 = '2';
+
+--THUE--
+Create table Thue (
+CCCD varchar(100) NOT NULL,
+LoaiThue nvarchar(100),
+MucThue real,
+TinhTrang nvarchar(50),
+CONSTRAINT thue_theo_cccd
+FOREIGN KEY (CCCD)
+REFERENCES CongDan (cmnd)
+)
+
+insert into Thue (CCCD, LoaiThue, MucThue, TinhTrang)
+values ('1','Thue thu nhap ca nhan',1.5, 'Chua dong');
+insert into Thue (CCCD, LoaiThue, MucThue, TinhTrang)
+values ('2','Thue thu nhap ca nhan',2.4, 'Chua dong');
+insert into Thue (CCCD, LoaiThue, MucThue, TinhTrang)
+values ('3','Thue thu nhap ca nhan',3.6, 'Chua dong');
+
+select * from Thue
+
+--TAI KHOAN--
+CREATE TABLE TaiKhoan (
+ TaiKhoan varchar(100),
+ MatKhau varchar(255)
+);
+INSERT INTO TaiKhoan (TaiKhoan, MatKhau)
+VALUES ('admin', '123');
+INSERT INTO TaiKhoan (TaiKhoan, MatKhau)
+VALUES ('nva', '123');
+INSERT INTO TaiKhoan (TaiKhoan, MatKhau)
+VALUES ('nvb', '123');
+select * from TaiKhoan
