@@ -69,7 +69,7 @@ namespace DoAn_Nhom7
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaSoHoKhau.Text,txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
 
-            if (db.KiemTraSHK(txtCmnd_tv.Text,txtCMND.Text))
+            if (db.KiemTraSHK(txtCmnd_tv.Text))
             {
                 tvDao.ThemThanhVien(tv);
                 LayDanhSachThanhVien();

@@ -43,7 +43,7 @@ namespace DoAn_Nhom7
 
                 CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text,GioiTinh, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
                 cdDao.Them(congDan);
-                mem.ThietLapMoiQuanHe(tv);
+                mem.ThietLapMoiQuanHeBoCon(tv);
                 mem.ThemThanhVien(tv);
             }
             else
