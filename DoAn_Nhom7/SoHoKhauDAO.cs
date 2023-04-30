@@ -20,9 +20,7 @@ namespace DoAn_Nhom7
         }
         public DataTable DanhSachThanhVien(string maShk)
         {
-            string sqlStr = string.Format("SELECT maSoHoKhau,CMNDChuHo,CMNDThanhVien,quanHeVoiChuHo FROM ThanhVienSoHoKhau WHERE maSoHoKhau = '" + maShk + "'");
-            //string sqlStr2 = string.Format("SELECT shk.maSoHoKhau, cd.cmnd, cd.hoTen, cd.gioiTinh, tv.quanHeVoiChuHo FROM ThanhVienSoHoKhau tv, SoHoKhau shk, CongDan cd WHERE tv.maShk = shk.maSoHoKhau and cd.cmnd = tv.cccd_ThanhVien and shk.maSoHoKhau = '" + maShk + "'");
-            //string sqlStr = sqlStr1 + " UNION " + sqlStr2;
+            string sqlStr = string.Format("SELECT maSoHoKhau,CMNDThanhVien,quanHeVoiChuHo FROM ThanhVienSoHoKhau WHERE maSoHoKhau = '" + maShk + "'");
             return dbconnection.DanhSach(sqlStr);
         }
         public void ThemSoHoKhau(SoHoKhau hk)
