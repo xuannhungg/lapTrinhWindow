@@ -33,7 +33,7 @@ namespace DoAn_Nhom7
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (db.KiemTraSHK(txtCMND.Text))
+            if (db.KiemTraSHK(txtCMND.Text,txtCMND.Text))
             {
                 SoHoKhau hk = new SoHoKhau(txtMaSoHoKhau.Text, txtCMND.Text, txtMaKhuVuc.Text, txtXaPhuong.Text, txtQuanHuyen.Text, txtTinhThanhPho.Text, txtDiaChi.Text, dtpNgayLap.Text);
                 hkdao.ThemSoHoKhau(hk);
@@ -92,7 +92,7 @@ namespace DoAn_Nhom7
         private void btnThemTv_Click(object sender, EventArgs e)
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text ,txtCMND.Text, txtCmnd_tv.Text, txtQuanHe.Text);
-            if (db.KiemTraSHK(txtCmnd_tv.Text))
+            if (db.KiemTraSHK(txtCmnd_tv.Text,txtCMND.Text))
             {
                 tvDao.ThemThanhVien(tv);
                 LayDanhSachThanhVien();
@@ -156,6 +156,35 @@ namespace DoAn_Nhom7
             finally
             {
                 conn.Close();
+            }
+        }
+
+        private void txtCmnd_tv_KeyDown(object sender, KeyEventArgs e)
+        {
+            string sqlStr = string.Format("SELECT CongDan.hoTen, CongDan.gioiTinh , QuanHe.quanHeVoiCMND1 FROM QuanHe JOIN CongDan ON CongDan.CMND = QuanHe.CMND2 WHERE QuanHe.CMND1 = '" + txtCMND.Text+ "' AND QuanHe.CMND2 = '"+txtCmnd_tv.Text+"' ");
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                    SqlDataReader dta = cmd.ExecuteReader();
+                    while (dta.Read())
+                    {
+                        //mashk.Text = Convert.ToString(dta["maSoHoKhau"]);
+                        txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
+                        txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
+                        txtQuanHe.Text = Convert.ToString(dta["quanHeVoiCMND1"]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
     }

@@ -14,9 +14,14 @@ namespace DoAn_Nhom7
         DBConnection dbc = new DBConnection();
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
 
+        public void ThietLapMoiQuanHe(ThanhVienShk tv)
+        {
+            string sqlStr = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndChuHo, tv.CmndThanhVien, "Con", "Bo");
+            dbc.XuLy(sqlStr);
+        }
         public void ThemThanhVien(ThanhVienShk tv)
         {
-            string sqlStr = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '{0}', '{1}', '{2}', quanHeVoiCMND2 FROM QuanHe WHERE CMND1 = '{1}' AND CMND2 = '{2}'", tv.MaShk,tv.CmndChuHo, tv.CmndThanhVien);
+            string sqlStr = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '{0}', '{1}', '{2}', quanHeVoiCMND1 FROM QuanHe WHERE CMND1 = '{1}' AND CMND2 = '{2}'", tv.MaShk,tv.CmndChuHo, tv.CmndThanhVien);
             dbc.XuLy(sqlStr);
         }
         public void SuaThanhVien(ThanhVienShk tv)

@@ -102,5 +102,9 @@ insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChu
 values ('1','1','3','Con gai');
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien, quanHeVoiChuHo)
 values ('1','1','4','Con trai');
-
 select * from ThanhVienSoHoKhau
+
+SELECT CongDan.hoTen, CongDan.gioiTinh, QuanHe.quanHeVoiCMND1 
+FROM QuanHe 
+JOIN CongDan ON CongDan.CMND = QuanHe.CMND2
+WHERE QuanHe.CMND1 = '1' AND QuanHe.CMND2 = '2';
