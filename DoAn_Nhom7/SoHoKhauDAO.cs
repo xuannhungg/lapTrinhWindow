@@ -40,5 +40,67 @@ namespace DoAn_Nhom7
             string sqlStr = string.Format("DELETE FROM SoHoKhau WHERE maSoHoKhau = '{0}'", hk.MaSoHoKhau);
             dbconnection.XuLy(sqlStr);
         }
+        public void LapSoHoKhau(TextBox txtMaSoHoKhau,TextBox txtCMND, TextBox txtMaKhuVuc,TextBox txtXaPhuong,TextBox txtQuanHuyen,TextBox txtTinhThanhPho,TextBox txtDiaChi,DateTimePicker dtpNgayLap)
+        {
+                string sqlStr = string.Format("SELECT * FROM SoHoKhau WHERE maSoHoKhau = '" + txtMaSoHoKhau.Text + "'");
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                    SqlDataReader dta = cmd.ExecuteReader();
+                    while (dta.Read())
+                    {
+                        txtCMND.Text = Convert.ToString(dta["CMNDChuHo"]);
+                        txtMaKhuVuc.Text = Convert.ToString(dta["maKV"]);
+                        txtXaPhuong.Text = Convert.ToString(dta["xaPhuong"]);
+                        txtQuanHuyen.Text = Convert.ToString(dta["quanHuyen"]);
+                        txtTinhThanhPho.Text = Convert.ToString(dta["tinhTP"]);
+                        txtDiaChi.Text = Convert.ToString(dta["diaChi"]);
+                        dtpNgayLap.Text = Convert.ToString(dta["ngayLap"]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+        }
+        public void LapTVSoHoKhau(TextBox txtCMND,TextBox txtCmnd_tv,TextBox txtMaShk_tv,TextBox txtMaSoHoKhau,TextBox txtHoTen_tv,TextBox txtGioiTinh_tv,TextBox txtQuanHe)
+        {
+            string sqlStr = string.Format("SELECT CongDan.hoTen, CongDan.gioiTinh , QuanHe.quanHeVoiCMND1 FROM QuanHe JOIN CongDan ON CongDan.CMND = QuanHe.CMND2 WHERE QuanHe.CMND1 = '" + txtCMND.Text + "' AND QuanHe.CMND2 = '" + txtCmnd_tv.Text + "' ");
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                    SqlDataReader dta = cmd.ExecuteReader();
+                    if (dta.Read())
+                    {
+                        txtMaShk_tv.Text = txtMaSoHoKhau.Text;
+                        txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
+                        txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
+                        txtQuanHe.Text = Convert.ToString(dta["quanHeVoiCMND1"]);
+                    }
+                    else
+                    {
+                        txtMaShk_tv.Text = "";
+                        txtHoTen_tv.Text = "" ;
+                        txtGioiTinh_tv.Text = "";
+                        txtQuanHe.Text = "";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

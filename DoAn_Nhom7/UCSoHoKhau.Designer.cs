@@ -68,6 +68,8 @@
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtTinhThanhPho = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtTraCuu = new System.Windows.Forms.TextBox();
+            this.btnTraCuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSoHoKhau)).BeginInit();
             this.pnThanhvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThanhVienShk)).BeginInit();
@@ -472,6 +474,7 @@
             this.txtMaSoHoKhau.Name = "txtMaSoHoKhau";
             this.txtMaSoHoKhau.Size = new System.Drawing.Size(102, 27);
             this.txtMaSoHoKhau.TabIndex = 12;
+            this.txtMaSoHoKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaSoHoKhau_KeyDown);
             // 
             // txtQuanHuyen
             // 
@@ -507,10 +510,29 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "Quan Li Cong Dan Trong Thanh Pho: So ho khau";
             // 
+            // txtTraCuu
+            // 
+            this.txtTraCuu.Location = new System.Drawing.Point(4, 15);
+            this.txtTraCuu.Name = "txtTraCuu";
+            this.txtTraCuu.Size = new System.Drawing.Size(100, 22);
+            this.txtTraCuu.TabIndex = 32;
+            // 
+            // btnTraCuu
+            // 
+            this.btnTraCuu.Location = new System.Drawing.Point(718, 20);
+            this.btnTraCuu.Name = "btnTraCuu";
+            this.btnTraCuu.Size = new System.Drawing.Size(75, 23);
+            this.btnTraCuu.TabIndex = 33;
+            this.btnTraCuu.Text = "Tra Cứu";
+            this.btnTraCuu.UseVisualStyleBackColor = true;
+            this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
+            // 
             // UCSoHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnTraCuu);
+            this.Controls.Add(this.txtTraCuu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnThanhvien);
             this.Controls.Add(this.pnSoHoKhau);
@@ -570,5 +592,7 @@
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.TextBox txtTinhThanhPho;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTraCuu;
+        private System.Windows.Forms.Button btnTraCuu;
     }
 }

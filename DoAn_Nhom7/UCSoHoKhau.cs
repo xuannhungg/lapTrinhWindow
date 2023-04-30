@@ -161,32 +161,65 @@ namespace DoAn_Nhom7
 
         private void txtCmnd_tv_KeyDown(object sender, KeyEventArgs e)
         {
-            string sqlStr = string.Format("SELECT CongDan.hoTen, CongDan.gioiTinh , QuanHe.quanHeVoiCMND1 FROM QuanHe JOIN CongDan ON CongDan.CMND = QuanHe.CMND2 WHERE QuanHe.CMND1 = '" + txtCMND.Text+ "' AND QuanHe.CMND2 = '"+txtCmnd_tv.Text+"' ");
-            if (e.KeyCode == Keys.Enter)
+            hkdao.LapTVSoHoKhau(txtCMND, txtCmnd_tv, txtMaShk_tv, txtMaSoHoKhau, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
+        }
+
+        private void btnTraCuu_Click(object sender, EventArgs e)
+        {
+            LayDanhSach();
+            string sqlStr1 = string.Format("SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '"+txtTraCuu.Text+"'");
+            string sqlStr2= string.Format("SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo = '" + txtTraCuu.Text + "'");
+            string sqlStr = sqlStr1 + " UNION " + sqlStr2;
+            try
             {
-                try
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                if (dta.Read())
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                    SqlDataReader dta = cmd.ExecuteReader();
-                    while (dta.Read())
+                    txtMaSoHoKhau.Text = Convert.ToString(dta["maSoHoKhau"]);
+                    txtCmnd_tv.Text = txtTraCuu.Text;
+                    hkdao.LapSoHoKhau(txtMaSoHoKhau, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho, txtDiaChi, dtpNgayLap);
+                    hkdao.LapTVSoHoKhau(txtCMND, txtCmnd_tv, txtMaShk_tv, txtMaSoHoKhau, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
+                    if (txtHoTen_tv.Text == "")
+                        txtCmnd_tv.Text = "";
+                    foreach (DataGridViewRow row in dtgvSoHoKhau.Rows)
                     {
-                        //mashk.Text = Convert.ToString(dta["maSoHoKhau"]);
-                        txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
-                        txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
-                        txtQuanHe.Text = Convert.ToString(dta["quanHeVoiCMND1"]);
+                        object value = row.Cells[1].Value;
+                        if (value != null && value.ToString() == txtCMND.Text)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.LightBlue;
+                        }
+                    }
+                    LayDanhSachThanhVien();
+                    foreach (DataGridViewRow row in dtgvThanhVienShk.Rows)
+                    {
+                        object value = row.Cells[1].Value;
+                        if (value != null && value.ToString() == txtCmnd_tv.Text)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.LightBlue;
+                        }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
+                else
+                    MessageBox.Show("Khong thuoc shk nao");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
+
+        private void txtMaSoHoKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            hkdao.LapSoHoKhau(txtMaSoHoKhau, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho, txtDiaChi, dtpNgayLap);
+        }
+
+
     }
     
 }
