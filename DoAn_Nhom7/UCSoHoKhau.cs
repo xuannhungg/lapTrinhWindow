@@ -33,7 +33,7 @@ namespace DoAn_Nhom7
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (db.KiemTraSHK(txtCMND.Text,txtCMND.Text))
+            if (db.KiemTraSHK(txtCMND.Text))
             {
                 SoHoKhau hk = new SoHoKhau(txtMaSoHoKhau.Text, txtCMND.Text, txtMaKhuVuc.Text, txtXaPhuong.Text, txtQuanHuyen.Text, txtTinhThanhPho.Text, txtDiaChi.Text, dtpNgayLap.Text);
                 hkdao.ThemSoHoKhau(hk);
@@ -92,7 +92,7 @@ namespace DoAn_Nhom7
         private void btnThemTv_Click(object sender, EventArgs e)
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text ,txtCMND.Text, txtCmnd_tv.Text, txtQuanHe.Text);
-            if (db.KiemTraSHK(txtCmnd_tv.Text,txtCMND.Text))
+            if (db.KiemTraTVSHK(txtCmnd_tv.Text))
             {
                 tvDao.ThemThanhVien(tv);
                 LayDanhSachThanhVien();

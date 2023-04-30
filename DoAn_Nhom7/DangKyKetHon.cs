@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace DoAn_Nhom7
     {
         CongDanDAO cddao = new CongDanDAO();
         HonNhanDAO hnDao = new HonNhanDAO();
+        ThanhVienShkDAO mem = new ThanhVienShkDAO();
+        DBConnection dbconnection = new DBConnection();
         public DangKyKetHon()
         {
             InitializeComponent();
@@ -26,7 +29,10 @@ namespace DoAn_Nhom7
             {
                 CongDan cdA = new CongDan(txtGiayToTuyThanNam.Text, txtHoTenNam.Text);
                 CongDan cdB = new CongDan(txtGiayToTuyThanNu.Text, txtHoTenNu.Text);
+                ThanhVienShk tv = new ThanhVienShk(dbconnection.timMaSHK(txtGiayToTuyThanNam.Text), txtGiayToTuyThanNam.Text, txtGiayToTuyThanNu.Text, "Vo");
+                mem.ThietLapMoiQuanHeVoChong(tv);
                 cddao.CapNhatKetHon(cdA, cdB);
+                mem.ThemThanhVien(tv);
             }
             else
                 MessageBox.Show("Co nguoi chua du dieu kien ket hon (1.chua du tuoi; 2.da ket hon)");
