@@ -23,13 +23,15 @@ CREATE TABLE CongDan (
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
 VALUES ('nva', '1/1/2003', 'nam','1','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '1000000','1','ki tuc xa 01/01/2019','nghe An','2/2/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva1', '2/2/2003', 'nam','2','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '2200000','2','nha tro 02/02/2020','Nghe An','3/3/2021','Viet Nam');
+VALUES ('nta', '2/2/2003', 'nu','2','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '2200000','2','nha tro 02/02/2020','Nghe An','3/3/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
 VALUES ('nva2', '3/3/2003', 'nam','3','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 03/03/2021','Nghe an','4/4/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva4', '3/3/2006', 'nu','4','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 04/04/2022','Nghe an','4/4/2021','Viet Nam');
+VALUES ('nta2', '3/3/2006', 'nu','4','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 04/04/2022','Nghe an','4/4/2021','Viet Nam');
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
-VALUES ('nva5', '3/3/2000', 'nam','5','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 05/02/2023','Nghe an','4/4/2021','Viet Nam');
+VALUES ('nva3', '3/3/2000', 'nam','5','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '30000000','3','nha tro 05/02/2023','Nghe an','4/4/2021','Viet Nam');
+INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
+VALUES ('nta3', '3/3/2000', 'nu','6','kinh','chua ket hon','nghe an','nghe an','nghe an','dai hoc','sinh vien', '40000000','3','nha tro 09/02/2021','Nghe an','4/4/2021','Viet Nam');
 
 select * from CongDan
 
@@ -76,7 +78,7 @@ CREATE TABLE SoHoKhau(
 INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,ngayLap)
 Values('1','1','2NT','Long Dinh','Can Duoc','Long An','Ap 3','1993/2/1')
 INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,ngayLap)
-Values('2','5','1','Linh Xuan','Thu Duc','TPHCM','Duong so 5','1990/2/1')
+Values('2','3','1','Linh Xuan','Thu Duc','TPHCM','Duong so 5','1990/2/1')
 
 select * from SoHoKhau
 
@@ -126,6 +128,8 @@ insert into Thue (CCCD, LoaiThue, MucThue, TinhTrang)
 values ('2','Thue thu nhap ca nhan',2.4, 'Chua dong');
 insert into Thue (CCCD, LoaiThue, MucThue, TinhTrang)
 values ('3','Thue thu nhap ca nhan',3.6, 'Chua dong');
+insert into Thue (CCCD, LoaiThue, MucThue, TinhTrang)
+values ('4','Thue thu nhap ca nhan', 2.3, 'Chua dong');
 
 select * from Thue
 
