@@ -33,9 +33,14 @@ namespace DoAn_Nhom7
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            SoHoKhau hk = new SoHoKhau(txtMaSoHoKhau.Text, txtCMND.Text, txtMaKhuVuc.Text, txtXaPhuong.Text, txtQuanHuyen.Text, txtTinhThanhPho.Text, txtDiaChi.Text, dtpNgayLap.Text);
-            hkdao.ThemSoHoKhau(hk);
-            LayDanhSach();
+            if (db.KiemTraSHK(txtCMND.Text))
+            {
+                SoHoKhau hk = new SoHoKhau(txtMaSoHoKhau.Text, txtCMND.Text, txtMaKhuVuc.Text, txtXaPhuong.Text, txtQuanHuyen.Text, txtTinhThanhPho.Text, txtDiaChi.Text, dtpNgayLap.Text);
+                hkdao.ThemSoHoKhau(hk);
+                LayDanhSach();
+            }
+            else
+                MessageBox.Show("Da co shk");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -128,7 +133,7 @@ namespace DoAn_Nhom7
         {
             DataGridViewRow row = new DataGridViewRow();
             row = this.dtgvThanhVienShk.Rows[e.RowIndex];
-            txtCmnd_tv.Text = row.Cells[2].Value.ToString();
+            txtCmnd_tv.Text = row.Cells[1].Value.ToString();
             string sqlStr = string.Format("SELECT SHK.maSoHoKhau, CD.hoTen, CD.gioiTinh, TVSHK.quanHeVoiChuHo FROM CongDan CD INNER JOIN ThanhVienSoHoKhau TVSHK ON CD.cmnd = TVSHK.CMNDThanhVien INNER JOIN SoHoKhau SHK ON SHK.maSoHoKhau = TVSHK.maSoHoKhau AND SHK.CMNDChuHo = TVSHK.CMNDChuHo WHERE CD.cmnd = '{0}'", txtCmnd_tv.Text);
 
             try
