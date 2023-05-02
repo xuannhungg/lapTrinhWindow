@@ -69,6 +69,7 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTen = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -437,6 +438,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.txtNgaySinh);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -478,6 +480,16 @@
             this.lblTen.Size = new System.Drawing.Size(97, 20);
             this.lblTen.TabIndex = 0;
             this.lblTen.Text = "Họ và tên *:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(303, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(231, 15);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "*Nhập cmnd và click enter để điền nhanh";
             // 
             // UCKhaiTu
             // 
@@ -547,5 +559,6 @@
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTen;
+        private System.Windows.Forms.Label label4;
     }
 }

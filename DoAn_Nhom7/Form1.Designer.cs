@@ -221,7 +221,6 @@
             this.rdbDaKetHon.TabStop = true;
             this.rdbDaKetHon.Text = "Đã kết hôn";
             this.rdbDaKetHon.UseVisualStyleBackColor = false;
-           
             // 
             // lblTinhTrang
             // 
@@ -381,6 +380,7 @@
             this.btnKhaiSinh.TabIndex = 7;
             this.btnKhaiSinh.Text = "KHAI SINH";
             this.btnKhaiSinh.UseVisualStyleBackColor = false;
+            this.btnKhaiSinh.Click += new System.EventHandler(this.btnKhaiSinh_Click);
             // 
             // btnHonNhan
             // 

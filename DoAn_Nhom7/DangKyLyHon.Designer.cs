@@ -34,34 +34,27 @@
             this.lblTenA = new System.Windows.Forms.Label();
             this.lblNamSinhA = new System.Windows.Forms.Label();
             this.lblCMNDA = new System.Windows.Forms.Label();
-            this.lblNgayVaNoiCapCMNDA = new System.Windows.Forms.Label();
             this.lblLyHon = new System.Windows.Forms.Label();
             this.lblNamSinhB = new System.Windows.Forms.Label();
             this.lblCMNDB = new System.Windows.Forms.Label();
-            this.lblNgayVaNoiCapB = new System.Windows.Forms.Label();
             this.lblCuTruA = new System.Windows.Forms.Label();
             this.lblCuTruB = new System.Windows.Forms.Label();
             this.lblNoiDung = new System.Windows.Forms.Label();
-            this.lblConChung = new System.Windows.Forms.Label();
-            this.lblTaiSanChung = new System.Windows.Forms.Label();
             this.txtTenA = new System.Windows.Forms.TextBox();
             this.txtCMNDA = new System.Windows.Forms.TextBox();
             this.txtTenB = new System.Windows.Forms.TextBox();
             this.txtCuTruA = new System.Windows.Forms.TextBox();
             this.txtNamSinhA = new System.Windows.Forms.TextBox();
-            this.txtNgayNoiCapA = new System.Windows.Forms.TextBox();
             this.txtNamSinhB = new System.Windows.Forms.TextBox();
             this.txtCMNDB = new System.Windows.Forms.TextBox();
-            this.txtNgayNoiCapB = new System.Windows.Forms.TextBox();
             this.txtCuTruB = new System.Windows.Forms.TextBox();
             this.txtNoiDung = new System.Windows.Forms.TextBox();
-            this.txtConChung = new System.Windows.Forms.TextBox();
-            this.txtTaiSanChung = new System.Windows.Forms.TextBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -123,16 +116,6 @@
             this.lblCMNDA.TabIndex = 4;
             this.lblCMNDA.Text = "CMND số : ";
             // 
-            // lblNgayVaNoiCapCMNDA
-            // 
-            this.lblNgayVaNoiCapCMNDA.AutoSize = true;
-            this.lblNgayVaNoiCapCMNDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNgayVaNoiCapCMNDA.Location = new System.Drawing.Point(487, 76);
-            this.lblNgayVaNoiCapCMNDA.Name = "lblNgayVaNoiCapCMNDA";
-            this.lblNgayVaNoiCapCMNDA.Size = new System.Drawing.Size(152, 25);
-            this.lblNgayVaNoiCapCMNDA.TabIndex = 5;
-            this.lblNgayVaNoiCapCMNDA.Text = "Ngày và nơi cấp";
-            // 
             // lblLyHon
             // 
             this.lblLyHon.AutoSize = true;
@@ -163,16 +146,6 @@
             this.lblCMNDB.TabIndex = 8;
             this.lblCMNDB.Text = "CMND số : ";
             // 
-            // lblNgayVaNoiCapB
-            // 
-            this.lblNgayVaNoiCapB.AutoSize = true;
-            this.lblNgayVaNoiCapB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblNgayVaNoiCapB.Location = new System.Drawing.Point(486, 82);
-            this.lblNgayVaNoiCapB.Name = "lblNgayVaNoiCapB";
-            this.lblNgayVaNoiCapB.Size = new System.Drawing.Size(152, 25);
-            this.lblNgayVaNoiCapB.TabIndex = 9;
-            this.lblNgayVaNoiCapB.Text = "Ngày và nơi cấp";
-            // 
             // lblCuTruA
             // 
             this.lblCuTruA.AutoSize = true;
@@ -202,26 +175,6 @@
             this.lblNoiDung.Size = new System.Drawing.Size(188, 25);
             this.lblNoiDung.TabIndex = 12;
             this.lblNoiDung.Text = "Nội dung xin ly hôn :";
-            // 
-            // lblConChung
-            // 
-            this.lblConChung.AutoSize = true;
-            this.lblConChung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblConChung.Location = new System.Drawing.Point(23, 462);
-            this.lblConChung.Name = "lblConChung";
-            this.lblConChung.Size = new System.Drawing.Size(143, 25);
-            this.lblConChung.TabIndex = 13;
-            this.lblConChung.Text = "Về Con Chung";
-            // 
-            // lblTaiSanChung
-            // 
-            this.lblTaiSanChung.AutoSize = true;
-            this.lblTaiSanChung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTaiSanChung.Location = new System.Drawing.Point(23, 521);
-            this.lblTaiSanChung.Name = "lblTaiSanChung";
-            this.lblTaiSanChung.Size = new System.Drawing.Size(175, 25);
-            this.lblTaiSanChung.TabIndex = 14;
-            this.lblTaiSanChung.Text = "Về Tài Sản Chung";
             // 
             // txtTenA
             // 
@@ -264,14 +217,6 @@
             this.txtNamSinhA.Size = new System.Drawing.Size(133, 30);
             this.txtNamSinhA.TabIndex = 20;
             // 
-            // txtNgayNoiCapA
-            // 
-            this.txtNgayNoiCapA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNgayNoiCapA.Location = new System.Drawing.Point(657, 78);
-            this.txtNgayNoiCapA.Name = "txtNgayNoiCapA";
-            this.txtNgayNoiCapA.Size = new System.Drawing.Size(133, 30);
-            this.txtNgayNoiCapA.TabIndex = 21;
-            // 
             // txtNamSinhB
             // 
             this.txtNamSinhB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -288,14 +233,6 @@
             this.txtCMNDB.Size = new System.Drawing.Size(161, 30);
             this.txtCMNDB.TabIndex = 23;
             // 
-            // txtNgayNoiCapB
-            // 
-            this.txtNgayNoiCapB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNgayNoiCapB.Location = new System.Drawing.Point(656, 84);
-            this.txtNgayNoiCapB.Name = "txtNgayNoiCapB";
-            this.txtNgayNoiCapB.Size = new System.Drawing.Size(133, 30);
-            this.txtNgayNoiCapB.TabIndex = 24;
-            // 
             // txtCuTruB
             // 
             this.txtCuTruB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -311,22 +248,6 @@
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.Size = new System.Drawing.Size(577, 30);
             this.txtNoiDung.TabIndex = 26;
-            // 
-            // txtConChung
-            // 
-            this.txtConChung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtConChung.Location = new System.Drawing.Point(259, 464);
-            this.txtConChung.Name = "txtConChung";
-            this.txtConChung.Size = new System.Drawing.Size(161, 30);
-            this.txtConChung.TabIndex = 27;
-            // 
-            // txtTaiSanChung
-            // 
-            this.txtTaiSanChung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTaiSanChung.Location = new System.Drawing.Point(258, 521);
-            this.txtTaiSanChung.Name = "txtTaiSanChung";
-            this.txtTaiSanChung.Size = new System.Drawing.Size(161, 30);
-            this.txtTaiSanChung.TabIndex = 28;
             // 
             // btnXacNhan
             // 
@@ -346,12 +267,8 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnXacNhan);
-            this.panel1.Controls.Add(this.txtTaiSanChung);
-            this.panel1.Controls.Add(this.txtConChung);
             this.panel1.Controls.Add(this.txtNoiDung);
             this.panel1.Controls.Add(this.lblNoiDung);
-            this.panel1.Controls.Add(this.lblConChung);
-            this.panel1.Controls.Add(this.lblTaiSanChung);
             this.panel1.Location = new System.Drawing.Point(22, 86);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1268, 572);
@@ -372,14 +289,12 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.Controls.Add(this.txtTenB);
             this.panel3.Controls.Add(this.lblCuTruB);
-            this.panel3.Controls.Add(this.lblNgayVaNoiCapB);
             this.panel3.Controls.Add(this.txtNamSinhB);
             this.panel3.Controls.Add(this.lblCMNDB);
             this.panel3.Controls.Add(this.txtCMNDB);
             this.panel3.Controls.Add(this.txtCuTruB);
             this.panel3.Controls.Add(this.lblNamSinhB);
             this.panel3.Controls.Add(this.lblLyHon);
-            this.panel3.Controls.Add(this.txtNgayNoiCapB);
             this.panel3.Location = new System.Drawing.Point(28, 215);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(807, 171);
@@ -388,6 +303,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtTenA);
             this.panel2.Controls.Add(this.txtCMNDA);
             this.panel2.Controls.Add(this.txtCuTruA);
@@ -395,13 +311,21 @@
             this.panel2.Controls.Add(this.txtNamSinhA);
             this.panel2.Controls.Add(this.lblCuTruA);
             this.panel2.Controls.Add(this.lblNamSinhA);
-            this.panel2.Controls.Add(this.txtNgayNoiCapA);
-            this.panel2.Controls.Add(this.lblNgayVaNoiCapCMNDA);
             this.panel2.Controls.Add(this.lblCMNDA);
             this.panel2.Location = new System.Drawing.Point(28, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(807, 177);
             this.panel2.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(41, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(361, 18);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Điền CMND 1 trong 2 người và ấn enter để điền nhanh";
             // 
             // DangKyLyHon
             // 
@@ -435,33 +359,26 @@
         private System.Windows.Forms.Label lblTenA;
         private System.Windows.Forms.Label lblNamSinhA;
         private System.Windows.Forms.Label lblCMNDA;
-        private System.Windows.Forms.Label lblNgayVaNoiCapCMNDA;
         private System.Windows.Forms.Label lblLyHon;
         private System.Windows.Forms.Label lblNamSinhB;
         private System.Windows.Forms.Label lblCMNDB;
-        private System.Windows.Forms.Label lblNgayVaNoiCapB;
         private System.Windows.Forms.Label lblCuTruA;
         private System.Windows.Forms.Label lblCuTruB;
         private System.Windows.Forms.Label lblNoiDung;
-        private System.Windows.Forms.Label lblConChung;
-        private System.Windows.Forms.Label lblTaiSanChung;
         private System.Windows.Forms.TextBox txtTenA;
         private System.Windows.Forms.TextBox txtCMNDA;
         private System.Windows.Forms.TextBox txtTenB;
         private System.Windows.Forms.TextBox txtCuTruA;
         private System.Windows.Forms.TextBox txtNamSinhA;
-        private System.Windows.Forms.TextBox txtNgayNoiCapA;
         private System.Windows.Forms.TextBox txtNamSinhB;
         private System.Windows.Forms.TextBox txtCMNDB;
-        private System.Windows.Forms.TextBox txtNgayNoiCapB;
         private System.Windows.Forms.TextBox txtCuTruB;
         private System.Windows.Forms.TextBox txtNoiDung;
-        private System.Windows.Forms.TextBox txtConChung;
-        private System.Windows.Forms.TextBox txtTaiSanChung;
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }

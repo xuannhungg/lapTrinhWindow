@@ -56,12 +56,12 @@ namespace DoAn_Nhom7
         }
         public DataSet TimCongDanDaKetHon(DataGridView dtgv)
         {
-            string sqlStr = "SELECT * from CongDan WHERE tinhTrangHonNhan != 'chua ket hon'";
+            string sqlStr = "SELECT * from CongDan WHERE tinhTrangHonNhan != 'Doc Than'";
             return dbconnection.TimCongDanDaKetHon(sqlStr, dtgv);
         }
         public DataSet TimCongDanDocThan(DataGridView dtgv)
         {
-            string sqlStr = "SELECT * from CongDan WHERE tinhTrangHonNhan = 'chua ket hon'";
+            string sqlStr = "SELECT * from CongDan WHERE tinhTrangHonNhan = 'Doc Than'";
             return dbconnection.TimCongDanDaKetHon(sqlStr, dtgv);
         }
         public DataSet TimCongDanTheoCCCD(string cccd, DataGridView dtgv)

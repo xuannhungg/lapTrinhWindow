@@ -60,6 +60,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbldltd = new System.Windows.Forms.Label();
             this.lblchxh = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -341,6 +343,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtCongAn);
             this.panel1.Controls.Add(this.lblKinhGui);
@@ -395,6 +399,26 @@
             this.lblchxh.TabIndex = 45;
             this.lblchxh.Text = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(475, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(231, 15);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "*Nhập cmnd và click enter để điền nhanh";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(301, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(241, 15);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "*Nhập vào đây và click enter để điền nhanh";
+            // 
             // UCTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,5 +470,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbldltd;
         private System.Windows.Forms.Label lblchxh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

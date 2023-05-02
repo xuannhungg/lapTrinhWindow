@@ -16,5 +16,10 @@ namespace DoAn_Nhom7_Entity
         {
             InitializeComponent();
         }
+
+        private void UCHonNhan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -155,6 +155,12 @@
     <Compile Include="UCHonNhan.Designer.cs">
       <DependentUpon>UCHonNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCKhaiSinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCKhaiSinh.Designer.cs">
+      <DependentUpon>UCKhaiSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCKhaiTu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCHonNhan.resx">
       <DependentUpon>UCHonNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCKhaiSinh.resx">
+      <DependentUpon>UCKhaiSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCKhaiTu.resx">
       <DependentUpon>UCKhaiTu.cs</DependentUpon>

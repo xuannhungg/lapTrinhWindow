@@ -218,5 +218,12 @@ namespace DoAn_Nhom7
             hi.ShowDialog();
         }
 
+        private void btnKhaiSinh_Click(object sender, EventArgs e)
+        {
+            UCKhaiSinh uc = new UCKhaiSinh();
+            uc.Dock = DockStyle.Fill;
+            pnHienThi.Controls.Clear();
+            pnHienThi.Controls.Add(uc);
+        }
     }
 }
