@@ -140,6 +140,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCHonNhan";
             this.Size = new System.Drawing.Size(899, 591);
+            this.Load += new System.EventHandler(this.UCHonNhan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
