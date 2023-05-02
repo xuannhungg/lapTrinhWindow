@@ -123,7 +123,7 @@ namespace DoAn_Nhom7
         private void btnSuaTv_Click(object sender, EventArgs e)
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text, txtCMND.Text, txtCmnd_tv.Text, txtQuanHe.Text);
-            tvDao.SuaThanhVien(tv);
+            tvDao.SuaThanhVien(tv,txtQuanHe.Text);
             LayDanhSachThanhVien();
         }
 
@@ -173,6 +173,8 @@ namespace DoAn_Nhom7
         private void txtCmnd_tv_KeyDown(object sender, KeyEventArgs e)
         {
             hkdao.LapTVSoHoKhau(txtCMND, txtCmnd_tv, txtMaShk_tv, txtMaSoHoKhau, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
+            if (txtHoTen_tv.Text == "")
+                hkdao.LapThongTin(txtCmnd_tv, txtHoTen_tv, txtGioiTinh_tv);
         }
 
         private void btnTraCuu_Click(object sender, EventArgs e)

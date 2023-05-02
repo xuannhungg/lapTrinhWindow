@@ -70,6 +70,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTraCuu = new System.Windows.Forms.TextBox();
             this.btnTraCuu = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSoHoKhau)).BeginInit();
             this.pnThanhvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThanhVienShk)).BeginInit();
@@ -247,7 +248,7 @@
             this.pnThanhvien.Controls.Add(this.btnXem);
             this.pnThanhvien.Controls.Add(this.label1);
             this.pnThanhvien.Controls.Add(this.dtgvThanhVienShk);
-            this.pnThanhvien.Location = new System.Drawing.Point(472, 64);
+            this.pnThanhvien.Location = new System.Drawing.Point(479, 92);
             this.pnThanhvien.Name = "pnThanhvien";
             this.pnThanhvien.Size = new System.Drawing.Size(483, 418);
             this.pnThanhvien.TabIndex = 29;
@@ -312,7 +313,7 @@
             this.pnSoHoKhau.Controls.Add(this.txtQuanHuyen);
             this.pnSoHoKhau.Controls.Add(this.txtCMND);
             this.pnSoHoKhau.Controls.Add(this.txtTinhThanhPho);
-            this.pnSoHoKhau.Location = new System.Drawing.Point(5, 64);
+            this.pnSoHoKhau.Location = new System.Drawing.Point(12, 92);
             this.pnSoHoKhau.Name = "pnSoHoKhau";
             this.pnSoHoKhau.Size = new System.Drawing.Size(452, 418);
             this.pnSoHoKhau.TabIndex = 30;
@@ -512,14 +513,14 @@
             // 
             // txtTraCuu
             // 
-            this.txtTraCuu.Location = new System.Drawing.Point(4, 15);
+            this.txtTraCuu.Location = new System.Drawing.Point(143, 48);
             this.txtTraCuu.Name = "txtTraCuu";
             this.txtTraCuu.Size = new System.Drawing.Size(100, 22);
             this.txtTraCuu.TabIndex = 32;
             // 
             // btnTraCuu
             // 
-            this.btnTraCuu.Location = new System.Drawing.Point(718, 20);
+            this.btnTraCuu.Location = new System.Drawing.Point(256, 51);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(75, 23);
             this.btnTraCuu.TabIndex = 33;
@@ -527,10 +528,20 @@
             this.btnTraCuu.UseVisualStyleBackColor = true;
             this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(47, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Nhập CMND";
+            // 
             // UCSoHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnTraCuu);
             this.Controls.Add(this.txtTraCuu);
             this.Controls.Add(this.label3);
@@ -594,5 +605,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTraCuu;
         private System.Windows.Forms.Button btnTraCuu;
+        private System.Windows.Forms.Label label4;
     }
 }
