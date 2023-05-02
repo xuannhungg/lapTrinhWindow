@@ -415,7 +415,7 @@ namespace DoAn_Nhom7
         public string timCMNDBo(string maSHK)
         {
             conn.Open();
-            string sqlStr = string.Format("select shk.maSoHoKhau,cd.cmnd, cd.hoten ,cd.gioiTinh,'chu ho' AS QuanHe  FROM CongDan cd INNER JOIN SoHoKhau shk ON cd.cmnd = shk.CMND where shk.maSoHoKhau = '" + maSHK + "'");
+            string sqlStr = string.Format("select shk.maSoHoKhau,cd.cmnd, cd.hoten ,cd.gioiTinh,'chu ho' AS QuanHe  FROM CongDan cd INNER JOIN SoHoKhau shk ON cd.cmnd = shk.CMNDChuHo where shk.maSoHoKhau = '" + maSHK + "'");
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())

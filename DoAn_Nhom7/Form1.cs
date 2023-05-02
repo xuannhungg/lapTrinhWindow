@@ -13,7 +13,6 @@ using System.Windows.Forms;
 
 namespace DoAn_Nhom7
 {
-
     public partial class FTrangChu : Form
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
@@ -21,11 +20,11 @@ namespace DoAn_Nhom7
         public FTrangChu()
         {
             InitializeComponent();        }
-        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            frmDangNhap form3 = new frmDangNhap();
-            form3.Show();
-        }
+        //private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    frmDangNhap form3 = new frmDangNhap();
+        //    form3.Show();
+        //}
         public void LayDanhSach()
         {
             this.dGVDanhSach.DataSource = congdandao.DanhSach();
@@ -68,13 +67,13 @@ namespace DoAn_Nhom7
             DataSet dts = congdandao.TimCongDanTheoCCCD(txtCCCD.Text, dGVDanhSach);
             this.dGVDanhSach.DataSource = dts.Tables["cmnd"];
         }
-        private void button17_Click(object sender, EventArgs e)
-        {
-            FCongDan form1 = new FCongDan();
-            form1.ShowDialog();
-        }
+        //private void button17_Click(object sender, EventArgs e)
+        //{
+        //    FCongDan form1 = new FCongDan();
+        //    form1.ShowDialog();
+        //}
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             LayDanhSach();
             txtCCCD.Text = "";
@@ -89,10 +88,6 @@ namespace DoAn_Nhom7
         {
             DataSet dts = congdandao.TimCongDanDocThan(dGVDanhSach);
             this.dGVDanhSach.DataSource = dts.Tables["tinhTrangHonNhan"];
-        }
-        private void dGVDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         public void KiemTraTamTruTamVang()
         {
@@ -160,11 +155,6 @@ namespace DoAn_Nhom7
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCCCD_Click(object sender, EventArgs e)
         {
             UCCanCuoc uc = new UCCanCuoc();
@@ -181,16 +171,6 @@ namespace DoAn_Nhom7
             pnHienThi.Controls.Add(uc);
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdbDaKetHon_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSoHoKhau_Click(object sender, EventArgs e)
         {
             UCSoHoKhau uc = new UCSoHoKhau();
@@ -198,7 +178,6 @@ namespace DoAn_Nhom7
             pnHienThi.Controls.Clear();
             pnHienThi.Controls.Add(uc);
         }
-
         private void btnTamTru_Click(object sender, EventArgs e)
         {
             UCTamTruTamVang uc = new UCTamTruTamVang();
@@ -230,8 +209,6 @@ namespace DoAn_Nhom7
             pnHienThi.Controls.Clear();
             pnHienThi.Controls.Add(uc);
         }
-
-
         private void dGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string cmnd = dGVDanhSach.Rows[e.RowIndex].Cells["cmnd"].Value.ToString();

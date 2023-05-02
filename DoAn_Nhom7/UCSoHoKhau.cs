@@ -147,7 +147,6 @@ namespace DoAn_Nhom7
             row = this.dtgvThanhVienShk.Rows[e.RowIndex];
             txtCmnd_tv.Text = row.Cells[1].Value.ToString();
             string sqlStr = string.Format("SELECT SHK.maSoHoKhau, CD.hoTen, CD.gioiTinh, TVSHK.quanHeVoiChuHo FROM CongDan CD INNER JOIN ThanhVienSoHoKhau TVSHK ON CD.cmnd = TVSHK.CMNDThanhVien INNER JOIN SoHoKhau SHK ON SHK.maSoHoKhau = TVSHK.maSoHoKhau AND SHK.CMNDChuHo = TVSHK.CMNDChuHo WHERE CD.cmnd = '{0}'", txtCmnd_tv.Text);
-
             try
             {
                 conn.Open();
