@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCHonNhan));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDangKyLyHon = new System.Windows.Forms.Button();
             this.btnDangKyKetHon = new System.Windows.Forms.Button();
+            this.btnDangKyLyHon = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,19 +55,6 @@
             this.panel2.Size = new System.Drawing.Size(269, 129);
             this.panel2.TabIndex = 10;
             // 
-            // btnDangKyLyHon
-            // 
-            this.btnDangKyLyHon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKyLyHon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDangKyLyHon.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDangKyLyHon.Location = new System.Drawing.Point(22, 65);
-            this.btnDangKyLyHon.Name = "btnDangKyLyHon";
-            this.btnDangKyLyHon.Size = new System.Drawing.Size(206, 38);
-            this.btnDangKyLyHon.TabIndex = 1;
-            this.btnDangKyLyHon.Text = "Đăng Ký Ly Hôn";
-            this.btnDangKyLyHon.UseVisualStyleBackColor = true;
-            this.btnDangKyLyHon.Click += new System.EventHandler(this.btnDangKyLyHon_Click);
-            // 
             // btnDangKyKetHon
             // 
             this.btnDangKyKetHon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -80,6 +67,19 @@
             this.btnDangKyKetHon.Text = "Đăng Ký Kết Hôn";
             this.btnDangKyKetHon.UseVisualStyleBackColor = true;
             this.btnDangKyKetHon.Click += new System.EventHandler(this.btnDangKyKetHon_Click);
+            // 
+            // btnDangKyLyHon
+            // 
+            this.btnDangKyLyHon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangKyLyHon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDangKyLyHon.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDangKyLyHon.Location = new System.Drawing.Point(22, 65);
+            this.btnDangKyLyHon.Name = "btnDangKyLyHon";
+            this.btnDangKyLyHon.Size = new System.Drawing.Size(206, 38);
+            this.btnDangKyLyHon.TabIndex = 1;
+            this.btnDangKyLyHon.Text = "Đăng Ký Ly Hôn";
+            this.btnDangKyLyHon.UseVisualStyleBackColor = true;
+            this.btnDangKyLyHon.Click += new System.EventHandler(this.btnDangKyLyHon_Click);
             // 
             // pictureBox1
             // 
