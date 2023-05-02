@@ -179,7 +179,7 @@ namespace DoAn_Nhom7
             if (dr.Read())
             {
                 string a = Convert.ToString(dr["tinhTrangHonNhan"]);
-                if (a == "chua ket hon")
+                if (a == "Doc Than")
                 {
                     conn.Close();
                     return true;
