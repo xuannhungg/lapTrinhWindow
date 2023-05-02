@@ -97,7 +97,8 @@ namespace DoAn_Nhom7
             LayDanhSachThanhVien();
             dtgvThanhVienShk.Columns[0].HeaderText = "Mã sổ hộ khẩu";
             dtgvThanhVienShk.Columns[1].HeaderText = "CMND thành viên";
-            dtgvThanhVienShk.Columns[2].HeaderText = "Quan hệ";
+            dtgvThanhVienShk.Columns[2].HeaderText = "Quan hệ với chủ hộ";
+
         }
 
         private void btnThemTv_Click(object sender, EventArgs e)
