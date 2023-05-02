@@ -75,6 +75,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -282,6 +283,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.rDNu);
             this.panel2.Controls.Add(this.rDNam);
             this.panel2.Controls.Add(this.txtQuocTich);
@@ -540,6 +542,16 @@
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 47;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label21.Location = new System.Drawing.Point(3, 83);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(231, 15);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "*Nhập cmnd và click enter để điền nhanh";
+            // 
             // UCCanCuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -606,5 +618,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RadioButton rDNu;
         private System.Windows.Forms.RadioButton rDNam;
+        private System.Windows.Forms.Label label21;
     }
 }

@@ -160,7 +160,7 @@ namespace DoAn_Nhom7_Entity
         public void TimNguoiDaKetHon()
         {
             var result = from c in db.CongDans
-                         where c.tinhTrangHonNhan != "chua ket hon"
+                         where c.tinhTrangHonNhan != "Doc Than"
                          select new
                          {
                              hoTen = c.hoTen,
@@ -186,7 +186,7 @@ namespace DoAn_Nhom7_Entity
         public void TimNguoiChuaKetHon()
         {
             var result = from c in db.CongDans
-                         where c.tinhTrangHonNhan == "chua ket hon"
+                         where c.tinhTrangHonNhan == "Doc Than"
                          select new
                          {
                              hoTen = c.hoTen,
