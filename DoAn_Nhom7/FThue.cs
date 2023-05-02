@@ -21,6 +21,11 @@ namespace DoAn_Nhom7
         private void FThue_Load(object sender, EventArgs e)
         {
                      
-        }      
+        }
+
+        private void ucThue1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,15 +21,38 @@ namespace DoAn_Nhom7
         private void UCThue_Load(object sender, EventArgs e)
         {
             LayDanhSach();
+            dGVThue.Columns[0].HeaderText = "Mã sổ hộ khẩu";
+            dGVThue.Columns[1].HeaderText = "Loại thuế";
+            dGVThue.Columns[2].HeaderText = "Mức thuế";
+            dGVThue.Columns[3].HeaderText = "Tình trạng";
+           
         }
         public void LayDanhSach()
         {
             this.dGVThue.DataSource = thueDao.DanhSach();
             this.dGVChinhSuaDanhSach.DataSource = thueDao.DanhSach();
+          
         }
         public void LayThongTinCongDan() //lay thong tin de truyen vao datagridview (dGVCongDan)
         {
             thueDao.LayThongTinCongDan(txtCCCD.Text, this.dGVCongDan, txtLuong, txtTen, txtNgheNghiep);
+            dGVCongDan.Columns[0].HeaderText = "Họ tên";
+            dGVCongDan.Columns[1].HeaderText = "Ngày tháng năm sinh";
+            dGVCongDan.Columns[2].HeaderText = "Giới tính";
+            dGVCongDan.Columns[3].HeaderText = "CMND";
+            dGVCongDan.Columns[4].HeaderText = "Dân tộc ";
+            dGVCongDan.Columns[5].HeaderText = "Tình trạng hôn nhân";
+            dGVCongDan.Columns[6].HeaderText = "Nơi đăng kí khai sinh";
+            dGVCongDan.Columns[7].HeaderText = "Quê quán";
+            dGVCongDan.Columns[8].HeaderText = "Nơi thường trú";
+            dGVCongDan.Columns[9].HeaderText = "Trình độ học vấn";
+            dGVCongDan.Columns[10].HeaderText = "Nghề nghiệp";
+            dGVCongDan.Columns[11].HeaderText = "Lương";
+            dGVCongDan.Columns[12].HeaderText = "Số lần kết hôn";
+            dGVCongDan.Columns[13].HeaderText = "Tạm trú";
+            dGVCongDan.Columns[14].HeaderText = "Nơi cấp CMND";
+            dGVCongDan.Columns[15].HeaderText = "Ngày cấp";
+            dGVCongDan.Columns[16].HeaderText = "Quốc tịch";
         }
         private void tinhSoTienCanDong()
         {
