@@ -113,7 +113,7 @@ WHERE QuanHe.CMND1 = '1' AND QuanHe.CMND2 = '2';
 
 --THUE--
 Create table Thue (
-CCCD varchar(100) NOT NULL,
+CCCD varchar(100) NOT NULL Primary key,
 LoaiThue nvarchar(100),
 MucThue real,
 TinhTrang nvarchar(50),
