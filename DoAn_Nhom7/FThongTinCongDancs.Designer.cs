@@ -304,7 +304,8 @@
             this.Controls.Add(this.lblHoTen);
             this.MaximizeBox = false;
             this.Name = "FThongTinCongDancs";
-            this.Text = "FThongTinCongDancs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thông tin công dân";
             this.Load += new System.EventHandler(this.FThongTinCongDancs_Load);
             this.Scroll += new System.Windows.Forms.ScrollEventHandler(this.FThongTinCongDancs_Scroll);
             this.ResumeLayout(false);

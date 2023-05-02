@@ -44,29 +44,9 @@ namespace DoAn_Nhom7
             pnSignUp.Visible = false;
         }
 
-        private void lblMatKhau_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)

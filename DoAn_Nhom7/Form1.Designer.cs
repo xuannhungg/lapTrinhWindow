@@ -41,7 +41,7 @@
             this.rdbDaKetHon = new System.Windows.Forms.RadioButton();
             this.lblTinhTrang = new System.Windows.Forms.Label();
             this.rdbTatCa = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.dGVDanhSach = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtCCCD = new System.Windows.Forms.TextBox();
@@ -183,7 +183,7 @@
             this.tabPage2.Controls.Add(this.rdbDaKetHon);
             this.tabPage2.Controls.Add(this.lblTinhTrang);
             this.tabPage2.Controls.Add(this.rdbTatCa);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnRefresh);
             this.tabPage2.Controls.Add(this.dGVDanhSach);
             this.tabPage2.Controls.Add(this.btnTimKiem);
             this.tabPage2.Controls.Add(this.txtCCCD);
@@ -194,7 +194,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1412, 677);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tra cuu ho so";
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // rdbChuaKetHon
             // 
@@ -221,7 +220,7 @@
             this.rdbDaKetHon.TabStop = true;
             this.rdbDaKetHon.Text = "Da ket hon";
             this.rdbDaKetHon.UseVisualStyleBackColor = false;
-            this.rdbDaKetHon.CheckedChanged += new System.EventHandler(this.rdbDaKetHon_CheckedChanged);
+           
             // 
             // lblTinhTrang
             // 
@@ -248,18 +247,18 @@
             this.rdbTatCa.Text = "Tat ca";
             this.rdbTatCa.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.BackColor = System.Drawing.Color.Beige;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(952, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 42);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnRefresh.BackColor = System.Drawing.Color.Beige;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnRefresh.Location = new System.Drawing.Point(952, 17);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(124, 42);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dGVDanhSach
             // 
@@ -273,7 +272,6 @@
             this.dGVDanhSach.Size = new System.Drawing.Size(1250, 496);
             this.dGVDanhSach.TabIndex = 3;
             this.dGVDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellClick);
-            this.dGVDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSach_CellContentClick);
             // 
             // btnTimKiem
             // 
@@ -355,7 +353,6 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(238, 671);
             this.pnMenu.TabIndex = 0;
-            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnKhaiTu
             // 
@@ -509,7 +506,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Label lblCCCD;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.RadioButton rdbChuaKetHon;
         private System.Windows.Forms.RadioButton rdbDaKetHon;
         private System.Windows.Forms.Label lblTinhTrang;

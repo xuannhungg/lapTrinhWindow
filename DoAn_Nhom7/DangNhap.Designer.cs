@@ -97,7 +97,6 @@
             this.lblMatKhau.Size = new System.Drawing.Size(88, 20);
             this.lblMatKhau.TabIndex = 3;
             this.lblMatKhau.Text = "Password:";
-            this.lblMatKhau.Click += new System.EventHandler(this.lblMatKhau_Click);
             // 
             // btnDangNhap
             // 
@@ -144,7 +143,6 @@
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.Size = new System.Drawing.Size(476, 476);
             this.pnLogin.TabIndex = 8;
-            this.pnLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
@@ -196,7 +194,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(369, 222);
             this.panel3.TabIndex = 8;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label3
             // 
@@ -232,7 +229,6 @@
             this.pnSignUp.Name = "pnSignUp";
             this.pnSignUp.Size = new System.Drawing.Size(545, 476);
             this.pnSignUp.TabIndex = 9;
-            this.pnSignUp.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button3
             // 
@@ -331,7 +327,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(435, 0);
+            this.button2.Location = new System.Drawing.Point(506, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(39, 41);
             this.button2.TabIndex = 11;

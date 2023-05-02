@@ -20,7 +20,7 @@ namespace DoAn_Nhom7
         }
         public DataSet timCongDanTheoCCCD(Thue thue)
         {
-            string sqlStr = "SELECT * from CongDan WHERE cmnd LIKE '%" + thue.CCCD + "%' ";
+            string sqlStr = "SELECT * from CongDan WHERE cmnd = '" + thue.CCCD + "' ";
             DataSet dts = dbconnection.timCongDanTheoCCCD(sqlStr, thue);
             return dts;
         }
