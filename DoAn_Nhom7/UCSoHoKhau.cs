@@ -60,6 +60,14 @@ namespace DoAn_Nhom7
         private void UCSoHoKhau_Load(object sender, EventArgs e)
         {
             LayDanhSach();
+            dtgvSoHoKhau.Columns[0].HeaderText = "Mã sổ hộ khẩu";
+            dtgvSoHoKhau.Columns[1].HeaderText = "CMND Chủ hộ";
+            dtgvSoHoKhau.Columns[2].HeaderText = "Mã khu vực";
+            dtgvSoHoKhau.Columns[3].HeaderText = "Xã phường";
+            dtgvSoHoKhau.Columns[4].HeaderText = "Quận huyện";
+            dtgvSoHoKhau.Columns[5].HeaderText = "Tỉnh thành phố";
+            dtgvSoHoKhau.Columns[6].HeaderText = "Địa chỉ";
+            dtgvSoHoKhau.Columns[7].HeaderText = "Ngày lập";
         }
 
         private void dtgvThanhVienShk_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,6 +95,10 @@ namespace DoAn_Nhom7
         private void btnXem_Click(object sender, EventArgs e)
         {
             LayDanhSachThanhVien();
+            dtgvThanhVienShk.Columns[0].HeaderText = "Mã sổ hộ khẩu";
+            dtgvThanhVienShk.Columns[1].HeaderText = "CMND Chủ hộ";
+            dtgvThanhVienShk.Columns[2].HeaderText = "CMND thành viên";
+            dtgvThanhVienShk.Columns[3].HeaderText = "Quan hệ với chủ hộ";
         }
 
         private void btnThemTv_Click(object sender, EventArgs e)

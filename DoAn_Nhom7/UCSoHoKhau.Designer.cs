@@ -82,9 +82,9 @@
             this.lblQuanHe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblQuanHe.Location = new System.Drawing.Point(15, 297);
             this.lblQuanHe.Name = "lblQuanHe";
-            this.lblQuanHe.Size = new System.Drawing.Size(158, 20);
+            this.lblQuanHe.Size = new System.Drawing.Size(153, 20);
             this.lblQuanHe.TabIndex = 35;
-            this.lblQuanHe.Text = "Quan he voi chu ho:";
+            this.lblQuanHe.Text = "Quan hệ với chủ hộ";
             // 
             // txtQuanHe
             // 
@@ -100,9 +100,9 @@
             this.lblGioiTinh_tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblGioiTinh_tv.Location = new System.Drawing.Point(17, 263);
             this.lblGioiTinh_tv.Name = "lblGioiTinh_tv";
-            this.lblGioiTinh_tv.Size = new System.Drawing.Size(157, 20);
+            this.lblGioiTinh_tv.Size = new System.Drawing.Size(152, 20);
             this.lblGioiTinh_tv.TabIndex = 33;
-            this.lblGioiTinh_tv.Text = "Gioi tinh thanh vien:";
+            this.lblGioiTinh_tv.Text = "Giới tính thành viên";
             // 
             // txtGioiTinh_tv
             // 
@@ -118,9 +118,9 @@
             this.lblHoTen_tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHoTen_tv.Location = new System.Drawing.Point(16, 225);
             this.lblHoTen_tv.Name = "lblHoTen_tv";
-            this.lblHoTen_tv.Size = new System.Drawing.Size(145, 20);
+            this.lblHoTen_tv.Size = new System.Drawing.Size(140, 20);
             this.lblHoTen_tv.TabIndex = 31;
-            this.lblHoTen_tv.Text = "Ho ten thanh vien:";
+            this.lblHoTen_tv.Text = "Họ tên thành viên";
             // 
             // txtHoTen_tv
             // 
@@ -136,9 +136,9 @@
             this.lblCmnd_Tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCmnd_Tv.Location = new System.Drawing.Point(15, 195);
             this.lblCmnd_Tv.Name = "lblCmnd_Tv";
-            this.lblCmnd_Tv.Size = new System.Drawing.Size(139, 20);
+            this.lblCmnd_Tv.Size = new System.Drawing.Size(146, 20);
             this.lblCmnd_Tv.TabIndex = 29;
-            this.lblCmnd_Tv.Text = "Cmnd thanh vien:";
+            this.lblCmnd_Tv.Text = "CMND thành viên:";
             this.lblCmnd_Tv.Click += new System.EventHandler(this.lblCmnd_Tv_Click);
             // 
             // txtCmnd_tv
@@ -156,9 +156,9 @@
             this.lblmaShk_tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblmaShk_tv.Location = new System.Drawing.Point(17, 162);
             this.lblmaShk_tv.Name = "lblmaShk_tv";
-            this.lblmaShk_tv.Size = new System.Drawing.Size(107, 20);
+            this.lblmaShk_tv.Size = new System.Drawing.Size(165, 20);
             this.lblmaShk_tv.TabIndex = 27;
-            this.lblmaShk_tv.Text = "Ma SHK (tv):";
+            this.lblmaShk_tv.Text = "Mã SHK (thanhvien):";
             // 
             // dtgvSoHoKhau
             // 
@@ -179,9 +179,9 @@
             this.btnThemTv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemTv.Location = new System.Drawing.Point(19, 337);
             this.btnThemTv.Name = "btnThemTv";
-            this.btnThemTv.Size = new System.Drawing.Size(107, 43);
+            this.btnThemTv.Size = new System.Drawing.Size(149, 43);
             this.btnThemTv.TabIndex = 37;
-            this.btnThemTv.Text = "Thêm thanh vien";
+            this.btnThemTv.Text = "Thêm thành viên";
             this.btnThemTv.UseVisualStyleBackColor = true;
             this.btnThemTv.Click += new System.EventHandler(this.btnThemTv_Click);
             // 
@@ -189,11 +189,11 @@
             // 
             this.btnXoaTv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaTv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoaTv.Location = new System.Drawing.Point(146, 337);
+            this.btnXoaTv.Location = new System.Drawing.Point(180, 337);
             this.btnXoaTv.Name = "btnXoaTv";
-            this.btnXoaTv.Size = new System.Drawing.Size(100, 43);
+            this.btnXoaTv.Size = new System.Drawing.Size(142, 43);
             this.btnXoaTv.TabIndex = 38;
-            this.btnXoaTv.Text = "Xóa thanh vien";
+            this.btnXoaTv.Text = "Xoá thành viên";
             this.btnXoaTv.UseVisualStyleBackColor = true;
             this.btnXoaTv.Click += new System.EventHandler(this.btnXoaTv_Click);
             // 
@@ -201,11 +201,11 @@
             // 
             this.btnSuaTv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaTv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSuaTv.Location = new System.Drawing.Point(264, 337);
+            this.btnSuaTv.Location = new System.Drawing.Point(328, 337);
             this.btnSuaTv.Name = "btnSuaTv";
-            this.btnSuaTv.Size = new System.Drawing.Size(84, 42);
+            this.btnSuaTv.Size = new System.Drawing.Size(137, 42);
             this.btnSuaTv.TabIndex = 39;
-            this.btnSuaTv.Text = "Sửa thanh vien";
+            this.btnSuaTv.Text = "Sửa thành viên";
             this.btnSuaTv.UseVisualStyleBackColor = true;
             this.btnSuaTv.Click += new System.EventHandler(this.btnSuaTv_Click);
             // 
@@ -217,7 +217,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 25);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Thong tin so ho khau:";
+            this.label2.Text = "Thông tin sổ hộ khẩu:";
             // 
             // txtMaShk_tv
             // 
@@ -249,7 +249,7 @@
             this.pnThanhvien.Controls.Add(this.dtgvThanhVienShk);
             this.pnThanhvien.Location = new System.Drawing.Point(472, 64);
             this.pnThanhvien.Name = "pnThanhvien";
-            this.pnThanhvien.Size = new System.Drawing.Size(385, 418);
+            this.pnThanhvien.Size = new System.Drawing.Size(483, 418);
             this.pnThanhvien.TabIndex = 29;
             // 
             // btnXem
@@ -272,7 +272,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 25);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Thanh vien so ho khau:";
+            this.label1.Text = "Thành viên sổ hộ khẩu:";
             // 
             // dtgvThanhVienShk
             // 

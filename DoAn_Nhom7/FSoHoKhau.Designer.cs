@@ -274,7 +274,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 25);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Thanh vien so ho khau:";
+            this.label1.Text = "Thành viên sổ hộ khẩu:";
             // 
             // dtgvSoHoKhau
             // 
@@ -295,7 +295,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 25);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Thong tin so ho khau:";
+            this.label2.Text = "Thông tin sổ hộ khẩu:";
             // 
             // btnXem
             // 
@@ -341,7 +341,7 @@
             this.btnThemTv.Name = "btnThemTv";
             this.btnThemTv.Size = new System.Drawing.Size(184, 45);
             this.btnThemTv.TabIndex = 37;
-            this.btnThemTv.Text = "Thêm thanh vien";
+            this.btnThemTv.Text = "Thêm thành viên";
             this.btnThemTv.UseVisualStyleBackColor = true;
             this.btnThemTv.Click += new System.EventHandler(this.btnThemTv_Click);
             // 
@@ -353,7 +353,7 @@
             this.btnXoaTv.Name = "btnXoaTv";
             this.btnXoaTv.Size = new System.Drawing.Size(184, 45);
             this.btnXoaTv.TabIndex = 38;
-            this.btnXoaTv.Text = "Xóa thanh vien";
+            this.btnXoaTv.Text = "Xóa thành viên";
             this.btnXoaTv.UseVisualStyleBackColor = true;
             this.btnXoaTv.Click += new System.EventHandler(this.btnXoaTv_Click);
             // 
@@ -365,7 +365,7 @@
             this.btnSuaTv.Name = "btnSuaTv";
             this.btnSuaTv.Size = new System.Drawing.Size(184, 45);
             this.btnSuaTv.TabIndex = 39;
-            this.btnSuaTv.Text = "Sửa thanh vien";
+            this.btnSuaTv.Text = "Sửa thành viên";
             this.btnSuaTv.UseVisualStyleBackColor = true;
             this.btnSuaTv.Click += new System.EventHandler(this.btnSuaTv_Click);
             // 
@@ -377,7 +377,7 @@
             this.lblQuanHe.Name = "lblQuanHe";
             this.lblQuanHe.Size = new System.Drawing.Size(188, 25);
             this.lblQuanHe.TabIndex = 35;
-            this.lblQuanHe.Text = "Quan he voi chu ho:";
+            this.lblQuanHe.Text = "Quan hệ với chủ hộ:";
             // 
             // txtQuanHe
             // 
@@ -395,7 +395,7 @@
             this.lblGioiTinh_tv.Name = "lblGioiTinh_tv";
             this.lblGioiTinh_tv.Size = new System.Drawing.Size(183, 25);
             this.lblGioiTinh_tv.TabIndex = 33;
-            this.lblGioiTinh_tv.Text = "Gioi tinh thanh vien:";
+            this.lblGioiTinh_tv.Text = "Giới tính thành viên:";
             // 
             // txtGioiTinh_tv
             // 
@@ -413,7 +413,7 @@
             this.lblHoTen_tv.Name = "lblHoTen_tv";
             this.lblHoTen_tv.Size = new System.Drawing.Size(170, 25);
             this.lblHoTen_tv.TabIndex = 31;
-            this.lblHoTen_tv.Text = "Ho ten thanh vien:";
+            this.lblHoTen_tv.Text = "Họ tên thành viên:";
             // 
             // txtHoTen_tv
             // 
@@ -429,9 +429,9 @@
             this.lblCmnd_Tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCmnd_Tv.Location = new System.Drawing.Point(23, 293);
             this.lblCmnd_Tv.Name = "lblCmnd_Tv";
-            this.lblCmnd_Tv.Size = new System.Drawing.Size(166, 25);
+            this.lblCmnd_Tv.Size = new System.Drawing.Size(173, 25);
             this.lblCmnd_Tv.TabIndex = 29;
-            this.lblCmnd_Tv.Text = "Cmnd thanh vien:";
+            this.lblCmnd_Tv.Text = "CMND thành viên:";
             // 
             // txtCmnd_tv
             // 
@@ -447,9 +447,9 @@
             this.lblmaShk_tv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblmaShk_tv.Location = new System.Drawing.Point(23, 241);
             this.lblmaShk_tv.Name = "lblmaShk_tv";
-            this.lblmaShk_tv.Size = new System.Drawing.Size(127, 25);
+            this.lblmaShk_tv.Size = new System.Drawing.Size(197, 25);
             this.lblmaShk_tv.TabIndex = 27;
-            this.lblmaShk_tv.Text = "Ma SHK (tv):";
+            this.lblmaShk_tv.Text = "Mã SHK (thànhviên):";
             // 
             // txtMaShk_tv
             // 

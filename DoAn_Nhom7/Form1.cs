@@ -38,6 +38,23 @@ namespace DoAn_Nhom7
         {
             LayDanhSach();
             dGVDanhSach.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dGVDanhSach.Columns[0].HeaderText = "Họ tên";
+            dGVDanhSach.Columns[1].HeaderText = "Ngày tháng năm sinh";
+            dGVDanhSach.Columns[2].HeaderText = "Giới tính";
+            dGVDanhSach.Columns[3].HeaderText = "CMND";
+            dGVDanhSach.Columns[4].HeaderText = "Dân tộc ";
+            dGVDanhSach.Columns[5].HeaderText = "Tình trạng hôn nhân";
+            dGVDanhSach.Columns[6].HeaderText = "Nơi đăng kí khai sinh";
+            dGVDanhSach.Columns[7].HeaderText = "Quê quán";
+            dGVDanhSach.Columns[8].HeaderText = "Nơi thường trú";
+            dGVDanhSach.Columns[9].HeaderText = "Trình độ học vấn";
+            dGVDanhSach.Columns[10].HeaderText = "Nghề nghiệp";
+            dGVDanhSach.Columns[11].HeaderText = "Lương";
+            dGVDanhSach.Columns[12].HeaderText = "Số lần kết hôn";
+            dGVDanhSach.Columns[13].HeaderText = "Tạm trú";
+            dGVDanhSach.Columns[14].HeaderText = "Nơi cấp CMND";
+            dGVDanhSach.Columns[15].HeaderText = "Ngày cấp";
+            dGVDanhSach.Columns[16].HeaderText = "Quốc tịch";
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -103,35 +120,35 @@ namespace DoAn_Nhom7
             string dv = cmbTimKiem.Text;
             switch (dv)
             {
-                case "Can cuoc cong dan":
+                case "CĂN CƯỚC CÔNG DÂN":
                     FCongDan formCCCD = new FCongDan();
                     formCCCD.Show();
                     break;
-                case "Thue":
+                case "THUẾ":
                     FThue fThue = new FThue();
                     fThue.Show();
                     break;
-                case "So ho khau":
+                case "SỔ HỘ KHẨU":
                     FSoHoKhau fShk = new FSoHoKhau();
                     fShk.ShowDialog();
                     break;
-                case "Tam tru, tam vang":
+                case "TẠM TRÚ/ TẠM VẮNG":
                     FTamTruTamVang fTttv = new FTamTruTamVang();
                     fTttv.ShowDialog();
                     break;
-                case "Thong ke dan so":
+                case "THỐNG KÊ DÂN SỐ":
                     FThongKe fTkds = new FThongKe();
                     fTkds.ShowDialog();
                     break;
-                case "Hon nhan va gia dinh":
+                case "HÔN NHÂN VÀ GIA ĐÌNH":
                     HonNhanVaGiaDinh fHnvgd = new HonNhanVaGiaDinh();
                     fHnvgd.ShowDialog();
                     break;
-                case "Khai sinh":
+                case "KHAI SINH":
                     FKhaiSinh fKs = new FKhaiSinh();
                     fKs.Show();
                     break;
-                case "Khai tu":
+                case "KHAI TỬ":
                     FKhaiTu fKt = new FKhaiTu();
                     fKt.Show();
                     break;

@@ -39,6 +39,7 @@
             this.ucThue1.Name = "ucThue1";
             this.ucThue1.Size = new System.Drawing.Size(1381, 765);
             this.ucThue1.TabIndex = 0;
+            this.ucThue1.Load += new System.EventHandler(this.ucThue1_Load);
             // 
             // FThue
             // 

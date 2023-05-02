@@ -126,11 +126,11 @@
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.BackColor = System.Drawing.Color.White;
             this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTimKiem.Location = new System.Drawing.Point(31, 20);
+            this.lblTimKiem.Location = new System.Drawing.Point(36, 20);
             this.lblTimKiem.Name = "lblTimKiem";
             this.lblTimKiem.Size = new System.Drawing.Size(181, 25);
             this.lblTimKiem.TabIndex = 8;
-            this.lblTimKiem.Text = "Tim kiem dich vu:";
+            this.lblTimKiem.Text = "Tìm kiếm dịch vụ:";
             // 
             // cmbTimKiem
             // 
@@ -148,15 +148,16 @@
             this.cmbTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.cmbTimKiem.FormattingEnabled = true;
+            this.cmbTimKiem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbTimKiem.Items.AddRange(new object[] {
-            "Can cuoc cong dan",
-            "Thue",
-            "So ho khau",
-            "Tam tru, tam vang",
-            "Thong ke dan so",
-            "Hon nhan va gia dinh",
-            "Khai sinh",
-            "Khai tu"});
+            "CĂN CƯỚC CÔNG DÂN",
+            "THUẾ",
+            "SỔ HỘ KHẨU",
+            "TẠM TRÚ/ TẠM VẮNG",
+            "THỐNG KÊ DÂN SỐ",
+            "HÔN NHÂN VÀ GIA ĐÌNH",
+            "KHAI SINH",
+            "KHAI TỬ"});
             this.cmbTimKiem.Location = new System.Drawing.Point(233, 17);
             this.cmbTimKiem.Name = "cmbTimKiem";
             this.cmbTimKiem.Size = new System.Drawing.Size(526, 28);
@@ -169,11 +170,11 @@
             this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(376, 22);
+            this.label1.Location = new System.Drawing.Point(325, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(635, 51);
+            this.label1.Size = new System.Drawing.Size(740, 51);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Quan Ly Cong Dan Thanh Pho";
+            this.label1.Text = "QUẢN LÝ CÔNG DÂN THÀNH PHỐ";
             // 
             // tabPage2
             // 
@@ -205,7 +206,7 @@
             this.rdbChuaKetHon.Size = new System.Drawing.Size(174, 33);
             this.rdbChuaKetHon.TabIndex = 11;
             this.rdbChuaKetHon.TabStop = true;
-            this.rdbChuaKetHon.Text = "Chua ket hon";
+            this.rdbChuaKetHon.Text = "Chưa kết hôn";
             this.rdbChuaKetHon.UseVisualStyleBackColor = false;
             // 
             // rdbDaKetHon
@@ -218,7 +219,7 @@
             this.rdbDaKetHon.Size = new System.Drawing.Size(148, 33);
             this.rdbDaKetHon.TabIndex = 10;
             this.rdbDaKetHon.TabStop = true;
-            this.rdbDaKetHon.Text = "Da ket hon";
+            this.rdbDaKetHon.Text = "Đã kết hôn";
             this.rdbDaKetHon.UseVisualStyleBackColor = false;
            
             // 
@@ -231,7 +232,7 @@
             this.lblTinhTrang.Name = "lblTinhTrang";
             this.lblTinhTrang.Size = new System.Drawing.Size(127, 29);
             this.lblTinhTrang.TabIndex = 9;
-            this.lblTinhTrang.Text = "Tinh trang:";
+            this.lblTinhTrang.Text = "Tình trạng:";
             // 
             // rdbTatCa
             // 
@@ -244,7 +245,7 @@
             this.rdbTatCa.Size = new System.Drawing.Size(100, 33);
             this.rdbTatCa.TabIndex = 8;
             this.rdbTatCa.TabStop = true;
-            this.rdbTatCa.Text = "Tat ca";
+            this.rdbTatCa.Text = "Tất cả";
             this.rdbTatCa.UseVisualStyleBackColor = false;
             // 
             // btnRefresh
@@ -282,7 +283,7 @@
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(83, 42);
             this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "Tim";
+            this.btnTimKiem.Text = "Tìm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -323,18 +324,18 @@
             this.pnDichVu.BackColor = System.Drawing.Color.LightBlue;
             this.pnDichVu.Controls.Add(this.pnHienThi);
             this.pnDichVu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnDichVu.Location = new System.Drawing.Point(239, 3);
+            this.pnDichVu.Location = new System.Drawing.Point(264, 3);
             this.pnDichVu.Name = "pnDichVu";
-            this.pnDichVu.Size = new System.Drawing.Size(1170, 671);
+            this.pnDichVu.Size = new System.Drawing.Size(1145, 671);
             this.pnDichVu.TabIndex = 1;
             // 
             // pnHienThi
             // 
             this.pnHienThi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pnHienThi.Location = new System.Drawing.Point(9, 4);
+            this.pnHienThi.Location = new System.Drawing.Point(3, 4);
             this.pnHienThi.Name = "pnHienThi";
-            this.pnHienThi.Size = new System.Drawing.Size(1158, 662);
+            this.pnHienThi.Size = new System.Drawing.Size(1164, 662);
             this.pnHienThi.TabIndex = 0;
             // 
             // pnMenu
@@ -351,7 +352,7 @@
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenu.Location = new System.Drawing.Point(3, 3);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(238, 671);
+            this.pnMenu.Size = new System.Drawing.Size(255, 671);
             this.pnMenu.TabIndex = 0;
             // 
             // btnKhaiTu
@@ -362,9 +363,9 @@
             this.btnKhaiTu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnKhaiTu.Location = new System.Drawing.Point(25, 591);
             this.btnKhaiTu.Name = "btnKhaiTu";
-            this.btnKhaiTu.Size = new System.Drawing.Size(189, 43);
+            this.btnKhaiTu.Size = new System.Drawing.Size(227, 43);
             this.btnKhaiTu.TabIndex = 8;
-            this.btnKhaiTu.Text = "Khai tu";
+            this.btnKhaiTu.Text = "KHAI TỬ";
             this.btnKhaiTu.UseVisualStyleBackColor = false;
             this.btnKhaiTu.Click += new System.EventHandler(this.btnKhaiTu_Click);
             // 
@@ -376,9 +377,9 @@
             this.btnKhaiSinh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnKhaiSinh.Location = new System.Drawing.Point(25, 520);
             this.btnKhaiSinh.Name = "btnKhaiSinh";
-            this.btnKhaiSinh.Size = new System.Drawing.Size(189, 43);
+            this.btnKhaiSinh.Size = new System.Drawing.Size(227, 43);
             this.btnKhaiSinh.TabIndex = 7;
-            this.btnKhaiSinh.Text = "Khai sinh";
+            this.btnKhaiSinh.Text = "KHAI SINH";
             this.btnKhaiSinh.UseVisualStyleBackColor = false;
             // 
             // btnHonNhan
@@ -389,9 +390,9 @@
             this.btnHonNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnHonNhan.Location = new System.Drawing.Point(25, 453);
             this.btnHonNhan.Name = "btnHonNhan";
-            this.btnHonNhan.Size = new System.Drawing.Size(189, 43);
+            this.btnHonNhan.Size = new System.Drawing.Size(227, 43);
             this.btnHonNhan.TabIndex = 6;
-            this.btnHonNhan.Text = "Hon nhan";
+            this.btnHonNhan.Text = "HÔN NHÂN";
             this.btnHonNhan.UseVisualStyleBackColor = false;
             this.btnHonNhan.Click += new System.EventHandler(this.btnHonNhan_Click);
             // 
@@ -403,9 +404,9 @@
             this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThongKe.Location = new System.Drawing.Point(25, 385);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(189, 43);
+            this.btnThongKe.Size = new System.Drawing.Size(227, 43);
             this.btnThongKe.TabIndex = 5;
-            this.btnThongKe.Text = "Thong ke dan so";
+            this.btnThongKe.Text = "THỐNG KÊ DÂN SỐ";
             this.btnThongKe.UseVisualStyleBackColor = false;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
@@ -415,11 +416,11 @@
             this.btnTamTru.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTamTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTamTru.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTamTru.Location = new System.Drawing.Point(25, 313);
+            this.btnTamTru.Location = new System.Drawing.Point(25, 315);
             this.btnTamTru.Name = "btnTamTru";
-            this.btnTamTru.Size = new System.Drawing.Size(189, 43);
+            this.btnTamTru.Size = new System.Drawing.Size(227, 43);
             this.btnTamTru.TabIndex = 3;
-            this.btnTamTru.Text = "Tam tru tam vang";
+            this.btnTamTru.Text = "TẠM TRÚ/TẠM VẮNG";
             this.btnTamTru.UseVisualStyleBackColor = false;
             this.btnTamTru.Click += new System.EventHandler(this.btnTamTru_Click);
             // 
@@ -431,9 +432,9 @@
             this.btnSoHoKhau.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSoHoKhau.Location = new System.Drawing.Point(25, 245);
             this.btnSoHoKhau.Name = "btnSoHoKhau";
-            this.btnSoHoKhau.Size = new System.Drawing.Size(189, 43);
+            this.btnSoHoKhau.Size = new System.Drawing.Size(227, 43);
             this.btnSoHoKhau.TabIndex = 2;
-            this.btnSoHoKhau.Text = "So ho khau";
+            this.btnSoHoKhau.Text = "SỔ HỘ KHẨU";
             this.btnSoHoKhau.UseVisualStyleBackColor = false;
             this.btnSoHoKhau.Click += new System.EventHandler(this.btnSoHoKhau_Click);
             // 
@@ -445,9 +446,9 @@
             this.btnThue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnThue.Location = new System.Drawing.Point(25, 173);
             this.btnThue.Name = "btnThue";
-            this.btnThue.Size = new System.Drawing.Size(189, 43);
+            this.btnThue.Size = new System.Drawing.Size(227, 43);
             this.btnThue.TabIndex = 1;
-            this.btnThue.Text = "Thue";
+            this.btnThue.Text = "THUẾ";
             this.btnThue.UseVisualStyleBackColor = false;
             this.btnThue.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -459,7 +460,7 @@
             this.btnCCCD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCCCD.Location = new System.Drawing.Point(25, 101);
             this.btnCCCD.Name = "btnCCCD";
-            this.btnCCCD.Size = new System.Drawing.Size(189, 43);
+            this.btnCCCD.Size = new System.Drawing.Size(227, 43);
             this.btnCCCD.TabIndex = 0;
             this.btnCCCD.Text = "CCCD/CMND";
             this.btnCCCD.UseVisualStyleBackColor = false;

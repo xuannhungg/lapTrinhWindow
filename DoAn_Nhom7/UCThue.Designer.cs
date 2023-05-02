@@ -84,7 +84,7 @@
             this.cbChuaDong.Name = "cbChuaDong";
             this.cbChuaDong.Size = new System.Drawing.Size(111, 24);
             this.cbChuaDong.TabIndex = 17;
-            this.cbChuaDong.Text = "Chua dong";
+            this.cbChuaDong.Text = "Chưa đóng";
             this.cbChuaDong.UseVisualStyleBackColor = true;
             // 
             // cbDaDong
@@ -93,9 +93,9 @@
             this.cbDaDong.Enabled = false;
             this.cbDaDong.Location = new System.Drawing.Point(220, 137);
             this.cbDaDong.Name = "cbDaDong";
-            this.cbDaDong.Size = new System.Drawing.Size(94, 24);
+            this.cbDaDong.Size = new System.Drawing.Size(93, 24);
             this.cbDaDong.TabIndex = 16;
-            this.cbDaDong.Text = "Da dong";
+            this.cbDaDong.Text = "Đã đóng";
             this.cbDaDong.UseVisualStyleBackColor = true;
             // 
             // txtCCCD
@@ -280,7 +280,7 @@
             this.lblTinhTrang.Name = "lblTinhTrang";
             this.lblTinhTrang.Size = new System.Drawing.Size(89, 20);
             this.lblTinhTrang.TabIndex = 15;
-            this.lblTinhTrang.Text = "Tinh trang:";
+            this.lblTinhTrang.Text = "Tình trạng:";
             // 
             // tabControl1
             // 
@@ -340,7 +340,7 @@
             this.lblLuong.Name = "lblLuong";
             this.lblLuong.Size = new System.Drawing.Size(60, 20);
             this.lblLuong.TabIndex = 16;
-            this.lblLuong.Text = "Luong:";
+            this.lblLuong.Text = "Lương:";
             // 
             // lblTen
             // 
@@ -349,7 +349,7 @@
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(42, 20);
             this.lblTen.TabIndex = 18;
-            this.lblTen.Text = "Ten:";
+            this.lblTen.Text = "Tên:";
             // 
             // txtNgheNghiep
             // 
@@ -370,17 +370,17 @@
             this.lblNgheNghiep.AutoSize = true;
             this.lblNgheNghiep.Location = new System.Drawing.Point(12, 55);
             this.lblNgheNghiep.Name = "lblNgheNghiep";
-            this.lblNgheNghiep.Size = new System.Drawing.Size(110, 20);
+            this.lblNgheNghiep.Size = new System.Drawing.Size(107, 20);
             this.lblNgheNghiep.TabIndex = 18;
-            this.lblNgheNghiep.Text = "Nghe Nghiep:";
+            this.lblNgheNghiep.Text = "Nghề nghiệp:";
             // 
             // btnDongTien
             // 
             this.btnDongTien.Location = new System.Drawing.Point(357, 112);
             this.btnDongTien.Name = "btnDongTien";
-            this.btnDongTien.Size = new System.Drawing.Size(90, 35);
+            this.btnDongTien.Size = new System.Drawing.Size(99, 35);
             this.btnDongTien.TabIndex = 17;
-            this.btnDongTien.Text = "Dong Tien";
+            this.btnDongTien.Text = "Đóng tiền";
             this.btnDongTien.UseVisualStyleBackColor = true;
             this.btnDongTien.Click += new System.EventHandler(this.btnDongTien_Click);
             // 
@@ -407,7 +407,7 @@
             this.lblSoTienCanDong.Name = "lblSoTienCanDong";
             this.lblSoTienCanDong.Size = new System.Drawing.Size(156, 20);
             this.lblSoTienCanDong.TabIndex = 16;
-            this.lblSoTienCanDong.Text = "So tien can dong:";
+            this.lblSoTienCanDong.Text = "Số tiền cần đóng:";
             // 
             // panel1
             // 
@@ -430,9 +430,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
+            this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Muc thue (%):";
+            this.label2.Text = "Mức thuế(%):";
             // 
             // txtMucThue
             // 
@@ -448,7 +448,7 @@
             this.lblLoaiThue.Name = "lblLoaiThue";
             this.lblLoaiThue.Size = new System.Drawing.Size(83, 20);
             this.lblLoaiThue.TabIndex = 12;
-            this.lblLoaiThue.Text = "Loai thue:";
+            this.lblLoaiThue.Text = "Loại thuế:";
             // 
             // txtLoaiThue
             // 
