@@ -102,5 +102,36 @@ namespace DoAn_Nhom7
                 }
             }
         }
+        public void LapThongTin(TextBox txtCmnd_tv,TextBox txtHoTen_tv, TextBox txtGioiTinh_tv)
+        {
+            string sqlStr = string.Format("SELECT hoTen,gioiTinh FROM CongDan WHERE cmnd = '" + txtCmnd_tv.Text + "' ");
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                    SqlDataReader dta = cmd.ExecuteReader();
+                    if (dta.Read())
+                    {
+                        txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
+                        txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
+                    }
+                    else
+                    {
+                        txtHoTen_tv.Text = "";
+                        txtGioiTinh_tv.Text = "";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
     }
 }

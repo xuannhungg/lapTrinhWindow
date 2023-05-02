@@ -89,7 +89,7 @@ namespace DoAn_Nhom7
         private void btnSuaTv_Click(object sender, EventArgs e)
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaSoHoKhau.Text,txtMaShk_tv.Text, txtCmnd_tv.Text, txtQuanHe.Text);
-            tvDao.SuaThanhVien(tv);
+            tvDao.SuaThanhVien(tv,txtQuanHe.Text);
             LayDanhSachThanhVien();
         }
 
