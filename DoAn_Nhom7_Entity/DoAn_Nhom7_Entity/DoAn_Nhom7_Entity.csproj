@@ -44,6 +44,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +105,9 @@
       <DependentUpon>QuanLiCongDanModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="SoHoKhau.cs">
+      <DependentUpon>QuanLiCongDanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
       <DependentUpon>QuanLiCongDanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ThanhVienSoHoKhau.cs">

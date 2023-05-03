@@ -58,22 +58,22 @@
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbldltd = new System.Windows.Forms.Label();
             this.lblchxh = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(15, 251);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 20);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 70;
-            this.label1.Text = "từ ngày:";
+            this.label1.Text = "từ ngày*:";
             // 
             // txtCongAn
             // 
@@ -293,12 +293,12 @@
             // lblTamTru
             // 
             this.lblTamTru.AutoSize = true;
-            this.lblTamTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTamTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTamTru.Location = new System.Drawing.Point(14, 171);
             this.lblTamTru.Name = "lblTamTru";
-            this.lblTamTru.Size = new System.Drawing.Size(130, 20);
+            this.lblTamTru.Size = new System.Drawing.Size(178, 20);
             this.lblTamTru.TabIndex = 48;
-            this.lblTamTru.Text = "Chỗ ở hiện nay :";
+            this.lblTamTru.Text = "Đăng kí tạm trú tại*:";
             // 
             // lblThuongTru
             // 
@@ -379,6 +379,26 @@
             this.panel1.Size = new System.Drawing.Size(776, 442);
             this.panel1.TabIndex = 48;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(264, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(241, 15);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "*Nhập vào đây và click enter để điền nhanh";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(475, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(231, 15);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "*Nhập cmnd và click enter để điền nhanh";
+            // 
             // lbldltd
             // 
             this.lbldltd.AutoSize = true;
@@ -398,26 +418,6 @@
             this.lblchxh.Size = new System.Drawing.Size(443, 25);
             this.lblchxh.TabIndex = 45;
             this.lblchxh.Text = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(475, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 15);
-            this.label2.TabIndex = 88;
-            this.label2.Text = "*Nhập cmnd và click enter để điền nhanh";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(301, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 15);
-            this.label3.TabIndex = 89;
-            this.label3.Text = "*Nhập vào đây và click enter để điền nhanh";
             // 
             // UCTamTruTamVang
             // 

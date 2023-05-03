@@ -1,5 +1,4 @@
-use ahihi
-
+use project_LTWD
 --CONG DAN--
 CREATE TABLE CongDan (
  hoTen varchar(100),
@@ -38,7 +37,6 @@ VALUES ('dvc', '3/3/2008', 'nu','7','kinh','Doc Than','nghe an','nghe an','nghe 
 select * from CongDan
 
 --QUAN HE--
-use ahihi
 
 GO
 CREATE TABLE QuanHe (
@@ -60,7 +58,6 @@ VALUES ('4' , '5' , 'Vo','Chong');
 select * from QuanHe
 
 --SO HO KHAU--
-use ahihi
 
 CREATE TABLE SoHoKhau(
 	maSoHoKhau varchar (200) NOT NULL,
@@ -84,23 +81,17 @@ INSERT INTO SoHoKhau(maSoHoKhau,CMNDChuHo,maKV,xaPhuong,quanHuyen,tinhTP,diaChi,
 Values('2','4','1','Linh Xuan','Thu Duc','TPHCM','Duong so 5','1990/2/1')
 
 select * from SoHoKhau
-use ahihi
 
 --THANH VIEN SO HO KHAU--
 CREATE TABLE ThanhVienSoHoKhau(
-	maSoHoKhau varchar(200) not null ,
-	CMNDChuHo varchar (100) NOT NULL ,
-	CMNDThanhVien varchar (100) NOT NULL,
-	quanHeVoiChuHo varchar(100) not null,
-	CONSTRAINT fk_thanhVienSoHoKhau_soHoKhau
-	FOREIGN KEY (maSoHoKhau,CMNDChuHo)
-	REFERENCES SoHoKhau (maSoHoKhau,CMNDChuHo),
-	CONSTRAINT pk_thanhVien_congDan
-	FOREIGN KEY (CMNDThanhVien)
-	REFERENCES CongDan (cmnd),
-	CONSTRAINT fk_thanhVien_quanHe
-	FOREIGN KEY (CmndChuHo, CMNDThanhVien)
-	REFERENCES QuanHe (CMND1, CMND2)
+    maSoHoKhau varchar(200) not null,
+    CMNDChuHo varchar (100) NOT NULL ,
+    CMNDThanhVien varchar (100) NOT NULL,
+    quanHeVoiChuHo varchar(100) not null,
+    CONSTRAINT pk_ThanhVienSoHoKhau PRIMARY KEY (maSoHoKhau, CMNDChuHo, CMNDThanhVien),
+    CONSTRAINT fk_thanhVienSoHoKhau_soHoKhau FOREIGN KEY (maSoHoKhau, CMNDChuHo) REFERENCES SoHoKhau (maSoHoKhau, CMNDChuHo),
+    CONSTRAINT fk_thanhVien_congDan FOREIGN KEY (CMNDThanhVien) REFERENCES CongDan (cmnd),
+    CONSTRAINT fk_thanhVien_quanHe FOREIGN KEY (CMNDChuHo, CMNDThanhVien) REFERENCES QuanHe (CMND1, CMND2)
 );
 
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChuHo)
@@ -110,8 +101,6 @@ values ('1','1','3','Con');
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChuHo)
 values ('2','4','5','Vo');
 select * from ThanhVienSoHoKhau
-
-
 
 --THUE--
 Create table Thue (
@@ -137,7 +126,7 @@ select * from Thue
 
 --TAI KHOAN--
 CREATE TABLE TaiKhoan (
- TaiKhoan varchar(100),
+ TaiKhoan varchar(100) primary key,
  MatKhau varchar(255)
 );
 INSERT INTO TaiKhoan (TaiKhoan, MatKhau)

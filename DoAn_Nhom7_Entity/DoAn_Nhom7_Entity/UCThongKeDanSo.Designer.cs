@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCThongKeDanSo));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblchxh = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chartTyLeNamNu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTyLeNamNu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Thistle;
+            this.panel1.Controls.Add(this.chartTyLeNamNu);
             this.panel1.Controls.Add(this.lblchxh);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(25, 22);
@@ -67,6 +73,24 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // chartTyLeNamNu
+            // 
+            this.chartTyLeNamNu.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.Name = "ChartArea1";
+            this.chartTyLeNamNu.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTyLeNamNu.Legends.Add(legend1);
+            this.chartTyLeNamNu.Location = new System.Drawing.Point(393, 41);
+            this.chartTyLeNamNu.Name = "chartTyLeNamNu";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Tỷ Lệ Nam Nữ";
+            this.chartTyLeNamNu.Series.Add(series1);
+            this.chartTyLeNamNu.Size = new System.Drawing.Size(393, 364);
+            this.chartTyLeNamNu.TabIndex = 3;
+            this.chartTyLeNamNu.Text = "chart1";
+            // 
             // UCThongKeDanSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -74,17 +98,19 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCThongKeDanSo";
             this.Size = new System.Drawing.Size(992, 573);
+            this.Load += new System.EventHandler(this.UCThongKeDanSo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTyLeNamNu)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblchxh;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTyLeNamNu;
     }
 }

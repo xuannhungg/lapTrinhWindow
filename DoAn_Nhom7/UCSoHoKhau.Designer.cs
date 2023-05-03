@@ -513,14 +513,14 @@
             // 
             // txtTraCuu
             // 
-            this.txtTraCuu.Location = new System.Drawing.Point(143, 48);
+            this.txtTraCuu.Location = new System.Drawing.Point(161, 70);
             this.txtTraCuu.Name = "txtTraCuu";
             this.txtTraCuu.Size = new System.Drawing.Size(100, 22);
             this.txtTraCuu.TabIndex = 32;
             // 
             // btnTraCuu
             // 
-            this.btnTraCuu.Location = new System.Drawing.Point(256, 51);
+            this.btnTraCuu.Location = new System.Drawing.Point(279, 69);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(75, 23);
             this.btnTraCuu.TabIndex = 33;
@@ -531,11 +531,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 54);
+            this.label4.Location = new System.Drawing.Point(9, 73);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.Size = new System.Drawing.Size(131, 16);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Nhập CMND";
+            this.label4.Text = "Nhập CMND cần tìm:";
             // 
             // UCSoHoKhau
             // 
