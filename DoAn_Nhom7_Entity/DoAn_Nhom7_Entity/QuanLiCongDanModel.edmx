@@ -51,20 +51,18 @@
           <Property Name="diaChi" Type="varchar" MaxLength="100" />
           <Property Name="ngayLap" Type="varchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'project_LTWD.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="TaiKhoan">
-          <Property Name="TaiKhoan" Type="varchar" MaxLength="100" />
+          <Key>
+            <PropertyRef Name="TaiKhoan" />
+          </Key>
+          <Property Name="TaiKhoan" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="MatKhau" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        </EntityType>
         <EntityType Name="ThanhVienSoHoKhau">
           <Key>
             <PropertyRef Name="maSoHoKhau" />
             <PropertyRef Name="CMNDChuHo" />
             <PropertyRef Name="CMNDThanhVien" />
-            <PropertyRef Name="quanHeVoiChuHo" />
           </Key>
           <Property Name="maSoHoKhau" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="CMNDChuHo" Type="varchar" MaxLength="100" Nullable="false" />
@@ -80,7 +78,7 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
           <Property Name="MucThue" Type="real" />
           <Property Name="TinhTrang" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__QuanHe__CMND1__28ED12D1">
+        <Association Name="FK__QuanHe__CMND1__3E723F9C">
           <End Role="CongDan" Type="Self.CongDan" Multiplicity="1" />
           <End Role="QuanHe" Type="Self.QuanHe" Multiplicity="*" />
           <ReferentialConstraint>
@@ -92,7 +90,7 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__QuanHe__CMND2__29E1370A">
+        <Association Name="FK__QuanHe__CMND2__3F6663D5">
           <End Role="CongDan" Type="Self.CongDan" Multiplicity="1" />
           <End Role="QuanHe" Type="Self.QuanHe" Multiplicity="*" />
           <ReferentialConstraint>
@@ -101,6 +99,18 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
             </Principal>
             <Dependent Role="QuanHe">
               <PropertyRef Name="CMND2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_thanhVien_congDan">
+          <End Role="CongDan" Type="Self.CongDan" Multiplicity="1" />
+          <End Role="ThanhVienSoHoKhau" Type="Self.ThanhVienSoHoKhau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CongDan">
+              <PropertyRef Name="cmnd" />
+            </Principal>
+            <Dependent Role="ThanhVienSoHoKhau">
+              <PropertyRef Name="CMNDThanhVien" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -144,18 +154,6 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="pk_thanhVien_congDan">
-          <End Role="CongDan" Type="Self.CongDan" Multiplicity="1" />
-          <End Role="ThanhVienSoHoKhau" Type="Self.ThanhVienSoHoKhau" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CongDan">
-              <PropertyRef Name="cmnd" />
-            </Principal>
-            <Dependent Role="ThanhVienSoHoKhau">
-              <PropertyRef Name="CMNDThanhVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="thue_theo_cccd">
           <End Role="CongDan" Type="Self.CongDan" Multiplicity="1" />
           <End Role="Thue" Type="Self.Thue" Multiplicity="0..1" />
@@ -172,22 +170,20 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
           <EntitySet Name="CongDan" EntityType="Self.CongDan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuanHe" EntityType="Self.QuanHe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SoHoKhau" EntityType="Self.SoHoKhau" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThanhVienSoHoKhau" EntityType="Self.ThanhVienSoHoKhau" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thue" EntityType="Self.Thue" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ThanhVienSoHoKhau" EntityType="Self.ThanhVienSoHoKhau" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ThanhVienSoHoKhau].[maSoHoKhau] AS [maSoHoKhau], 
-    [ThanhVienSoHoKhau].[CMNDChuHo] AS [CMNDChuHo], 
-    [ThanhVienSoHoKhau].[CMNDThanhVien] AS [CMNDThanhVien], 
-    [ThanhVienSoHoKhau].[quanHeVoiChuHo] AS [quanHeVoiChuHo]
-    FROM [dbo].[ThanhVienSoHoKhau] AS [ThanhVienSoHoKhau]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__QuanHe__CMND1__28ED12D1" Association="Self.FK__QuanHe__CMND1__28ED12D1">
+          <AssociationSet Name="FK__QuanHe__CMND1__3E723F9C" Association="Self.FK__QuanHe__CMND1__3E723F9C">
             <End Role="CongDan" EntitySet="CongDan" />
             <End Role="QuanHe" EntitySet="QuanHe" />
           </AssociationSet>
-          <AssociationSet Name="FK__QuanHe__CMND2__29E1370A" Association="Self.FK__QuanHe__CMND2__29E1370A">
+          <AssociationSet Name="FK__QuanHe__CMND2__3F6663D5" Association="Self.FK__QuanHe__CMND2__3F6663D5">
             <End Role="CongDan" EntitySet="CongDan" />
             <End Role="QuanHe" EntitySet="QuanHe" />
+          </AssociationSet>
+          <AssociationSet Name="fk_thanhVien_congDan" Association="Self.fk_thanhVien_congDan">
+            <End Role="CongDan" EntitySet="CongDan" />
+            <End Role="ThanhVienSoHoKhau" EntitySet="ThanhVienSoHoKhau" />
           </AssociationSet>
           <AssociationSet Name="fk_thanhVien_quanHe" Association="Self.fk_thanhVien_quanHe">
             <End Role="QuanHe" EntitySet="QuanHe" />
@@ -200,10 +196,6 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
           <AssociationSet Name="pk_soHoKhau_congDan" Association="Self.pk_soHoKhau_congDan">
             <End Role="CongDan" EntitySet="CongDan" />
             <End Role="SoHoKhau" EntitySet="SoHoKhau" />
-          </AssociationSet>
-          <AssociationSet Name="pk_thanhVien_congDan" Association="Self.pk_thanhVien_congDan">
-            <End Role="CongDan" EntitySet="CongDan" />
-            <End Role="ThanhVienSoHoKhau" EntitySet="ThanhVienSoHoKhau" />
           </AssociationSet>
           <AssociationSet Name="thue_theo_cccd" Association="Self.thue_theo_cccd">
             <End Role="CongDan" EntitySet="CongDan" />
@@ -275,7 +267,6 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
             <PropertyRef Name="maSoHoKhau" />
             <PropertyRef Name="CMNDChuHo" />
             <PropertyRef Name="CMNDThanhVien" />
-            <PropertyRef Name="quanHeVoiChuHo" />
           </Key>
           <Property Name="maSoHoKhau" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CMNDChuHo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -417,7 +408,15 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
             <End Role="SoHoKhau" EntitySet="SoHoKhaus" />
             <End Role="ThanhVienSoHoKhau" EntitySet="ThanhVienSoHoKhaus" />
           </AssociationSet>
+          <EntitySet Name="TaiKhoans" EntityType="project_LTWDModel.TaiKhoan" />
         </EntityContainer>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="TaiKhoan1" />
+          </Key>
+          <Property Name="TaiKhoan1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -488,6 +487,14 @@ warning 6002: The table/view 'project_LTWD.dbo.ThanhVienSoHoKhau' does not have 
                 <ScalarProperty Name="LoaiThue" ColumnName="LoaiThue" />
                 <ScalarProperty Name="MucThue" ColumnName="MucThue" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="project_LTWDModel.TaiKhoan">
+              <MappingFragment StoreEntitySet="TaiKhoan">
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="TaiKhoan1" ColumnName="TaiKhoan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

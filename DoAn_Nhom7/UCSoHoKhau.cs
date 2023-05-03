@@ -232,7 +232,6 @@ namespace DoAn_Nhom7
             hkdao.LapSoHoKhau(txtMaSoHoKhau, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho, txtDiaChi, dtpNgayLap);
         }
 
-
     }
     
 }

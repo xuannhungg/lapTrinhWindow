@@ -17,6 +17,7 @@
         <AssociationConnector Association="project_LTWDModel.thue_theo_cccd" ManuallyRouted="false" />
         <AssociationConnector Association="project_LTWDModel.fk_thanhVien_quanHe" ManuallyRouted="false" />
         <AssociationConnector Association="project_LTWDModel.fk_thanhVienSoHoKhau_soHoKhau" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="project_LTWDModel.TaiKhoan" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
