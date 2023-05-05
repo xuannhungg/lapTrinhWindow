@@ -17,19 +17,29 @@ namespace DoAn_Nhom7
         public void ThietLapMoiQuanHeBoCon(ThanhVienShk tv)
         {
             string sqlStr = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndChuHo, tv.CmndThanhVien, "Con", "Bo");
+
             dbc.XuLy(sqlStr);
         }
         public void ThietLapMoiQuanHeVoChong(ThanhVienShk tv)
         {
-            string sqlStr = string.Format("UPDATE QuanHe SET quanHeVoiCMND1 = 'Vo', quanHeVoiCMND2 = 'Chong' WHERE CMND1 = '{0}' AND CMND2 = '{1}'", tv.CmndChuHo, tv.CmndThanhVien);
+            string sqlStr = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndChuHo, tv.CmndThanhVien, "Vo", "Chong");
+            //string sqlStr1 = string.Format("UPDATE QuanHe SET quanHeVoiCMND1 = 'Vo', quanHeVoiCMND2 = 'Chong' WHERE CMND1 = '{0}' AND CMND2 = '{1}'", tv.CmndChuHo, tv.CmndThanhVien);
+            dbc.XuLy(sqlStr);
+        }
+        public void ThietLapMoiQuanHeBoConDau(ThanhVienShk tv)
+        {
+            string sqlStr = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndChuHo, tv.CmndThanhVien, "Con Dau", "Bo Chong");
+            //string sqlStr1 = string.Format("UPDATE QuanHe SET quanHeVoiCMND1 = 'Con Dau', quanHeVoiCMND2 = 'Bo Chong' WHERE CMND1 = '{0}' AND CMND2 = '{1}'", tv.CmndChuHo, tv.CmndThanhVien);
             dbc.XuLy(sqlStr);
         }
         public void ThemThanhVien(ThanhVienShk tv)
         {
             if (tv.QuanHe == "Con")
                 ThietLapMoiQuanHeBoCon(tv);
-            else
+            else if(tv.QuanHe=="Vo")
                 ThietLapMoiQuanHeVoChong(tv);
+            else
+                ThietLapMoiQuanHeBoConDau(tv);
             string sqlStr = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '{0}', '{1}', '{2}', quanHeVoiCMND1 FROM QuanHe WHERE CMND1 = '{1}' AND CMND2 = '{2}'", tv.MaShk,tv.CmndChuHo, tv.CmndThanhVien);
             dbc.XuLy(sqlStr);
         }
@@ -38,6 +48,8 @@ namespace DoAn_Nhom7
            string qh2 = "";
             if (qh1 == "Con")
                 qh2 = "Bo";
+            else if (qh1 == "Con Dau")
+                qh2 = "Bo Chong";
             else
                 qh2 = "Chong";
             string sqlStr = string.Format("UPDATE QuanHe SET quanHeVoiCMND1 = '"+qh1+"', quanHeVoiCMND2 = '"+qh2+"' WHERE CMND1 = '{0}' AND CMND2 = '{1}'", tv.CmndChuHo, tv.CmndThanhVien);
@@ -49,7 +61,9 @@ namespace DoAn_Nhom7
         public void XoaThanhVien(ThanhVienShk tv)
         {
             string sqlStr = string.Format("DELETE FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '{0}'", tv.CmndThanhVien);
+            string sqlStr1 = string.Format("delete from QuanHe where CMND1 ='{0}' and CMND2='{1}'",tv.CmndChuHo,tv.CmndThanhVien);
             dbc.XuLy(sqlStr);
+            dbc.XuLy(sqlStr1);
         }
         public void DienThanhVienSHK(string cmnd, TextBox mashk, TextBox hoten, TextBox gioitinh, TextBox quanhe)
         {

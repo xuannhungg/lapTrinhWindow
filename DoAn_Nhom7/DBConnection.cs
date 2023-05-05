@@ -325,14 +325,31 @@ namespace DoAn_Nhom7
         public string timMaSHK(string cmnd)
         {
             conn.Open();
-            string sqlStr = "SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo = '" + cmnd + "'";
-
+            string sqlStr1 = "SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo = '" + cmnd + "'";
+            string sqlStr2 = "Select maSoHoKhau From ThanhVienSoHoKhau where CMNDThanhVien= '" + cmnd + "'";
+            string sqlStr = sqlStr1 + " UNION " + sqlStr2;
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())
             {
 
                 string a = Convert.ToString(dta["maSoHoKhau"]);
+                conn.Close();
+                return a;
+            }
+            conn.Close();
+            return null;
+        }
+        public string timChuHoSHK(string mashk)
+        {
+            conn.Open();
+            string sqlStr = "SELECT CMNDChuHo FROM SoHoKhau WHERE maSoHoKhau = '" + mashk + "'";
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            while (dta.Read())
+            {
+
+                string a = Convert.ToString(dta["CMNDChuHo"]);
                 conn.Close();
                 return a;
             }

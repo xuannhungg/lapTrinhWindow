@@ -39,6 +39,11 @@ namespace DoAn_Nhom7
             string sqlStr = string.Format("UPDATE CongDan SET  tinhTrangHonNhan='Doc Than' WHERE CMND = '{0}'", cd.CMND);
             dbconnection.XuLy(sqlStr);
         }
+        public void CapNhatQuanHeLyHon(CongDan a,CongDan b)
+        {
+            string sqlStr = string.Format("delete from QuanHe where CMND1 ='{0}' and CMND2='{1}'",a.CMND, b.CMND);
+            dbconnection.XuLy(sqlStr);
+        }
         public void CapNhatTamTru(CongDan cd)
         {
             string n = "";

@@ -29,8 +29,18 @@ namespace DoAn_Nhom7
             {
                 CongDan cdA = new CongDan(txtGiayToTuyThanNam.Text, txtHoTenNam.Text);
                 CongDan cdB = new CongDan(txtGiayToTuyThanNu.Text, txtHoTenNu.Text);
-                ThanhVienShk tv = new ThanhVienShk(dbconnection.timMaSHK(txtGiayToTuyThanNam.Text), txtGiayToTuyThanNam.Text, txtGiayToTuyThanNu.Text, "Vo");
-                mem.ThietLapMoiQuanHeVoChong(tv);
+                string maSHKCK = dbconnection.timMaSHK(txtGiayToTuyThanNam.Text);
+                string CMNDChuHoCK = dbconnection.timChuHoSHK(maSHKCK);
+                string maSHKVK = dbconnection.timMaSHK(txtGiayToTuyThanNu.Text);
+                string CMNDChuHoVK = dbconnection.timChuHoSHK(maSHKVK);
+                string quanhe;
+                if (CMNDChuHoCK == txtGiayToTuyThanNam.Text)
+                    quanhe = "Vo";
+                else
+                    quanhe = "Con Dau";
+                ThanhVienShk tv = new ThanhVienShk(maSHKCK, CMNDChuHoCK, txtGiayToTuyThanNu.Text, quanhe);
+                ThanhVienShk tv1 = new ThanhVienShk(maSHKVK, CMNDChuHoVK, txtGiayToTuyThanNu.Text, "Con");
+                mem.XoaThanhVien(tv1);
                 cddao.CapNhatKetHon(cdA, cdB);
                 mem.ThemThanhVien(tv);
             }
