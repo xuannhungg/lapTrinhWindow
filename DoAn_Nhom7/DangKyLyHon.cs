@@ -17,6 +17,8 @@ namespace DoAn_Nhom7
         CongDanDAO cddao = new CongDanDAO();
         DBConnection dbconnection = new DBConnection();
         HonNhanDAO hnDao = new HonNhanDAO();
+        SoHoKhauDAO hkdao = new SoHoKhauDAO();
+        ThanhVienShkDAO tvDao = new ThanhVienShkDAO();
         public DangKyLyHon()
         {
             InitializeComponent();
@@ -31,6 +33,16 @@ namespace DoAn_Nhom7
                 cddao.CapNhatLyHon(cdA);
                 CongDan cdB = new CongDan(txtCMNDB.Text);
                 cddao.CapNhatLyHon(cdB);
+                string mashk = dbconnection.timMaSHK(txtCMNDA.Text);
+                string CMNDChuHo = dbconnection.timChuHoSHK(mashk);
+                string quanhe;
+                if (CMNDChuHo == txtCMNDA.Text)
+                    quanhe = "Vo";
+                else
+                    quanhe = "Con Dau";
+                ThanhVienShk tv = new ThanhVienShk(mashk, CMNDChuHo, txtCMNDB.Text,quanhe);
+                tvDao.XoaThanhVien(tv);
+                cddao.CapNhatQuanHeLyHon(cdA, cdB);
             }
             else
                 MessageBox.Show("Co nguoi dang o tinh trang Doc Than");
