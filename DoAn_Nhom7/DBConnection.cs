@@ -289,6 +289,19 @@ namespace DoAn_Nhom7
             conn.Close();
             return tuoi;
         }
+        public string GioiTinh(string sqlStr)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string gioiTinh="";
+            if (dr.Read())
+            {
+                gioiTinh = Convert.ToString(dr["gioiTinh"].ToString());
+            }
+            conn.Close();
+            return gioiTinh;
+        }
         public void KhaiTu_KeyDown(string sqlStr, TextBox cmnd, TextBox ten, TextBox ngsinh, TextBox honNhan, TextBox noiThuongTru, TextBox gioiTinh, TextBox danToc, TextBox quocTich, TextBox queQuan, TextBox ngheNghiep)
         {
             conn.Open();

@@ -26,7 +26,16 @@ namespace DoAn_Nhom7
         }
         public void Xoa(CongDan cd)
         {
+            string mashk = dbconnection.timMaSHK(cd.CMND);
+            string sqlStr1 = string.Format("delete from ThanhVienSoHoKhau where CMNDThanhVien ='{0}'", cd.CMND);
+            string sqlStr2 = string.Format("delete from QuanHe where CMND1 = '{0}' or CMND2 = '{1}'",cd.CMND,cd.CMND);
             string sqlStr = string.Format("DELETE FROM CongDan WHERE cmnd = '{0}'", cd.CMND);
+            string sqlStr3 = string.Format("delete from ThanhVienSoHoKhau where CMNDChuHo ='{0}'", cd.CMND);
+            string sqlStr4 = string.Format("delete from SoHoKhau where CMNDChuHo ='{0}'", cd.CMND);
+            dbconnection.XuLy(sqlStr1);
+            dbconnection.XuLy(sqlStr3);
+            dbconnection.XuLy(sqlStr4);
+            dbconnection.XuLy(sqlStr2);
             dbconnection.XuLy(sqlStr);
         }
         public DataTable DanhSach()
