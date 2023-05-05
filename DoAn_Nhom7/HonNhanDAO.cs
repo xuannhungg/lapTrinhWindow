@@ -21,6 +21,11 @@ namespace DoAn_Nhom7
                 return true;
             else return false;
         }
+        public string GioiTinh(string cmnd)
+        {
+            string sqlStr = string.Format("SELECT gioiTinh from CongDan Where cmnd = '" + cmnd + "'");
+            return dbc.GioiTinh(sqlStr);
+        }
         public int Tuoi(string cmnd)
         {
             string sqlStr = string.Format("SELECT DATEDIFF(year, cast(ngayThangNamSinh as datetime), getdate()) AS  Tuoi from CongDan Where cmnd = '" + cmnd + "'");
