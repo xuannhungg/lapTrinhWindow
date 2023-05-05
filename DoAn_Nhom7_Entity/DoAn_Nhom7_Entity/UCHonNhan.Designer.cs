@@ -120,6 +120,7 @@
             this.btnDangKyKetHon.TabIndex = 0;
             this.btnDangKyKetHon.Text = "Đăng Ký Kết Hôn";
             this.btnDangKyKetHon.UseVisualStyleBackColor = true;
+            this.btnDangKyKetHon.Click += new System.EventHandler(this.btnDangKyKetHon_Click);
             // 
             // btnDangKyLyHon
             // 
