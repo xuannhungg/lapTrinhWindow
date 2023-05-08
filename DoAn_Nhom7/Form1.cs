@@ -211,11 +211,17 @@ namespace DoAn_Nhom7
         }
         private void dGVDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string cmnd = dGVDanhSach.Rows[e.RowIndex].Cells["cmnd"].Value.ToString();
+            string data = dGVDanhSach.Rows[e.RowIndex].Cells["cmnd"].Value.ToString();
 
             // Tạo và hiển thị form mới với thông tin từ cell click
-            Form hi = new FThongTinCongDancs(cmnd);
-            hi.ShowDialog();
+            tclChucNang.SelectedIndex = 2;
+            pnHienThi.Visible = true;
+            UCTamTruTamVang uc = new UCTamTruTamVang();
+            uc.Data = data;
+            uc.Dock = DockStyle.Fill;
+            pnHienThi.Controls.Clear();
+            pnHienThi.Controls.Add(uc);
+
         }
 
         private void btnKhaiSinh_Click(object sender, EventArgs e)
