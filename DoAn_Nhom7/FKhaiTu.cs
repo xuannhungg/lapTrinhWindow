@@ -17,10 +17,10 @@ namespace DoAn_Nhom7
         {
             InitializeComponent();
         }
-        private void FKhaiTu_Load(object sender, EventArgs e)
+
+        private void ucKhaiTu1_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

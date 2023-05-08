@@ -35,15 +35,12 @@
             this.lblQuocTich = new System.Windows.Forms.Label();
             this.lblNoiCuTru = new System.Windows.Forms.Label();
             this.lblGiayToTuyThan = new System.Windows.Forms.Label();
-            this.lblLanKetHon = new System.Windows.Forms.Label();
             this.txtHoTenNam = new System.Windows.Forms.TextBox();
             this.txtNgaySinhNam = new System.Windows.Forms.TextBox();
             this.txtDanTocNam = new System.Windows.Forms.TextBox();
             this.txtQueQuanNam = new System.Windows.Forms.TextBox();
             this.txtNoiCuTruNam = new System.Windows.Forms.TextBox();
             this.txtGiayToTuyThanNam = new System.Windows.Forms.TextBox();
-            this.txtLanKetHonNam = new System.Windows.Forms.TextBox();
-            this.txtLanKetHonNu = new System.Windows.Forms.TextBox();
             this.txtGiayToTuyThanNu = new System.Windows.Forms.TextBox();
             this.txtNoiCuTruNu = new System.Windows.Forms.TextBox();
             this.txtQueQuanNu = new System.Windows.Forms.TextBox();
@@ -56,8 +53,8 @@
             this.lblMucDe = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,16 +119,6 @@
             this.lblGiayToTuyThan.TabIndex = 5;
             this.lblGiayToTuyThan.Text = "Giấy Tờ Tùy Thân";
             // 
-            // lblLanKetHon
-            // 
-            this.lblLanKetHon.AutoSize = true;
-            this.lblLanKetHon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblLanKetHon.Location = new System.Drawing.Point(65, 445);
-            this.lblLanKetHon.Name = "lblLanKetHon";
-            this.lblLanKetHon.Size = new System.Drawing.Size(185, 25);
-            this.lblLanKetHon.TabIndex = 6;
-            this.lblLanKetHon.Text = "Kết hôn lần thứ mấy";
-            // 
             // txtHoTenNam
             // 
             this.txtHoTenNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -180,22 +167,6 @@
             this.txtGiayToTuyThanNam.Size = new System.Drawing.Size(173, 30);
             this.txtGiayToTuyThanNam.TabIndex = 12;
             this.txtGiayToTuyThanNam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGiayToTuyThanNam_KeyDown);
-            // 
-            // txtLanKetHonNam
-            // 
-            this.txtLanKetHonNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtLanKetHonNam.Location = new System.Drawing.Point(297, 442);
-            this.txtLanKetHonNam.Name = "txtLanKetHonNam";
-            this.txtLanKetHonNam.Size = new System.Drawing.Size(173, 30);
-            this.txtLanKetHonNam.TabIndex = 13;
-            // 
-            // txtLanKetHonNu
-            // 
-            this.txtLanKetHonNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtLanKetHonNu.Location = new System.Drawing.Point(541, 442);
-            this.txtLanKetHonNu.Name = "txtLanKetHonNu";
-            this.txtLanKetHonNu.Size = new System.Drawing.Size(171, 30);
-            this.txtLanKetHonNu.TabIndex = 20;
             // 
             // txtGiayToTuyThanNu
             // 
@@ -317,10 +288,8 @@
             this.panel1.Controls.Add(this.lblQuocTich);
             this.panel1.Controls.Add(this.lablblThongTinel1);
             this.panel1.Controls.Add(this.lblNoiCuTru);
-            this.panel1.Controls.Add(this.txtLanKetHonNu);
             this.panel1.Controls.Add(this.lblGiayToTuyThan);
             this.panel1.Controls.Add(this.txtGiayToTuyThanNu);
-            this.panel1.Controls.Add(this.lblLanKetHon);
             this.panel1.Controls.Add(this.txtNoiCuTruNu);
             this.panel1.Controls.Add(this.txtHoTenNam);
             this.panel1.Controls.Add(this.txtQueQuanNu);
@@ -331,21 +300,10 @@
             this.panel1.Controls.Add(this.txtQueQuanNam);
             this.panel1.Controls.Add(this.txtHoTenNu);
             this.panel1.Controls.Add(this.txtNoiCuTruNam);
-            this.panel1.Controls.Add(this.txtLanKetHonNam);
             this.panel1.Location = new System.Drawing.Point(12, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1167, 589);
             this.panel1.TabIndex = 26;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(744, 102);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(356, 383);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -356,6 +314,16 @@
             this.label1.Size = new System.Drawing.Size(296, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "Điền CMND và ấn enter để điền nhanh";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(744, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(356, 383);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
             // 
             // DangKyKetHon
             // 
@@ -385,15 +353,12 @@
         private System.Windows.Forms.Label lblQuocTich;
         private System.Windows.Forms.Label lblNoiCuTru;
         private System.Windows.Forms.Label lblGiayToTuyThan;
-        private System.Windows.Forms.Label lblLanKetHon;
         private System.Windows.Forms.TextBox txtHoTenNam;
         private System.Windows.Forms.TextBox txtNgaySinhNam;
         private System.Windows.Forms.TextBox txtDanTocNam;
         private System.Windows.Forms.TextBox txtQueQuanNam;
         private System.Windows.Forms.TextBox txtNoiCuTruNam;
         private System.Windows.Forms.TextBox txtGiayToTuyThanNam;
-        private System.Windows.Forms.TextBox txtLanKetHonNam;
-        private System.Windows.Forms.TextBox txtLanKetHonNu;
         private System.Windows.Forms.TextBox txtGiayToTuyThanNu;
         private System.Windows.Forms.TextBox txtNoiCuTruNu;
         private System.Windows.Forms.TextBox txtQueQuanNu;

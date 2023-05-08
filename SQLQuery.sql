@@ -70,6 +70,8 @@ VALUES ('3' , '6' , 'Anh','Em');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
 VALUES ('4' , '5' , 'Vo','Chong');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
+VALUES ('5' , '4' , 'Chong','Vo');
+INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
 VALUES ('6' , '1' , 'Bo','Con Gai');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
 VALUES ('6' , '2' , 'Me','Con Gai');

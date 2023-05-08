@@ -52,9 +52,14 @@ namespace DoAn_Nhom7
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            SoHoKhau hk = new SoHoKhau(txtMaSoHoKhau.Text, txtCMND.Text, txtMaKhuVuc.Text, txtXaPhuong.Text, txtQuanHuyen.Text, txtTinhThanhPho.Text, txtDiaChi.Text, dtpNgayLap.Text);
-            hkdao.SuaSoHoKhau(hk);
-            LayDanhSach();
+            if (db.timMaSHK(txtCMND.Text)==txtMaSoHoKhau.Text)
+            {
+                SoHoKhau hk = new SoHoKhau(txtMaSoHoKhau.Text, txtCMND.Text, txtMaKhuVuc.Text, txtXaPhuong.Text, txtQuanHuyen.Text, txtTinhThanhPho.Text, txtDiaChi.Text, dtpNgayLap.Text);
+                hkdao.SuaSoHoKhau(hk);
+                LayDanhSach();
+            }
+            else
+                MessageBox.Show("Khong cung shk");
         }
 
         private void UCSoHoKhau_Load(object sender, EventArgs e)
