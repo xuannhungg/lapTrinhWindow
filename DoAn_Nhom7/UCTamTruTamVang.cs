@@ -15,6 +15,7 @@ namespace DoAn_Nhom7
     {
         CongDanDAO cddao = new CongDanDAO();
         TamTruTamVangDAO tttvDao = new TamTruTamVangDAO();
+        public string Data { get; set; }
         public UCTamTruTamVang()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace DoAn_Nhom7
 
         private void UCTamTruTamVang_Load(object sender, EventArgs e)
         {
+            txtCMND.Text = Data;
+            tttvDao.LapDayThongTinTamTru(txtCMND, txtHoTen, txtNgaySinh, txtCongAn1, txtThuongTru);
 
         }
         private void txtCMND_KeyDown(object sender, KeyEventArgs e)
