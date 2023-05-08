@@ -35,17 +35,17 @@ namespace DoAn_Nhom7
                 string CMNDChuHoVK = dbconnection.timChuHoSHK(maSHKVK);
                 string quanhe;
                 if (CMNDChuHoCK == txtGiayToTuyThanNam.Text)
-                    quanhe = "Vo";
+                    quanhe = "Vợ";
                 else
-                    quanhe = "Con Dau";
+                    quanhe = "Con Dâu";
                 ThanhVienShk tv = new ThanhVienShk(maSHKCK, CMNDChuHoCK, txtGiayToTuyThanNu.Text, quanhe);
-                ThanhVienShk tv1 = new ThanhVienShk(maSHKVK, CMNDChuHoVK, txtGiayToTuyThanNu.Text, "Con Gai");
+                ThanhVienShk tv1 = new ThanhVienShk(maSHKVK, CMNDChuHoVK, txtGiayToTuyThanNu.Text, "Con Gái");
                 mem.XoaThanhVien(tv1);
                 cddao.CapNhatKetHon(cdA, cdB);
                 mem.ThemThanhVien(tv);
             }
             else
-                MessageBox.Show("Co nguoi chua du dieu kien ket hon (1.chua du tuoi; 2.da ket hon,3. trong 1 gia dinh)");
+                MessageBox.Show("Có người không đạt điều kiện kết hôn (1.chưa đủ tuổi; 2.đã kết hôn,3. trong 1 gia đình)");
         }
         private void txtGiayToTuyThanNam_KeyDown(object sender, KeyEventArgs e)
         {

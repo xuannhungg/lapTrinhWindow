@@ -67,8 +67,11 @@ namespace DoAn_Nhom7
                         tinhThanhPho = Convert.ToString(dta["tinhTP"]);
                         diaChi = Convert.ToString(dta["diaChi"]);
                         ngayLap = Convert.ToString(dta["ngayLap"]);
-                        SoHoKhau hk = new SoHoKhau(maSoHoKhau, CMND, maKhuVuc, xaPhuong, quanHuyen, tinhThanhPho, diaChi, ngayLap);
-                        hkdao.SuaSoHoKhau(hk);
+                        if (CMND != "")
+                        {
+                            SoHoKhau hk = new SoHoKhau(maSoHoKhau, CMND, maKhuVuc, xaPhuong, quanHuyen, tinhThanhPho, diaChi, ngayLap);
+                            hkdao.SuaSoHoKhau(hk);
+                        }
                     }
                 }
                 catch (Exception ex)

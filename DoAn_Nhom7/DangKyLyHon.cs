@@ -45,7 +45,7 @@ namespace DoAn_Nhom7
                 cddao.CapNhatQuanHeLyHon(cdA, cdB);
             }
             else
-                MessageBox.Show("Co nguoi dang o tinh trang Doc Than");
+                MessageBox.Show("Có người đang ở tình trạng độc thân");
         }
 
         private void txtCMNDA_KeyDown(object sender, KeyEventArgs e)
@@ -57,7 +57,7 @@ namespace DoAn_Nhom7
                 if (txtCMNDB.Text != "")
                     hnDao.LapDayThongTin_LyHon(txtCMNDB.Text, txtTenB, txtNamSinhB, txtCuTruB);
                 else
-                    MessageBox.Show("Khong co nguoi yeu");
+                    MessageBox.Show("Không tìm thấy vợ");
             }
         }
         private void DangKyLyHon_Load(object sender, EventArgs e)
