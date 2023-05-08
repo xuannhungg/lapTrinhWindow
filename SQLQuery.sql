@@ -16,8 +16,8 @@ CREATE TABLE CongDan (
  soLanKetHon nvarchar (20),
  tamTru nvarchar (100),
  noiCapCMND nvarchar (100),
- ngayCap varchar (100),
- quocTich varchar (100)
+ ngayCap nvarchar (100),
+ quocTich nvarchar (100)
 );
 INSERT INTO CongDan (hoTen, ngayThangNamSinh, gioiTinh,cmnd,danToc,tinhTrangHonNhan,noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,soLanKetHon,tamTru,noiCapCMND,NgayCap,quocTich)
 VALUES ('nva', '1/1/2003', 'nam','1','kinh','Da Ket Hon Voi Nguoi Co CMND La 2','nghe an','nghe an','nghe an','dai hoc','sinh vien', '1000000','1','ki tuc xa 01/01/2019','nghe An','2/2/2021','Viet Nam');
@@ -50,33 +50,33 @@ CREATE TABLE QuanHe (
 );
 
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('1' , '2' , 'Vo','Chong');
+VALUES ('1' , '2' , N'Vợ',N'Chồng');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES  ('1' , '3' , 'Con Trai','Bo');
+VALUES  ('1' , '3' , 'Con Trai',N'Bố');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES  ('1' , '6' , 'Con Gai','Bo');
+VALUES  ('1' , '6' , N'Con Gái',N'Bố');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('2' , '1' , 'Chong','Vo');
+VALUES ('2' , '1' , N'Chồng',N'Vợ');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('2' , '3' , 'Con Trai','Me');
+VALUES ('2' , '3' , 'Con Trai',N'Mẹ');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('2' , '6' , 'Con Gai','Me');
+VALUES ('2' , '6' , 'Con Gái',N'Mẹ');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('3' , '1' , 'Bo','Con Trai');
+VALUES ('3' , '1' , N'Bố','Con Trai');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('3' , '2' , 'Me','Con Trai');
+VALUES ('3' , '2' , N'Mẹ','Con Trai');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('3' , '6' , 'Anh','Em');
+VALUES ('3' , '6' , 'Em Gái','Anh Trai');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('4' , '5' , 'Vo','Chong');
+VALUES ('4' , '5' , N'Vợ',N'Chồng');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('5' , '4' , 'Chong','Vo');
+VALUES ('5' , '4' , N'Chồng',N'Vợ');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('6' , '1' , 'Bo','Con Gai');
+VALUES ('6' , '1' , N'Bố',N'Con Gái');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('6' , '2' , 'Me','Con Gai');
+VALUES ('6' , '2' , N'Mẹ',N'Con Gái');
 INSERT INTO QuanHe (CMND1 , CMND2 , quanHeVoiCMND1 , quanHeVoiCMND2)
-VALUES ('6' , '3' , 'Anh','Em');
+VALUES ('6' , '3' , 'Anh Trai','Em Gái');
 select * from QuanHe
 
 --SO HO KHAU--
@@ -84,12 +84,12 @@ select * from QuanHe
 CREATE TABLE SoHoKhau(
 	maSoHoKhau varchar (200) NOT NULL,
 	CMNDChuHo varchar (100)  not null,
-	maKV varchar (100)not null,
-	xaPhuong varchar (100),
-	quanHuyen varchar (100),
-	tinhTP varchar (100),		
-	diaChi varchar (100),
-	ngayLap varchar (100),
+	maKV nvarchar (100)not null,
+	xaPhuong nvarchar (100),
+	quanHuyen nvarchar (100),
+	tinhTP nvarchar (100),		
+	diaChi nvarchar (100),
+	ngayLap nvarchar (100),
 	primary key (maSoHoKhau, CMNDChuHo),
 
 	CONSTRAINT pk_soHoKhau_congDan
@@ -109,7 +109,7 @@ CREATE TABLE ThanhVienSoHoKhau(
     maSoHoKhau varchar(200) not null,
     CMNDChuHo varchar (100) NOT NULL ,
     CMNDThanhVien varchar (100) NOT NULL,
-    quanHeVoiChuHo varchar(100) not null,
+    quanHeVoiChuHo nvarchar(100) not null,
     CONSTRAINT pk_ThanhVienSoHoKhau PRIMARY KEY (maSoHoKhau, CMNDChuHo, CMNDThanhVien),
     CONSTRAINT fk_thanhVienSoHoKhau_soHoKhau FOREIGN KEY (maSoHoKhau, CMNDChuHo) REFERENCES SoHoKhau (maSoHoKhau, CMNDChuHo),
     CONSTRAINT fk_thanhVien_congDan FOREIGN KEY (CMNDThanhVien) REFERENCES CongDan (cmnd),
@@ -117,13 +117,13 @@ CREATE TABLE ThanhVienSoHoKhau(
 );
 
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChuHo)
-values ('1','1','2','Vo');
+values ('1','1','2',N'Vợ');
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien, quanHeVoiChuHo)
 values ('1','1','3','Con Trai');
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien, quanHeVoiChuHo)
-values ('1','1','6','Con Gai');
+values ('1','1','6',N'Con Gái');
 insert into ThanhVienSoHoKhau(maSoHoKhau,CmndChuHo, CMNDThanhVien , quanHeVoiChuHo)
-values ('2','4','5','Vo');
+values ('2','4','5',N'Vợ');
 select * from ThanhVienSoHoKhau
 
 --THUE--

@@ -44,7 +44,7 @@ namespace DoAn_Nhom7
                 if (cmndChuHo == txtCMNDCha.Text)
                     quanhe = "Con";
                 else
-                    quanhe = "Chau";
+                    quanhe = "Cháu";
                 ThanhVienShk tv = new ThanhVienShk(mashk,cmndChuHo, cmndcon, quanhe);
 
                 CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text,GioiTinh, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
@@ -54,7 +54,7 @@ namespace DoAn_Nhom7
                 mem.ThemThanhVien(tv);
             }
             else
-                MessageBox.Show("2 nguoi chua ket hon");
+                MessageBox.Show("2 người chưa kết hôn");
         }
 
         private void txtCCCD_KeyDown(object sender, KeyEventArgs e)
