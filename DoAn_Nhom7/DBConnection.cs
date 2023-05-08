@@ -24,6 +24,7 @@ namespace DoAn_Nhom7
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                     MessageBox.Show("thanh cong");
+            
             }
             catch (Exception ex)
             {
@@ -289,6 +290,20 @@ namespace DoAn_Nhom7
             conn.Close();
             return tuoi;
         }
+        public bool ChuaCoQuanHe(string cmnda,string cmndb)
+        {
+            conn.Open();
+            string sqlStr = "Select * from QuanHe where CMND1 = '" + cmnda + "' and CMND2  = '" + cmndb + "'";
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            if (dta.Read())
+            {
+                conn.Close();
+                return false;
+            }
+            conn.Close();
+            return true;
+        }
         public string GioiTinh(string sqlStr)
         {
             conn.Open();
@@ -302,6 +317,7 @@ namespace DoAn_Nhom7
             conn.Close();
             return gioiTinh;
         }
+        
         public void KhaiTu_KeyDown(string sqlStr, TextBox cmnd, TextBox ten, TextBox ngsinh, TextBox honNhan, TextBox noiThuongTru, TextBox gioiTinh, TextBox danToc, TextBox quocTich, TextBox queQuan, TextBox ngheNghiep)
         {
             conn.Open();
@@ -338,9 +354,9 @@ namespace DoAn_Nhom7
         public string timMaSHK(string cmnd)
         {
             conn.Open();
-            string sqlStr1 = "SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo = '" + cmnd + "'";
-            string sqlStr2 = "Select maSoHoKhau From ThanhVienSoHoKhau where CMNDThanhVien= '" + cmnd + "'";
-            string sqlStr = sqlStr1 + " UNION " + sqlStr2;
+            string sqlStr = "SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDChuHo = '" + cmnd + "' or CMNDThanhVien= '" + cmnd + "'";
+            //string sqlStr2 = "Select maSoHoKhau From ThanhVienSoHoKhau where CMNDThanhVien= '" + cmnd + "'";
+            //string sqlStr = sqlStr1 + " UNION " + sqlStr2;
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())
@@ -388,9 +404,9 @@ namespace DoAn_Nhom7
         {
             conn.Open();
             //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
-            //string sqlStr = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
-            string sqlStr = " SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo= '" + cmnd + "'";
-            //string sqlStr = sqlStr2 + "UNION" + sqlStr1;
+            string sqlStr1 = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
+            string sqlStr2 = " SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo= '" + cmnd + "'";
+            string sqlStr = sqlStr2 + "UNION" + sqlStr1;
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())

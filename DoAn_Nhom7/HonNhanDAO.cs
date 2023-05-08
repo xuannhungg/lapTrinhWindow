@@ -17,7 +17,7 @@ namespace DoAn_Nhom7
         }
         public bool ThoaDieuKienKetHon(string cmndNam, string cmndNu)
         {
-            if (Tuoi(cmndNam) >= 20 && Tuoi(cmndNu) >= 18 && KiemTraHonNhan(cmndNam) == true && KiemTraHonNhan(cmndNu) == true)
+            if (Tuoi(cmndNam) >= 20 && Tuoi(cmndNu) >= 18 && KiemTraHonNhan(cmndNam) == true && KiemTraHonNhan(cmndNu) == true && dbc.timMaSHK(cmndNam)!=dbc.timMaSHK(cmndNu))
                 return true;
             else return false;
         }

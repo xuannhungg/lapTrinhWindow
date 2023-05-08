@@ -180,9 +180,7 @@ namespace DoAn_Nhom7
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
             LayDanhSach();
-            string sqlStr1 = string.Format("SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '"+txtTraCuu.Text+"'");
-            string sqlStr2= string.Format("SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo = '" + txtTraCuu.Text + "'");
-            string sqlStr = sqlStr1 + " UNION " + sqlStr2;
+            string sqlStr = string.Format("SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '"+txtTraCuu.Text+ "' OR CMNDChuHo = '"+txtTraCuu.Text+"'");
             try
             {
                 conn.Open();

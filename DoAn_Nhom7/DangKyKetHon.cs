@@ -39,13 +39,13 @@ namespace DoAn_Nhom7
                 else
                     quanhe = "Con Dau";
                 ThanhVienShk tv = new ThanhVienShk(maSHKCK, CMNDChuHoCK, txtGiayToTuyThanNu.Text, quanhe);
-                ThanhVienShk tv1 = new ThanhVienShk(maSHKVK, CMNDChuHoVK, txtGiayToTuyThanNu.Text, "Con");
+                ThanhVienShk tv1 = new ThanhVienShk(maSHKVK, CMNDChuHoVK, txtGiayToTuyThanNu.Text, "Con Gai");
                 mem.XoaThanhVien(tv1);
                 cddao.CapNhatKetHon(cdA, cdB);
                 mem.ThemThanhVien(tv);
             }
             else
-                MessageBox.Show("Co nguoi chua du dieu kien ket hon (1.chua du tuoi; 2.da ket hon)");
+                MessageBox.Show("Co nguoi chua du dieu kien ket hon (1.chua du tuoi; 2.da ket hon,3. trong 1 gia dinh)");
         }
         private void txtGiayToTuyThanNam_KeyDown(object sender, KeyEventArgs e)
         {

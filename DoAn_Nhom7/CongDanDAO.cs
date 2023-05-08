@@ -67,6 +67,21 @@ namespace DoAn_Nhom7
             dbconnection.XuLy(sqlStr);
             string sqlStr1 = string.Format("UPDATE CongDan SET  tinhTrangHonNhan='Da Ket Hon Voi Nguoi Co CMND La " + nam.CMND + "' WHERE CMND = '{0}'", nu.CMND);
             dbconnection.XuLy(sqlStr1);
+            string sqlStr2 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", nam.cmnd, nu.cmnd, "Vo", "Chong");
+            dbconnection.XuLy(sqlStr2);
+            string sqlStr3 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')",  nu.cmnd, nam.cmnd, "Chong", "Vo");
+            dbconnection.XuLy(sqlStr3);
+        }
+        public void CapNhatKhaiSinh(string cmndbo,string cmndme,string cmndcon)
+        {
+            string sqlStr2 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", cmndbo, cmndcon, "Con", "Bo");
+            dbconnection.XuLy(sqlStr2);
+            string sqlStr3 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", cmndcon, cmndbo, "Bo", "Con");
+            dbconnection.XuLy(sqlStr3);
+            string sqlStr4 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", cmndme, cmndcon, "Con", "Me");
+            dbconnection.XuLy(sqlStr4);
+            string sqlStr5 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", cmndcon, cmndme, "Me", "Con");
+            dbconnection.XuLy(sqlStr5);
         }
         public DataSet TimCongDanDaKetHon(DataGridView dtgv)
         {

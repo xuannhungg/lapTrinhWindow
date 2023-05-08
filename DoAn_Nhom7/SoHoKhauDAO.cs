@@ -31,13 +31,37 @@ namespace DoAn_Nhom7
         }
         public void SuaSoHoKhau(SoHoKhau hk)
         {
-            string sqlStr = string.Format("UPDATE SoHoKhau SET CMNDChuHo='{1}', maKV = '{2}',  xaPhuong = '{3}' , quanHuyen = '{4}', tinhTP = '{5}',diaChi = '{6}', ngayLap = '{7}' WHERE maSoHoKhau = '{0}'", hk.MaSoHoKhau, hk.CMND, hk.MaKV, hk.XaPhuong, hk.QuanHuyen, hk.TinhThanhPho
-            , hk.DiaChi, hk.NgayLap);
+            //Tạo bảng ảo
+            string maSHKMoi = hk.MaSoHoKhau + "*";
+            string sqlStr = string.Format("INSERT INTO SoHoKhau (maSoHoKhau, CMNDChuHo, maKV, xaPhuong, quanHuyen, tinhTP, diaChi, ngayLap) SELECT '"+maSHKMoi+"', '"+hk.CMND+"', maKV, xaPhuong, quanHuyen, tinhTP, diaChi, ngayLap FROM SoHoKhau WHERE maSoHoKhau = '"+hk.MaSoHoKhau+"'");
+            string sqlStr1 = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '"+maSHKMoi+"', '"+hk.CMND+ "', CMNDThanhVien, quanHeVoiCMND1 FROM ThanhVienSoHoKhau INNER JOIN QuanHe ON QuanHe.CMND2 = ThanhVienSoHoKhau.CMNDThanhVien WHERE ThanhVienSoHoKhau.maSoHoKhau = '"+hk.MaSoHoKhau+"' AND QuanHe.CMND1 = '"+hk.CMND+"'");
+            string sqlStr5 = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '"+maSHKMoi+"', '" + hk.CMND + "', CMNDChuHo, quanHeVoiCMND1 FROM SoHoKhau INNER JOIN QuanHe ON QuanHe.CMND2 = SoHoKhau.CMNDChuHo WHERE SoHoKhau.maSoHoKhau = '" + hk.MaSoHoKhau + "' AND QuanHe.CMND1 = '" + hk.CMND + "'");
+            string sqlStr3 = string.Format("DELETE FROM ThanhVienSoHoKhau WHERE maSoHoKhau = '{0}'", hk.MaSoHoKhau);
+           // Cập nhật
+            string sqlStr2 = string.Format("DELETE FROM SoHoKhau WHERE maSoHoKhau = '{0}'",hk.MaSoHoKhau);
+            string sqlStr7 = string.Format("INSERT INTO SoHoKhau (maSoHoKhau, CMNDChuHo, maKV, xaPhuong, quanHuyen, tinhTP, diaChi, ngayLap) SELECT '" + hk.MaSoHoKhau + "', '" + hk.CMND + "', maKV, xaPhuong, quanHuyen, tinhTP, diaChi, ngayLap FROM SoHoKhau WHERE maSoHoKhau = '" + maSHKMoi + "'");
+            string sqlStr8 = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '" + hk.MaSoHoKhau + "', '" + hk.CMND + "', CMNDThanhVien, quanHeVoiCMND1 FROM ThanhVienSoHoKhau INNER JOIN QuanHe ON QuanHe.CMND2 = ThanhVienSoHoKhau.CMNDThanhVien WHERE ThanhVienSoHoKhau.maSoHoKhau = '" + maSHKMoi + "' AND QuanHe.CMND1 = '" + hk.CMND + "'");
+            string sqlStr9 = string.Format("INSERT INTO ThanhVienSoHoKhau(maSoHoKhau, CMNDChuHo, CMNDThanhVien, quanHeVoiChuHo) SELECT '" + hk.MaSoHoKhau + "', '" + hk.CMND + "', CMNDChuHo, quanHeVoiCMND1 FROM SoHoKhau INNER JOIN QuanHe ON QuanHe.CMND2 = SoHoKhau.CMNDChuHo WHERE SoHoKhau.maSoHoKhau = '" + maSHKMoi + "' AND QuanHe.CMND1 = '" + hk.CMND + "'");
+            string sqlStr10 = string.Format("DELETE FROM ThanhVienSoHoKhau WHERE maSoHoKhau = '{0}'", maSHKMoi);
+            string sqlStr11 = string.Format("DELETE FROM SoHoKhau WHERE maSoHoKhau = '{0}'", maSHKMoi);
+
             dbconnection.XuLy(sqlStr);
+            dbconnection.XuLy(sqlStr1);
+            dbconnection.XuLy(sqlStr5);
+            dbconnection.XuLy(sqlStr3);
+            dbconnection.XuLy(sqlStr2);
+//
+            dbconnection.XuLy(sqlStr7);
+            dbconnection.XuLy(sqlStr8);
+            dbconnection.XuLy(sqlStr9);
+            dbconnection.XuLy(sqlStr10);
+            dbconnection.XuLy(sqlStr11);
         }
         public void XoaSoHoKhau(SoHoKhau hk)
         {
+            string sqlStr1 = string.Format("DELETE FROM ThanhVienSoHoKhau WHERE maSoHoKhau = '{0}'", hk.MaSoHoKhau);
             string sqlStr = string.Format("DELETE FROM SoHoKhau WHERE maSoHoKhau = '{0}'", hk.MaSoHoKhau);
+            dbconnection.XuLy(sqlStr1);
             dbconnection.XuLy(sqlStr);
         }
         public void LapSoHoKhau(TextBox txtMaSoHoKhau,TextBox txtCMND, TextBox txtMaKhuVuc,TextBox txtXaPhuong,TextBox txtQuanHuyen,TextBox txtTinhThanhPho,TextBox txtDiaChi,DateTimePicker dtpNgayLap)
