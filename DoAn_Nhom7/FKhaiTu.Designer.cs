@@ -39,6 +39,7 @@
             this.ucKhaiTu1.Name = "ucKhaiTu1";
             this.ucKhaiTu1.Size = new System.Drawing.Size(1173, 655);
             this.ucKhaiTu1.TabIndex = 0;
+            this.ucKhaiTu1.Load += new System.EventHandler(this.ucKhaiTu1_Load);
             // 
             // FKhaiTu
             // 
@@ -50,7 +51,6 @@
             this.Name = "FKhaiTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KHAI TỬ";
-            this.Load += new System.EventHandler(this.FKhaiTu_Load);
             this.ResumeLayout(false);
 
         }

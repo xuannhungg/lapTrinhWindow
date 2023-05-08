@@ -16,10 +16,13 @@ namespace DoAn_Nhom7
 
         public void ThietLapMoiQuanHeBoCon(ThanhVienShk tv)
         {
-            string sqlStr = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndChuHo, tv.CmndThanhVien, "Con", "Bo");
-            string sqlStr1 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndThanhVien, tv.CmndChuHo, "Bo", "Con");
-            dbc.XuLy(sqlStr);
-            dbc.XuLy(sqlStr1);
+            if (dbc.ChuaCoQuanHe(tv.CmndChuHo, tv.CmndThanhVien) && dbc.ChuaCoQuanHe(tv.CmndThanhVien, tv.CmndChuHo))
+            {
+                string sqlStr = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndChuHo, tv.CmndThanhVien, "Con", "Bo");
+                string sqlStr1 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndThanhVien, tv.CmndChuHo, "Bo", "Con");
+                dbc.XuLy(sqlStr);
+                dbc.XuLy(sqlStr1);
+            }
         }
         public void ThietLapMoiQuanHeVoChong(ThanhVienShk tv)
         {
@@ -146,7 +149,7 @@ namespace DoAn_Nhom7
                     conn.Close();
                 }
             }
-            else if (tv.QuanHe == "Vo")
+            else if (tv.QuanHe == "Con")
             {
                 try
                 {
@@ -173,14 +176,28 @@ namespace DoAn_Nhom7
                             dbc.XuLy(sqlStr1);
                             dbc.XuLy(sqlStr2);
                         }
-                        else if (b == "Anh" || b== "Em")
+                        else if (b == "Anh Trai" || b== "Em Trai")
                         {
-                            string sqlStr1 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", a, tv.CmndThanhVien, "Chi Dau", "Em");
-                            string sqlStr2 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndThanhVien, a, "Em", "Chi Dau");
+                            string sqlStr1 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", a, tv.CmndThanhVien, "Chau", "Chu");
+                            string sqlStr2 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndThanhVien, a, "Chu", "Chau");
                             dbc.XuLy(sqlStr1);
                             dbc.XuLy(sqlStr2);
                         }
+                        else if (b == "Chi Gai" || b == "Em Gai")
+                        {
+                            string sqlStr1 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", a, tv.CmndThanhVien, "Chau", "Gi");
+                            string sqlStr2 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndThanhVien, a, "Gi", "Chau");
+                            dbc.XuLy(sqlStr1);
+                            dbc.XuLy(sqlStr2);
+                        }
+                        else if ((b == "Vo") && dbc.ChuaCoQuanHe(a, tv.CmndThanhVien) && dbc.ChuaCoQuanHe(tv.CmndThanhVien, a))
+                        {
 
+                            string sqlStr1 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", a, tv.CmndThanhVien, "Con", "Me");
+                            string sqlStr2 = string.Format("INSERT INTO QuanHe(CMND1, CMND2, quanHeVoiCMND1, quanHeVoiCMND2) VALUES ('{0}', '{1}', '{2}','{3}')", tv.CmndThanhVien, a, "Me", "Con");
+                            dbc.XuLy(sqlStr1);
+                            dbc.XuLy(sqlStr2);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -192,6 +209,7 @@ namespace DoAn_Nhom7
                     conn.Close();
                 }
             }
+
         }
         public void ThemThanhVien(ThanhVienShk tv)
         {
