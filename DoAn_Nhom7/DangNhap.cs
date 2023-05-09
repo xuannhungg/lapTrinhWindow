@@ -16,6 +16,8 @@ namespace DoAn_Nhom7
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
         TaiKhoanDAO tkdao = new TaiKhoanDAO();
+        public TabControl tclChucNang { get; set; }
+        public ComboBox cmbTimKiem { get; set; }
         public frmDangNhap()
         {
             InitializeComponent();
@@ -29,6 +31,9 @@ namespace DoAn_Nhom7
             {
                 TaiKhoan tk = new TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text);
                 tkdao.DangNhap(tk);
+                tclChucNang.TabPages[1].Enabled = true;
+                tclChucNang.TabPages[2].Enabled = true;
+                this.Close();
             }
         }
 

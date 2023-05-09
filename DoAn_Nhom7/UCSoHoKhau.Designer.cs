@@ -140,7 +140,6 @@
             this.lblCmnd_Tv.Size = new System.Drawing.Size(146, 20);
             this.lblCmnd_Tv.TabIndex = 29;
             this.lblCmnd_Tv.Text = "CMND thành viên:";
-            this.lblCmnd_Tv.Click += new System.EventHandler(this.lblCmnd_Tv_Click);
             // 
             // txtCmnd_tv
             // 
@@ -285,9 +284,7 @@
             this.dtgvThanhVienShk.RowTemplate.Height = 24;
             this.dtgvThanhVienShk.Size = new System.Drawing.Size(357, 105);
             this.dtgvThanhVienShk.TabIndex = 22;
-            this.dtgvThanhVienShk.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvThanhVienShk_CellClick);
-            this.dtgvThanhVienShk.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvThanhVienShk_CellContentClick);
-            // 
+            this.dtgvThanhVienShk.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvThanhVienShk_CellClick);            // 
             // pnSoHoKhau
             // 
             this.pnSoHoKhau.BackColor = System.Drawing.Color.LightBlue;

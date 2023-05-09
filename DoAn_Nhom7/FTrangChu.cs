@@ -19,7 +19,10 @@ namespace DoAn_Nhom7
         CongDanDAO congdandao = new CongDanDAO();
         public FTrangChu()
         {
-            InitializeComponent();       
+            InitializeComponent();
+            tclChucNang.TabPages[1].Enabled = false;
+            tclChucNang.TabPages[2].Enabled = false;
+            cmbTimKiem.Enabled = false;
         }
         public void LayDanhSach()
         {
@@ -55,6 +58,8 @@ namespace DoAn_Nhom7
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             frmDangNhap formdn = new frmDangNhap();
+            formdn.tclChucNang = tclChucNang;
+            formdn.cmbTimKiem = cmbTimKiem;
             formdn.ShowDialog();
         }
 

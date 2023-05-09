@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangKiKetHonDAO.cs" />
+    <Compile Include="DangKyKetHonDAO.cs" />
     <Compile Include="DangKyKetHon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +61,7 @@
     <Compile Include="DangKyLyHon.Designer.cs">
       <DependentUpon>DangKyLyHon.cs</DependentUpon>
     </Compile>
+    <Compile Include="DangKyLyHonDAO.cs" />
     <Compile Include="FCongDan.cs">
       <SubType>Form</SubType>
     </Compile>

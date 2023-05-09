@@ -16,6 +16,7 @@ namespace DoAn_Nhom7
     {
         SoHoKhauDAO hkdao = new SoHoKhauDAO();
         ThanhVienShkDAO tvDao = new ThanhVienShkDAO();
+        SoHoKhauDAO shkDao = new SoHoKhauDAO();
         DBConnection db = new DBConnection();
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.conStr);
         public UCSoHoKhau()
@@ -25,10 +26,6 @@ namespace DoAn_Nhom7
         public void LayDanhSach()
         {
             this.dtgvSoHoKhau.DataSource = hkdao.DanhSach();
-        }
-        private void lblCmnd_Tv_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -74,12 +71,6 @@ namespace DoAn_Nhom7
             dtgvSoHoKhau.Columns[6].HeaderText = "Địa chỉ";
             dtgvSoHoKhau.Columns[7].HeaderText = "Ngày lập";
         }
-
-        private void dtgvThanhVienShk_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dtgvSoHoKhau_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -103,13 +94,12 @@ namespace DoAn_Nhom7
             dtgvThanhVienShk.Columns[0].HeaderText = "Mã sổ hộ khẩu";
             dtgvThanhVienShk.Columns[1].HeaderText = "CMND thành viên";
             dtgvThanhVienShk.Columns[2].HeaderText = "Quan hệ với chủ hộ";
-
         }
 
         private void btnThemTv_Click(object sender, EventArgs e)
         {
             ThanhVienShk tv = new ThanhVienShk(txtMaShk_tv.Text ,txtCMND.Text, txtCmnd_tv.Text, txtQuanHe.Text);
-            if (db.KiemTraTVSHK(txtCmnd_tv.Text))
+            if (shkDao.KiemTraTVSHK(txtCmnd_tv.Text))
             {
                 tvDao.ThemThanhVien(tv);
                 LayDanhSachThanhVien();
@@ -148,31 +138,7 @@ namespace DoAn_Nhom7
 
         private void dtgvThanhVienShk_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            row = this.dtgvThanhVienShk.Rows[e.RowIndex];
-            txtCmnd_tv.Text = row.Cells[1].Value.ToString();
-            string sqlStr = string.Format("SELECT SHK.maSoHoKhau, CD.hoTen, CD.gioiTinh, TVSHK.quanHeVoiChuHo FROM CongDan CD INNER JOIN ThanhVienSoHoKhau TVSHK ON CD.cmnd = TVSHK.CMNDThanhVien INNER JOIN SoHoKhau SHK ON SHK.maSoHoKhau = TVSHK.maSoHoKhau AND SHK.CMNDChuHo = TVSHK.CMNDChuHo WHERE CD.cmnd = '{0}'", txtCmnd_tv.Text);
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                SqlDataReader dta = cmd.ExecuteReader();
-                while (dta.Read())
-                {
-                    txtMaShk_tv.Text = Convert.ToString(dta["maSoHoKhau"]);
-                    txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
-                    txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
-                    txtQuanHe.Text = Convert.ToString(dta["quanHeVoiChuHo"]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            tvDao.ThanhVienShk_CellClick(sender, e, dtgvThanhVienShk, txtCmnd_tv, txtMaShk_tv, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
         }
 
         private void txtCmnd_tv_KeyDown(object sender, KeyEventArgs e)
@@ -184,50 +150,57 @@ namespace DoAn_Nhom7
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
+            //LayDanhSach();
+            //string sqlStr = string.Format("SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '"+txtTraCuu.Text+ "' OR CMNDChuHo = '"+txtTraCuu.Text+"'");
+            //try
+            //{
+            //    conn.Open();
+            //    SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            //    SqlDataReader dta = cmd.ExecuteReader();
+            //    if (dta.Read())
+            //    {
+            //        txtMaSoHoKhau.Text = Convert.ToString(dta["maSoHoKhau"]);
+            //        txtCmnd_tv.Text = txtTraCuu.Text;
+            //        hkdao.LapSoHoKhau(txtMaSoHoKhau, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho, txtDiaChi, dtpNgayLap);
+            //        hkdao.LapTVSoHoKhau(txtCMND, txtCmnd_tv, txtMaShk_tv, txtMaSoHoKhau, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
+            //        if (txtHoTen_tv.Text == "")
+            //            txtCmnd_tv.Text = "";
+            //        foreach (DataGridViewRow row in dtgvSoHoKhau.Rows)
+            //        {
+            //            object value = row.Cells[1].Value;
+            //            if (value != null && value.ToString() == txtCMND.Text)
+            //            {
+            //                row.DefaultCellStyle.BackColor = Color.LightBlue;
+            //            }
+            //        }
+            //        LayDanhSachThanhVien();
+            //        foreach (DataGridViewRow row in dtgvThanhVienShk.Rows)
+            //        {
+            //            object value = row.Cells[1].Value;
+            //            if (value != null && value.ToString() == txtCmnd_tv.Text)
+            //            {
+            //                row.DefaultCellStyle.BackColor = Color.LightBlue;
+            //            }
+            //        }
+            //    }
+            //    else
+            //        MessageBox.Show("Khong thuoc shk nao");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    conn.Close();
+            //}
+
             LayDanhSach();
-            string sqlStr = string.Format("SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '"+txtTraCuu.Text+ "' OR CMNDChuHo = '"+txtTraCuu.Text+"'");
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                SqlDataReader dta = cmd.ExecuteReader();
-                if (dta.Read())
-                {
-                    txtMaSoHoKhau.Text = Convert.ToString(dta["maSoHoKhau"]);
-                    txtCmnd_tv.Text = txtTraCuu.Text;
-                    hkdao.LapSoHoKhau(txtMaSoHoKhau, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho, txtDiaChi, dtpNgayLap);
-                    hkdao.LapTVSoHoKhau(txtCMND, txtCmnd_tv, txtMaShk_tv, txtMaSoHoKhau, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
-                    if (txtHoTen_tv.Text == "")
-                        txtCmnd_tv.Text = "";
-                    foreach (DataGridViewRow row in dtgvSoHoKhau.Rows)
-                    {
-                        object value = row.Cells[1].Value;
-                        if (value != null && value.ToString() == txtCMND.Text)
-                        {
-                            row.DefaultCellStyle.BackColor = Color.LightBlue;
-                        }
-                    }
-                    LayDanhSachThanhVien();
-                    foreach (DataGridViewRow row in dtgvThanhVienShk.Rows)
-                    {
-                        object value = row.Cells[1].Value;
-                        if (value != null && value.ToString() == txtCmnd_tv.Text)
-                        {
-                            row.DefaultCellStyle.BackColor = Color.LightBlue;
-                        }
-                    }
-                }
-                else
-                    MessageBox.Show("Khong thuoc shk nao");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            shkDao.TraCuu_Click(sender, e, dtgvSoHoKhau, dtgvThanhVienShk,
+                txtMaSoHoKhau, txtCmnd_tv, txtTraCuu, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho,
+                txtDiaChi, dtpNgayLap, txtMaShk_tv, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
+            LayDanhSachThanhVien();
+            
         }
 
         private void txtMaSoHoKhau_KeyDown(object sender, KeyEventArgs e)

@@ -17,7 +17,7 @@ namespace DoAn_Nhom7
         CongDanDAO cddao = new CongDanDAO();
         HonNhanDAO hnDao = new HonNhanDAO();
         ThanhVienShkDAO mem = new ThanhVienShkDAO();
-        DangKiKetHonDAO dkkhDao = new DangKiKetHonDAO();
+        DangKyKetHonDAO dkkhDao = new DangKyKetHonDAO();
         public DangKyKetHon()
         {
             InitializeComponent();

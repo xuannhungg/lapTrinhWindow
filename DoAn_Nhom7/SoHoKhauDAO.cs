@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,65 +67,23 @@ namespace DoAn_Nhom7
         }
         public void LapSoHoKhau(TextBox txtMaSoHoKhau,TextBox txtCMND, TextBox txtMaKhuVuc,TextBox txtXaPhuong,TextBox txtQuanHuyen,TextBox txtTinhThanhPho,TextBox txtDiaChi,DateTimePicker dtpNgayLap)
         {
-                string sqlStr = string.Format("SELECT * FROM SoHoKhau WHERE maSoHoKhau = '" + txtMaSoHoKhau.Text + "'");
-                try
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                    SqlDataReader dta = cmd.ExecuteReader();
-                    while (dta.Read())
-                    {
-                        txtCMND.Text = Convert.ToString(dta["CMNDChuHo"]);
-                        txtMaKhuVuc.Text = Convert.ToString(dta["maKV"]);
-                        txtXaPhuong.Text = Convert.ToString(dta["xaPhuong"]);
-                        txtQuanHuyen.Text = Convert.ToString(dta["quanHuyen"]);
-                        txtTinhThanhPho.Text = Convert.ToString(dta["tinhTP"]);
-                        txtDiaChi.Text = Convert.ToString(dta["diaChi"]);
-                        dtpNgayLap.Text = Convert.ToString(dta["ngayLap"]);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
+            string sqlStr = string.Format("SELECT * FROM SoHoKhau WHERE maSoHoKhau = '" + txtMaSoHoKhau.Text + "'");
+            dbconnection.LapSoHoKhau(sqlStr, txtMaSoHoKhau, txtCMND, txtMaKhuVuc, txtXaPhuong, txtQuanHuyen, txtTinhThanhPho, txtDiaChi, dtpNgayLap);
         }
         public void LapTVSoHoKhau(TextBox txtCMND,TextBox txtCmnd_tv,TextBox txtMaShk_tv,TextBox txtMaSoHoKhau,TextBox txtHoTen_tv,TextBox txtGioiTinh_tv,TextBox txtQuanHe)
         {
             string sqlStr = string.Format("SELECT CongDan.hoTen, CongDan.gioiTinh , QuanHe.quanHeVoiCMND1 FROM QuanHe JOIN CongDan ON CongDan.CMND = QuanHe.CMND2 WHERE QuanHe.CMND1 = '" + txtCMND.Text + "' AND QuanHe.CMND2 = '" + txtCmnd_tv.Text + "' ");
-            {
-                try
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                    SqlDataReader dta = cmd.ExecuteReader();
-                    if (dta.Read())
-                    {
-                        txtMaShk_tv.Text = txtMaSoHoKhau.Text;
-                        txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
-                        txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
-                        txtQuanHe.Text = Convert.ToString(dta["quanHeVoiCMND1"]);
-                    }
-                    else
-                    {
-                        txtMaShk_tv.Text = "";
-                        txtHoTen_tv.Text = "" ;
-                        txtGioiTinh_tv.Text = "";
-                        txtQuanHe.Text = "";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
+            dbconnection.LapTVSoHoKhau(sqlStr, txtCMND, txtCmnd_tv, txtMaShk_tv, txtMaSoHoKhau, txtHoTen_tv, txtGioiTinh_tv, txtQuanHe);
+        }
+        public void TraCuu_Click(object sender, EventArgs e, DataGridView dtgvSoHoKhau, DataGridView dtgvThanhVienShk, TextBox maShk, TextBox cmndTv, TextBox traCuu, TextBox cmnd, TextBox maKv, TextBox xaPhuong, TextBox quanHuyen, TextBox tinhTp, TextBox diaChi, DateTimePicker ngayLap, TextBox maShkTv, TextBox hoTenTv, TextBox gioiTinhTv, TextBox quanHe)
+        {
+            string sqlStr = string.Format("SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien = '" + traCuu.Text + "' OR CMNDChuHo = '" + traCuu.Text + "'");
+            string sqlStr_lapShk = string.Format("SELECT * FROM SoHoKhau WHERE maSoHoKhau = '" + maShk.Text + "'");
+            string sqlStr_lapTvShk = string.Format("SELECT CongDan.hoTen, CongDan.gioiTinh , QuanHe.quanHeVoiCMND1 FROM QuanHe JOIN CongDan ON CongDan.CMND = QuanHe.CMND2 WHERE QuanHe.CMND1 = '" + cmnd.Text + "' AND QuanHe.CMND2 = '" + cmndTv.Text + "' ");          
+            
+            dbconnection.TraCuu_Click(sender, e, sqlStr, sqlStr_lapShk, sqlStr_lapTvShk,
+                dtgvSoHoKhau, dtgvThanhVienShk, maShk, cmndTv, traCuu, cmnd,
+                maKv, xaPhuong, quanHuyen, tinhTp, diaChi, ngayLap, maShkTv, hoTenTv, gioiTinhTv, quanHe);
         }
         public void LapThongTin(TextBox txtCmnd_tv,TextBox txtHoTen_tv, TextBox txtGioiTinh_tv)
         {
@@ -160,6 +119,14 @@ namespace DoAn_Nhom7
         {
             string sqlStr = "SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDChuHo = '" + cmnd + "' or CMNDThanhVien= '" + cmnd + "'";
             return dbconnection.TimMaSHK(cmnd, sqlStr);
+        }
+        public bool KiemTraTVSHK(string cmnd)
+        {
+            //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
+            string sqlStr = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
+            //string sqlStr2 = " SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo= '" + cmnd1 + "'";
+            //string sqlStr = sqlStr2 + "UNION" + sqlStr1;
+            return dbconnection.KiemTraTVSHK(cmnd, sqlStr);
         }
     }
 }

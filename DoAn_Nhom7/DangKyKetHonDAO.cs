@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoAn_Nhom7
 {
-    public class DangKiKetHonDAO
+    public class DangKyKetHonDAO
     {
         DBConnection db = new DBConnection();
         public string TimMaSHK(string cmnd)

@@ -415,13 +415,9 @@ namespace DoAn_Nhom7
             conn.Close();
             return true;
         }
-        public bool KiemTraTVSHK(string cmnd)
+        public bool KiemTraTVSHK(string cmnd, string sqlStr)
         {
-            conn.Open();
-            //string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
-            string sqlStr = " SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDThanhVien= '" + cmnd + "'";
-            //string sqlStr2 = " SELECT maSoHoKhau FROM SoHoKhau WHERE CMNDChuHo= '" + cmnd1 + "'";
-            //string sqlStr = sqlStr2 + "UNION" + sqlStr1;
+            conn.Open();           
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
@@ -435,6 +431,135 @@ namespace DoAn_Nhom7
             }
             conn.Close();
             return true;
+        }
+        public void ThanhVienShk_CellClick(object sender, DataGridViewCellEventArgs e, string sqlStr, DataGridView dtgvThanhVienShk, TextBox cmndTv, TextBox maShkTv, TextBox hoTenTv, TextBox gioiTinhTv, TextBox quanHe)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dtgvThanhVienShk.Rows[e.RowIndex];
+            cmndTv.Text = row.Cells[1].Value.ToString();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                while (dta.Read())
+                {
+                    maShkTv.Text = Convert.ToString(dta["maSoHoKhau"]);
+                    hoTenTv.Text = Convert.ToString(dta["hoTen"]); ;
+                    gioiTinhTv.Text = Convert.ToString(dta["gioiTinh"]);
+                    quanHe.Text = Convert.ToString(dta["quanHeVoiChuHo"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void LapSoHoKhau(string sqlStr, TextBox txtMaSoHoKhau, TextBox txtCMND, TextBox txtMaKhuVuc, TextBox txtXaPhuong, TextBox txtQuanHuyen, TextBox txtTinhThanhPho, TextBox txtDiaChi, DateTimePicker dtpNgayLap)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                while (dta.Read())
+                {
+                    txtCMND.Text = Convert.ToString(dta["CMNDChuHo"]);
+                    txtMaKhuVuc.Text = Convert.ToString(dta["maKV"]);
+                    txtXaPhuong.Text = Convert.ToString(dta["xaPhuong"]);
+                    txtQuanHuyen.Text = Convert.ToString(dta["quanHuyen"]);
+                    txtTinhThanhPho.Text = Convert.ToString(dta["tinhTP"]);
+                    txtDiaChi.Text = Convert.ToString(dta["diaChi"]);
+                    dtpNgayLap.Text = Convert.ToString(dta["ngayLap"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void LapTVSoHoKhau(string sqlStr, TextBox txtCMND, TextBox txtCmnd_tv, TextBox txtMaShk_tv, TextBox txtMaSoHoKhau, TextBox txtHoTen_tv, TextBox txtGioiTinh_tv, TextBox txtQuanHe)
+        {            
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                if (dta.Read())
+                {
+                    txtMaShk_tv.Text = txtMaSoHoKhau.Text;
+                    txtHoTen_tv.Text = Convert.ToString(dta["hoTen"]); ;
+                    txtGioiTinh_tv.Text = Convert.ToString(dta["gioiTinh"]);
+                    txtQuanHe.Text = Convert.ToString(dta["quanHeVoiCMND1"]);
+                }
+                else
+                {
+                    txtMaShk_tv.Text = "";
+                    txtHoTen_tv.Text = "";
+                    txtGioiTinh_tv.Text = "";
+                    txtQuanHe.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }          
+        }
+        public void TraCuu_Click(object sender, EventArgs e, string sqlStr, string sqlStr_lapShk, string sqlStr_lapTvShk, DataGridView dtgvSoHoKhau, DataGridView dtgvThanhVienShk, TextBox maShk, TextBox cmndTv, TextBox traCuu, TextBox cmnd, TextBox maKv, TextBox xaPhuong, TextBox quanHuyen, TextBox tinhTp, TextBox diaChi, DateTimePicker ngayLap, TextBox maShkTv, TextBox hoTenTv, TextBox gioiTinhTv, TextBox quanHe)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                if (dta.Read())
+                {
+                    maShk.Text = Convert.ToString(dta["maSoHoKhau"]);
+                    cmndTv.Text = traCuu.Text;
+                    LapSoHoKhau(sqlStr_lapShk, maShk,cmnd,maKv, xaPhuong, quanHuyen, tinhTp, diaChi, ngayLap);
+                    LapTVSoHoKhau(sqlStr_lapTvShk, cmnd, cmndTv, maShkTv, maShk, hoTenTv, gioiTinhTv, quanHe);
+                    if (hoTenTv.Text == "")
+                        cmndTv.Text = "";
+                    foreach (DataGridViewRow row in dtgvSoHoKhau.Rows)
+                    {
+                        object value = row.Cells[1].Value;
+                        if (value != null && value.ToString() == cmnd.Text)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.LightBlue;
+                        }
+                    }
+                    foreach (DataGridViewRow row in dtgvThanhVienShk.Rows)
+                    {
+                        object value = row.Cells[1].Value;
+                        if (value != null && value.ToString() == cmndTv.Text)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.LightBlue;
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("Khong thuoc shk nao");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
         public void LapDayThongTinKhaiSinh(string cmnd,Label a, Label a1,Label s, Label a2, Label a3, Label a4, Label a5)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -353,6 +354,11 @@ namespace DoAn_Nhom7
             {
                 conn.Close();
             }
+        }
+        public void ThanhVienShk_CellClick(object sender, DataGridViewCellEventArgs e, DataGridView dtgvThanhVienShk, TextBox cmndTv, TextBox maShkTv, TextBox hoTenTv, TextBox gioiTinhTv, TextBox quanHe)
+        {
+            string sqlStr = string.Format("SELECT SHK.maSoHoKhau, CD.hoTen, CD.gioiTinh, TVSHK.quanHeVoiChuHo FROM CongDan CD INNER JOIN ThanhVienSoHoKhau TVSHK ON CD.cmnd = TVSHK.CMNDThanhVien INNER JOIN SoHoKhau SHK ON SHK.maSoHoKhau = TVSHK.maSoHoKhau AND SHK.CMNDChuHo = TVSHK.CMNDChuHo WHERE CD.cmnd = '{0}'", cmndTv.Text);
+            dbc.ThanhVienShk_CellClick(sender, e, sqlStr, dtgvThanhVienShk, cmndTv, maShkTv, hoTenTv, gioiTinhTv, quanHe);
         }
     }
 }
