@@ -442,7 +442,7 @@ namespace DoAn_Nhom7
             conn.Close();
             return true;
         }
-        public void LapDayThongTinKhaiSinhBoMe(string cmnd, Label a1, Label a2, Label a3, Label a4, Label a5)
+        public void LapDayThongTinKhaiSinh(string cmnd,Label a, Label a1,Label s, Label a2, Label a3, Label a4, Label a5)
         {
             conn.Open();
             string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
@@ -450,11 +450,33 @@ namespace DoAn_Nhom7
             SqlDataReader dta = cmd.ExecuteReader();
             while (dta.Read())
             {
+                a.Text= Convert.ToString(dta["cmnd"]);
+                a1.Text = Convert.ToString(dta["hoTen"]);
+                a2.Text = Convert.ToString(dta["ngayThangNamSinh"]);
+                s.Text = Convert.ToString(dta["hoTen"]);
+                a3.Text = Convert.ToString(dta["danToc"]);
+                a5.Text = Convert.ToString(dta["queQuan"]);
+                a4.Text = Convert.ToString(dta["quocTich"]);
+            }
+            conn.Close();
+        }
+        public void LapDayThongTinKhaiSinhCon(string cmnd, Label a, Label a1, Label a2, Label a3, Label a4, Label a5,Label a6,Label a7)
+        {
+            conn.Open();
+            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+            while (dta.Read())
+            {
+                a.Text = Convert.ToString(dta["cmnd"]);
                 a1.Text = Convert.ToString(dta["hoTen"]);
                 a2.Text = Convert.ToString(dta["ngayThangNamSinh"]); ;
                 a3.Text = Convert.ToString(dta["danToc"]);
-                a4.Text = Convert.ToString(dta["queQuan"]);
-                a5.Text = Convert.ToString(dta["noiThuongTru"]);
+                a5.Text = Convert.ToString(dta["queQuan"]);
+                a4.Text = Convert.ToString(dta["quocTich"]);
+                a6.Text = Convert.ToString(dta["noiDangKiKhaiSinh"]);
+                a7.Text = Convert.ToString(dta["queQuan"]);
+
             }
             conn.Close();
         }

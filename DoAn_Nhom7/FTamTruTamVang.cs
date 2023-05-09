@@ -16,7 +16,6 @@ namespace DoAn_Nhom7
     {
         public string Data { get; set; }
         TamTruTamVangDAO tttvDao = new TamTruTamVangDAO();
-        private TextBox txtCMND;
 
         public FTamTruTamVang()
         {
@@ -24,7 +23,6 @@ namespace DoAn_Nhom7
         }
         public void FillDataFromUCTamTruTamVang(string cmnd)
         {
-            txtCMND.Text = cmnd;
         }
         private void FTamTruTamVang_Load(object sender, EventArgs e)
         {

@@ -39,6 +39,7 @@
             this.ucCanCuoc1.Name = "ucCanCuoc1";
             this.ucCanCuoc1.Size = new System.Drawing.Size(1176, 650);
             this.ucCanCuoc1.TabIndex = 0;
+            this.ucCanCuoc1.Load += new System.EventHandler(this.ucCanCuoc1_Load);
             // 
             // FCongDan
             // 
