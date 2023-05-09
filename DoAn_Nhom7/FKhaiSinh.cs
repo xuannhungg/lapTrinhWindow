@@ -54,18 +54,35 @@ namespace DoAn_Nhom7
                 cdDao.CapNhatKhaiSinh(txtCMNDCha.Text,txtCMNDMe.Text,cmndcon);
                 //mem.ThietLapMoiQuanHeBoCon(tv);
                 mem.ThemThanhVien(tv);
-                FThongTinCongDancs a = new FThongTinCongDancs();
-                a.cmnd = cmndcon;
-                a.cmndbo = txtCMNDCha.Text;
-                a.cmndme=txtCMNDMe.Text;
-                a.ShowDialog();
-                Bitmap bitmap = new Bitmap(a.Width, a.Height);
-                a.DrawToBitmap(bitmap, new Rectangle(0, 0, a.Width, a.Height));
-                bitmap.Save("a.png");
-                bitmap.Dispose();
-            }
+               FThongTinCongDancs form = new FThongTinCongDancs();
+               form.cmnd = cmndcon;
+               form.cmndbo = txtCMNDCha.Text;
+               form.cmndme = txtCMNDMe.Text;
+               form.ShowDialog();
+               Bitmap bitmap = new Bitmap(form.Width, form.Height);
+               form.DrawToBitmap(bitmap, new Rectangle(0, 0, form.Width, form.Height));
+               foreach (Control control in form.Controls)
+               {
+                   if (control is Label button)
+                   {
+                       Point buttonLocation = button.PointToScreen(Point.Empty);
+                       Point formLocation = form.PointToScreen(Point.Empty);
+                       Point relativeLocation = new Point(buttonLocation.X - formLocation.X, buttonLocation.Y - formLocation.Y);
+                       relativeLocation.Y += 34;
+
+                       using (Graphics graphics = Graphics.FromImage(bitmap))
+                       {
+                           graphics.DrawString(button.Text, button.Font, new SolidBrush(button.ForeColor), relativeLocation);
+                       }
+                   }
+               }
+               bitmap.Save(""+cmndcon+".png");
+               bitmap.Dispose();
+           }
             else
                 MessageBox.Show("2 người chưa kết hôn");
+            
+
         }
 
         private void txtCCCD_KeyDown(object sender, KeyEventArgs e)

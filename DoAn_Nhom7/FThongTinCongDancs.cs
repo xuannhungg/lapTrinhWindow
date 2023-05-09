@@ -28,9 +28,9 @@ namespace DoAn_Nhom7
         private void FThongTinCongDancs_Load(object sender, EventArgs e)
 
         {
-            //db.LapDayThongTinKhaiSinhCon(cmnd,lblCCCD, lblHoTen, lblNamSinh, lblDanToc, lblQuocTich, lblQueQuan,lblNoiSinh,lblNoiKhaiSinh);
-            //db.LapDayThongTinKhaiSinh(cmndme, lblCCCDNguoiKhaiSinh,lblHoTenNguoiKhaiSinh, lblHoTenMe, lblNamSinhMe, lblDanTocMe, lblQuocTichMe, lblQueQuanMe);
-            //db.LapDayThongTinKhaiSinh(cmndbo, lblCCCDNguoiKhaiSinh, lblHoTenNguoiKhaiSinh, lblHoTenBo, lblNamSinhBo, lblDanTocBo, lblQuocTichBo, lblQueQuanBo);
+            db.LapDayThongTinKhaiSinhCon(cmnd,lblCCCD, lblHoTen, lblNamSinh, lblDanToc, lblQuocTich, lblQueQuan,lblNoiSinh,lblNoiKhaiSinh);
+            db.LapDayThongTinKhaiSinh(cmndme, lblCCCDNguoiKhaiSinh,lblHoTenNguoiKhaiSinh, lblHoTenMe, lblNamSinhMe, lblDanTocMe, lblQuocTichMe, lblQueQuanMe);
+            db.LapDayThongTinKhaiSinh(cmndbo, lblCCCDNguoiKhaiSinh, lblHoTenNguoiKhaiSinh, lblHoTenBo, lblNamSinhBo, lblDanTocBo, lblQuocTichBo, lblQueQuanBo);
         }
 
         private void FThongTinCongDancs_Scroll(object sender, ScrollEventArgs e)
