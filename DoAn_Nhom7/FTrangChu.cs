@@ -19,12 +19,8 @@ namespace DoAn_Nhom7
         CongDanDAO congdandao = new CongDanDAO();
         public FTrangChu()
         {
-            InitializeComponent();        }
-        //private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    frmDangNhap form3 = new frmDangNhap();
-        //    form3.Show();
-        //}
+            InitializeComponent();       
+        }
         public void LayDanhSach()
         {
             this.dGVDanhSach.DataSource = congdandao.DanhSach();
@@ -67,11 +63,6 @@ namespace DoAn_Nhom7
             DataSet dts = congdandao.TimCongDanTheoCCCD(txtCCCD.Text, dGVDanhSach);
             this.dGVDanhSach.DataSource = dts.Tables["cmnd"];
         }
-        //private void button17_Click(object sender, EventArgs e)
-        //{
-        //    FCongDan form1 = new FCongDan();
-        //    form1.ShowDialog();
-        //}
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -113,7 +104,6 @@ namespace DoAn_Nhom7
                     }
                 }
             }
-
         }
         private void cmbTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {

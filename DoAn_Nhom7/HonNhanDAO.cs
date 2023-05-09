@@ -17,9 +17,14 @@ namespace DoAn_Nhom7
         }
         public bool ThoaDieuKienKetHon(string cmndNam, string cmndNu)
         {
-            if (Tuoi(cmndNam) >= 20 && Tuoi(cmndNu) >= 18 && KiemTraHonNhan(cmndNam) == true && KiemTraHonNhan(cmndNu) == true && dbc.timMaSHK(cmndNam)!=dbc.timMaSHK(cmndNu))
+            if (Tuoi(cmndNam) >= 20 && Tuoi(cmndNu) >= 18 && KiemTraHonNhan(cmndNam) == true && KiemTraHonNhan(cmndNu) == true && TimMaSHK(cmndNam)!=TimMaSHK(cmndNu))
                 return true;
             else return false;
+        }
+        public string TimMaSHK(string cmnd)
+        {
+            string sqlStr = "SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDChuHo = '" + cmnd + "' or CMNDThanhVien= '" + cmnd + "'";
+            return dbc.TimMaSHK(cmnd, sqlStr);
         }
         public string GioiTinh(string cmnd)
         {

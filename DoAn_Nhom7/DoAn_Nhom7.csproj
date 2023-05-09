@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangKiKetHonDAO.cs" />
     <Compile Include="DangKyKetHon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +88,11 @@
     <Compile Include="FKhaiTu.Designer.cs">
       <DependentUpon>FKhaiTu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FTrangChu.Designer.cs">
+      <DependentUpon>FTrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="FSoHoKhau.cs">
       <SubType>Form</SubType>
@@ -130,6 +131,7 @@
     <Compile Include="HonNhanVaGiaDinh.Designer.cs">
       <DependentUpon>HonNhanVaGiaDinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhaiSinhDAO.cs" />
     <Compile Include="KhaiTuDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -209,8 +211,8 @@
     <EmbeddedResource Include="FKhaiTu.resx">
       <DependentUpon>FKhaiTu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FTrangChu.resx">
+      <DependentUpon>FTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSoHoKhau.resx">
       <DependentUpon>FSoHoKhau.cs</DependentUpon>

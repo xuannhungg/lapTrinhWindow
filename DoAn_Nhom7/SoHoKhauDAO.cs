@@ -156,6 +156,10 @@ namespace DoAn_Nhom7
                 }
             }
         }
-
+        public string TimMaSHK(string cmnd)
+        {
+            string sqlStr = "SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDChuHo = '" + cmnd + "' or CMNDThanhVien= '" + cmnd + "'";
+            return dbconnection.TimMaSHK(cmnd, sqlStr);
+        }
     }
 }

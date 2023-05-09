@@ -40,7 +40,6 @@
             this.ucTamTruTamVang1.Name = "ucTamTruTamVang1";
             this.ucTamTruTamVang1.Size = new System.Drawing.Size(1049, 694);
             this.ucTamTruTamVang1.TabIndex = 0;
-            this.ucTamTruTamVang1.Load += new System.EventHandler(this.ucTamTruTamVang1_Load);
             // 
             // FTamTruTamVang
             // 

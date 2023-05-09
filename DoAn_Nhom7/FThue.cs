@@ -23,9 +23,5 @@ namespace DoAn_Nhom7
                      
         }
 
-        private void ucThue1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

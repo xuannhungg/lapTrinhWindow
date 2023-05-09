@@ -14,24 +14,13 @@ namespace DoAn_Nhom7
 {
     public partial class FTamTruTamVang : Form
     {
-        public string Data { get; set; }
-        TamTruTamVangDAO tttvDao = new TamTruTamVangDAO();
-
         public FTamTruTamVang()
         {
             InitializeComponent();
         }
-        public void FillDataFromUCTamTruTamVang(string cmnd)
-        {
-        }
         private void FTamTruTamVang_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void ucTamTruTamVang1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

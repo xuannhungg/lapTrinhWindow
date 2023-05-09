@@ -17,7 +17,7 @@ namespace DoAn_Nhom7
         CongDanDAO cddao = new CongDanDAO();
         HonNhanDAO hnDao = new HonNhanDAO();
         ThanhVienShkDAO mem = new ThanhVienShkDAO();
-        DBConnection dbconnection = new DBConnection();
+        DangKiKetHonDAO dkkhDao = new DangKiKetHonDAO();
         public DangKyKetHon()
         {
             InitializeComponent();
@@ -29,10 +29,10 @@ namespace DoAn_Nhom7
             {
                 CongDan cdA = new CongDan(txtGiayToTuyThanNam.Text, txtHoTenNam.Text);
                 CongDan cdB = new CongDan(txtGiayToTuyThanNu.Text, txtHoTenNu.Text);
-                string maSHKCK = dbconnection.timMaSHK(txtGiayToTuyThanNam.Text);
-                string CMNDChuHoCK = dbconnection.timChuHoSHK(maSHKCK);
-                string maSHKVK = dbconnection.timMaSHK(txtGiayToTuyThanNu.Text);
-                string CMNDChuHoVK = dbconnection.timChuHoSHK(maSHKVK);
+                string maSHKCK = dkkhDao.TimMaSHK(txtGiayToTuyThanNam.Text);
+                string CMNDChuHoCK = dkkhDao.TimChuHoSHK(maSHKCK);
+                string maSHKVK = dkkhDao.TimMaSHK(txtGiayToTuyThanNu.Text);
+                string CMNDChuHoVK = dkkhDao.TimChuHoSHK(maSHKVK);
                 string quanhe;
                 if (CMNDChuHoCK == txtGiayToTuyThanNam.Text)
                     quanhe = "Vợ";

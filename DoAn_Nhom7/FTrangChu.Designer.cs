@@ -77,7 +77,7 @@
             this.tclChucNang.Location = new System.Drawing.Point(1, 1);
             this.tclChucNang.Name = "tclChucNang";
             this.tclChucNang.SelectedIndex = 0;
-            this.tclChucNang.Size = new System.Drawing.Size(1420, 712);
+            this.tclChucNang.Size = new System.Drawing.Size(1510, 704);
             this.tclChucNang.TabIndex = 0;
             // 
             // tabPage1
@@ -93,7 +93,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1412, 677);
+            this.tabPage1.Size = new System.Drawing.Size(1502, 732);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang chu";
             // 
@@ -313,7 +313,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 31);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1412, 677);
+            this.tabPage5.Size = new System.Drawing.Size(1502, 669);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "Dich vu";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -323,18 +323,18 @@
             this.pnDichVu.BackColor = System.Drawing.Color.LightBlue;
             this.pnDichVu.Controls.Add(this.pnHienThi);
             this.pnDichVu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnDichVu.Location = new System.Drawing.Point(264, 3);
+            this.pnDichVu.Location = new System.Drawing.Point(279, 3);
             this.pnDichVu.Name = "pnDichVu";
-            this.pnDichVu.Size = new System.Drawing.Size(1145, 671);
+            this.pnDichVu.Size = new System.Drawing.Size(1220, 663);
             this.pnDichVu.TabIndex = 1;
             // 
             // pnHienThi
             // 
             this.pnHienThi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pnHienThi.Location = new System.Drawing.Point(3, 4);
+            this.pnHienThi.Location = new System.Drawing.Point(9, 9);
             this.pnHienThi.Name = "pnHienThi";
-            this.pnHienThi.Size = new System.Drawing.Size(1164, 662);
+            this.pnHienThi.Size = new System.Drawing.Size(1206, 646);
             this.pnHienThi.TabIndex = 0;
             // 
             // pnMenu
@@ -351,7 +351,7 @@
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenu.Location = new System.Drawing.Point(3, 3);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(255, 671);
+            this.pnMenu.Size = new System.Drawing.Size(279, 663);
             this.pnMenu.TabIndex = 0;
             // 
             // btnKhaiTu
@@ -471,7 +471,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1423, 713);
+            this.ClientSize = new System.Drawing.Size(1511, 703);
             this.Controls.Add(this.tclChucNang);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FTrangChu";
