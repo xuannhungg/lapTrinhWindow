@@ -19,7 +19,10 @@ namespace DoAn_Nhom7
         CongDanDAO congdandao = new CongDanDAO();
         public FTrangChu()
         {
-            InitializeComponent();        }
+            InitializeComponent();
+            tclChucNang.TabPages[1].Enabled = false;
+            tclChucNang.TabPages[2].Enabled = false;
+        }
         //private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         //{
         //    frmDangNhap form3 = new frmDangNhap();
@@ -59,6 +62,7 @@ namespace DoAn_Nhom7
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             frmDangNhap formdn = new frmDangNhap();
+            formdn.tclChucNang = tclChucNang;
             formdn.ShowDialog();
         }
 
@@ -214,6 +218,8 @@ namespace DoAn_Nhom7
             string data = dGVDanhSach.Rows[e.RowIndex].Cells["cmnd"].Value.ToString();
 
             // Tạo và hiển thị form mới với thông tin từ cell click
+            //tclChucNang.Enabled = false;
+
             tclChucNang.SelectedIndex = 2;
             pnHienThi.Visible = true;
             UCTamTruTamVang uc = new UCTamTruTamVang();
