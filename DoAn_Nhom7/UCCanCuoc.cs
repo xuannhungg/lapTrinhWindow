@@ -31,11 +31,11 @@ namespace DoAn_Nhom7
             string GioiTinh;
             if (rDNam.Checked)
             {
-                GioiTinh = "nam"; 
+                GioiTinh = "Nam"; 
             }
             else
             {
-                GioiTinh = "nu"; 
+                GioiTinh = "Nữ"; 
             }
             CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, GioiTinh, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text,txtQuocTich.Text);
             cddao.Them(cd);
@@ -46,11 +46,11 @@ namespace DoAn_Nhom7
             string GioiTinh;
             if (rDNam.Checked)
             {
-                GioiTinh = "nam";
+                GioiTinh = "Nam";
             }
             else
             {
-                GioiTinh = "nu";
+                GioiTinh = "Nữ";
             }
             CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, GioiTinh, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text, txtQuocTich.Text);
             cddao.Xoa(cd);
@@ -61,11 +61,11 @@ namespace DoAn_Nhom7
             string GioiTinh;
             if (rDNam.Checked)
             {
-                GioiTinh = "nam";
+                GioiTinh = "Nam";
             }
             else
             {
-                GioiTinh = "nu";
+                GioiTinh = "Nữ";
             }
             CongDan cd = new CongDan(txtHoTen.Text, dTPNgaySinh.Text, GioiTinh, txtCMND.Text, txtDanToc.Text, txtHonNhan.Text, txtKhaiSinh.Text, txtQueQuan.Text, txtThuongTru.Text, txtHocVan.Text, txtNgheNghiep.Text, txtLuong.Text, txtSoLanKetHon.Text, txtTamTru.Text, txtNoiCapCMND.Text, dTPNgayCap.Text, txtQuocTich.Text);
             cddao.Sua(cd);

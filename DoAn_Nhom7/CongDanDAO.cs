@@ -16,12 +16,12 @@ namespace DoAn_Nhom7
         DBConnection dbconnection = new DBConnection();
         public void Them(CongDan cd)
         {
-            string sqlStr = string.Format("INSERT INTO CongDan( hoTen , ngayThangNamSinh , gioiTinh , cmnd , danToc , tinhTrangHonNhan , noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,tamTru,noiCapCMND,ngayCap,soLanKetHon,quocTich)  VALUES ('{0}', '{1}','{2}', '{3}','{4}', '{5}','{6}','{7}','{8}','{9}','{10}', '{11}', '{12}', '{13}', '{14}', '{15}','{16}')", cd.HoTen,cd.NgayThangNamSinh,cd.GioiTinh,cd.CMND,cd.DanToc,cd.TinhTrangHonNhan,cd.NoiDangKiKhaiSinh,cd.QueQuan,cd.NoiThuongTru,cd.TrinhDoHocVan,cd.NgheNghiep, cd.Luong,cd.tamTru,cd.noiCapCMND,cd.NgayCap,cd.soLanKetHon,cd.QuocTich);
+            string sqlStr = string.Format("INSERT INTO CongDan( hoTen , ngayThangNamSinh , gioiTinh , cmnd , danToc , tinhTrangHonNhan , noiDangKiKhaiSinh,queQuan,noiThuongTru,trinhDoHocVan,ngheNghiep, luong,tamTru,noiCapCMND,ngayCap,soLanKetHon,quocTich)  VALUES (N'{0}', N'{1}',N'{2}', '{3}',N'{4}', N'{5}',N'{6}',N'{7}',N'{8}',N'{9}',N'{10}', N'{11}', N'{12}', N'{13}', N'{14}', N'{15}',N'{16}')", cd.HoTen,cd.NgayThangNamSinh,cd.GioiTinh,cd.CMND,cd.DanToc,cd.TinhTrangHonNhan,cd.NoiDangKiKhaiSinh,cd.QueQuan,cd.NoiThuongTru,cd.TrinhDoHocVan,cd.NgheNghiep, cd.Luong,cd.tamTru,cd.noiCapCMND,cd.NgayCap,cd.soLanKetHon,cd.QuocTich);
             dbconnection.XuLy(sqlStr);
         }
         public void Sua(CongDan cd)
         {
-            string sqlStr = string.Format("UPDATE CongDan SET hoTen ='{12}',  ngayThangNamSinh = '{0}', gioiTinh= '{1}' , cmnd = '{2}', danToc= '{3}', tinhTrangHonNhan='{4}', noiDangKiKhaiSinh= '{5}', queQuan='{6}', noiThuongTru= '{7}', trinhDoHocVan= '{8}', luong = '{9}', ngheNghiep='{10}', tamTru = '{13}', noiCapCMND = '{14}', ngayCap = '{15}', soLanKetHon = '{16}',quocTich = '{17}' WHERE cmnd = '{11}'",  cd.NgayThangNamSinh, cd.GioiTinh, cd.CMND, cd.DanToc, cd.TinhTrangHonNhan, cd.NoiDangKiKhaiSinh, cd.QueQuan, cd.NoiThuongTru, cd.TrinhDoHocVan, cd.Luong, cd.NgheNghiep,cd.CMND,cd.HoTen,cd.tamTru,cd.noiCapCMND,cd.NgayCap,cd.soLanKetHon,cd.QuocTich);
+            string sqlStr = string.Format("UPDATE CongDan SET hoTen =N'{12}',  ngayThangNamSinh = N'{0}', gioiTinh= N'{1}' , cmnd = '{2}', danToc= N'{3}', tinhTrangHonNhan=N'{4}', noiDangKiKhaiSinh= N'{5}', queQuan=N'{6}', noiThuongTru= N'{7}', trinhDoHocVan= N'{8}', luong = N'{9}', ngheNghiep=N'{10}', tamTru = N'{13}', noiCapCMND = N'{14}', ngayCap = '{15}', soLanKetHon = N'{16}',quocTich = N'{17}' WHERE cmnd = '{11}'",  cd.NgayThangNamSinh, cd.GioiTinh, cd.CMND, cd.DanToc, cd.TinhTrangHonNhan, cd.NoiDangKiKhaiSinh, cd.QueQuan, cd.NoiThuongTru, cd.TrinhDoHocVan, cd.Luong, cd.NgheNghiep,cd.CMND,cd.HoTen,cd.tamTru,cd.noiCapCMND,cd.NgayCap,cd.soLanKetHon,cd.QuocTich);
             dbconnection.XuLy(sqlStr);
         }
         public void Xoa(CongDan cd)

@@ -12,21 +12,25 @@ namespace DoAn_Nhom7
 {
     public partial class FThongTinCongDancs : Form
     {
-        public string cmnd;
+        public string cmnd { get; set; }
+        public string cmndbo { get; set; }
+        public string cmndme { get; set; }
+
         DBConnection db = new DBConnection();
-        public FThongTinCongDancs(string Cmnd)
+        public FThongTinCongDancs()
         {
             InitializeComponent();
-            this.cmnd = db.timMaSHK(Cmnd);
-            MessageBox.Show(Cmnd);
+            db.LapDayThongTinKhaiSinhCon(cmnd, lblCCCD, lblHoTen, lblNamSinh, lblDanToc, lblQuocTich, lblQueQuan, lblNoiSinh, lblNoiKhaiSinh);
+            db.LapDayThongTinKhaiSinh(cmndme, lblCCCDNguoiKhaiSinh, lblHoTenNguoiKhaiSinh, lblHoTenMe, lblNamSinhMe, lblDanTocMe, lblQuocTichMe, lblQueQuanMe);
+            db.LapDayThongTinKhaiSinh(cmndbo, lblCCCDNguoiKhaiSinh, lblHoTenNguoiKhaiSinh, lblHoTenBo, lblNamSinhBo, lblDanTocBo, lblQuocTichBo, lblQueQuanBo);
         }
 
         private void FThongTinCongDancs_Load(object sender, EventArgs e)
 
         {
-            string cmndBo = db.timCMNDBo(cmnd);
-            db.LapDayThongTinKhaiSinhBoMe(cmndBo, lblHoTenBo, lblNamSinhBo, lblDanTocBo, lblQuocTichBo, lblQueQuanBo);
-            db.LapDayThongTinKhaiSinhBoMe("2", lblHoTenMe, lblNamSinhMe, lblDanTocMe, lblQuocTichMe, lblQueQuanMe);
+            //db.LapDayThongTinKhaiSinhCon(cmnd,lblCCCD, lblHoTen, lblNamSinh, lblDanToc, lblQuocTich, lblQueQuan,lblNoiSinh,lblNoiKhaiSinh);
+            //db.LapDayThongTinKhaiSinh(cmndme, lblCCCDNguoiKhaiSinh,lblHoTenNguoiKhaiSinh, lblHoTenMe, lblNamSinhMe, lblDanTocMe, lblQuocTichMe, lblQueQuanMe);
+            //db.LapDayThongTinKhaiSinh(cmndbo, lblCCCDNguoiKhaiSinh, lblHoTenNguoiKhaiSinh, lblHoTenBo, lblNamSinhBo, lblDanTocBo, lblQuocTichBo, lblQueQuanBo);
         }
 
         private void FThongTinCongDancs_Scroll(object sender, ScrollEventArgs e)

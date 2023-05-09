@@ -51,10 +51,10 @@ namespace DoAn_Nhom7
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (hnDao.GioiTinh(txtGiayToTuyThanNam.Text) == "nam")
+                if (hnDao.GioiTinh(txtGiayToTuyThanNam.Text) == "Nam")
                     hnDao.LapDayThongTin_KetHon(txtGiayToTuyThanNam, txtHoTenNam, txtNgaySinhNam, txtDanTocNam, txtQueQuanNam, txtNoiCuTruNam);
                 else
-                    MessageBox.Show("Sai gioi tinh");
+                    MessageBox.Show("Sai giới tính !!!");
             }
         }
 
@@ -62,10 +62,10 @@ namespace DoAn_Nhom7
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (hnDao.GioiTinh(txtGiayToTuyThanNu.Text) == "nu")
+                if (hnDao.GioiTinh(txtGiayToTuyThanNu.Text) == "Nữ")
                     hnDao.LapDayThongTin_KetHon(txtGiayToTuyThanNu, txtHoTenNu, txtNgaySinhNu,txtDanTocNu, txtQueQuanNu, txtNoiCuTruNu);
                 else
-                    MessageBox.Show("Sai gioi tinh");
+                    MessageBox.Show("Sai giới tính !!!");
             }
         }
 

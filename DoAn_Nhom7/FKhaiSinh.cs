@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using System.Drawing;
+
 
 namespace DoAn_Nhom7
 {
@@ -32,11 +34,11 @@ namespace DoAn_Nhom7
                 string GioiTinh;
                 if (rDNam.Checked)
                 {
-                    GioiTinh = "nam";
+                    GioiTinh = "Nam";
                 }
                 else
                 {
-                    GioiTinh = "nu";
+                    GioiTinh = "Nữ";
                 }
                 string mashk = dbconnection.timMaSHK(txtCMNDCha.Text);
                 string cmndChuHo = dbconnection.timChuHoSHK(mashk);
@@ -47,11 +49,20 @@ namespace DoAn_Nhom7
                     quanhe = "Cháu";
                 ThanhVienShk tv = new ThanhVienShk(mashk,cmndChuHo, cmndcon, quanhe);
 
-                CongDan congDan = new CongDan(cmndcon, txtTen.Text, tpNgSinh.Text,GioiTinh, txtDanToc.Text, txtQueQuan.Text, txtNoiSinh.Text);
+                CongDan congDan = new CongDan(txtTen.Text, tpNgSinh.Text,GioiTinh,cmndcon, txtDanToc.Text,"Doc Than",txtNoiSinh.Text, txtQueQuan.Text, txtQueQuan.Text,txtQuocTich.Text);
                 cdDao.Them(congDan);
                 cdDao.CapNhatKhaiSinh(txtCMNDCha.Text,txtCMNDMe.Text,cmndcon);
                 //mem.ThietLapMoiQuanHeBoCon(tv);
                 mem.ThemThanhVien(tv);
+                FThongTinCongDancs a = new FThongTinCongDancs();
+                a.cmnd = cmndcon;
+                a.cmndbo = txtCMNDCha.Text;
+                a.cmndme=txtCMNDMe.Text;
+                a.ShowDialog();
+                Bitmap bitmap = new Bitmap(a.Width, a.Height);
+                a.DrawToBitmap(bitmap, new Rectangle(0, 0, a.Width, a.Height));
+                bitmap.Save("a.png");
+                bitmap.Dispose();
             }
             else
                 MessageBox.Show("2 người chưa kết hôn");
