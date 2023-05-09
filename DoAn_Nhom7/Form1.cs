@@ -22,6 +22,7 @@ namespace DoAn_Nhom7
             InitializeComponent();
             tclChucNang.TabPages[1].Enabled = false;
             tclChucNang.TabPages[2].Enabled = false;
+            cmbTimKiem.Enabled = false;
         }
         //private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         //{
@@ -63,6 +64,7 @@ namespace DoAn_Nhom7
         {
             frmDangNhap formdn = new frmDangNhap();
             formdn.tclChucNang = tclChucNang;
+            formdn.cmbTimKiem = cmbTimKiem;
             formdn.ShowDialog();
         }
 
