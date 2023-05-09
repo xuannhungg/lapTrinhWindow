@@ -46,8 +46,8 @@ namespace DoAn_Nhom7
                 SqlDataReader dta = cmd.ExecuteReader();
                 if (dta.Read() == true)
                 {
-                    FTrangChu form1 = new FTrangChu();
-                    form1.ShowDialog();
+                    //FTrangChu form1 = new FTrangChu();
+                    //form1.ShowDialog();
                 }
                 else
                     MessageBox.Show("Tai khoan ban dang nhap sai");
