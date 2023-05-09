@@ -33,6 +33,7 @@ namespace DoAn_Nhom7
                 tkdao.DangNhap(tk);
                 tclChucNang.TabPages[1].Enabled = true;
                 tclChucNang.TabPages[2].Enabled = true;
+                cmbTimKiem.Enabled = true;
                 this.Close();
             }
         }
