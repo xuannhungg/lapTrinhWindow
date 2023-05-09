@@ -214,7 +214,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(8, 9);
+            this.label2.Location = new System.Drawing.Point(8, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 25);
             this.label2.TabIndex = 25;
@@ -248,7 +248,7 @@
             this.pnThanhvien.Controls.Add(this.btnXem);
             this.pnThanhvien.Controls.Add(this.label1);
             this.pnThanhvien.Controls.Add(this.dtgvThanhVienShk);
-            this.pnThanhvien.Location = new System.Drawing.Point(461, 92);
+            this.pnThanhvien.Location = new System.Drawing.Point(464, 70);
             this.pnThanhvien.Name = "pnThanhvien";
             this.pnThanhvien.Size = new System.Drawing.Size(416, 418);
             this.pnThanhvien.TabIndex = 29;
@@ -313,7 +313,7 @@
             this.pnSoHoKhau.Controls.Add(this.txtQuanHuyen);
             this.pnSoHoKhau.Controls.Add(this.txtCMND);
             this.pnSoHoKhau.Controls.Add(this.txtTinhThanhPho);
-            this.pnSoHoKhau.Location = new System.Drawing.Point(12, 92);
+            this.pnSoHoKhau.Location = new System.Drawing.Point(15, 70);
             this.pnSoHoKhau.Name = "pnSoHoKhau";
             this.pnSoHoKhau.Size = new System.Drawing.Size(443, 418);
             this.pnSoHoKhau.TabIndex = 30;
@@ -416,7 +416,7 @@
             // 
             // dtpNgayLap
             // 
-            this.dtpNgayLap.CustomFormat = "yyyy/MM/dd";
+            this.dtpNgayLap.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayLap.Location = new System.Drawing.Point(338, 272);
@@ -513,14 +513,14 @@
             // 
             // txtTraCuu
             // 
-            this.txtTraCuu.Location = new System.Drawing.Point(161, 70);
+            this.txtTraCuu.Location = new System.Drawing.Point(164, 48);
             this.txtTraCuu.Name = "txtTraCuu";
             this.txtTraCuu.Size = new System.Drawing.Size(100, 22);
             this.txtTraCuu.TabIndex = 32;
             // 
             // btnTraCuu
             // 
-            this.btnTraCuu.Location = new System.Drawing.Point(279, 69);
+            this.btnTraCuu.Location = new System.Drawing.Point(282, 47);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(75, 23);
             this.btnTraCuu.TabIndex = 33;
@@ -531,7 +531,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 73);
+            this.label4.Location = new System.Drawing.Point(12, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 16);
             this.label4.TabIndex = 34;

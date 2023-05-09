@@ -21,11 +21,6 @@ namespace DoAn_Nhom7
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             string GioiTinh;
@@ -79,9 +74,6 @@ namespace DoAn_Nhom7
             }
         }
 
-        private void UCCanCuoc_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

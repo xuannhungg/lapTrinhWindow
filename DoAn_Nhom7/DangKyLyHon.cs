@@ -33,8 +33,8 @@ namespace DoAn_Nhom7
                 cddao.CapNhatLyHon(cdA);
                 CongDan cdB = new CongDan(txtCMNDB.Text);
                 cddao.CapNhatLyHon(cdB);
-                string mashk = dbconnection.timMaSHK(txtCMNDA.Text);
-                string CMNDChuHo = dbconnection.timChuHoSHK(mashk);
+                string mashk = TimMaSHK(txtCMNDA.Text);
+                string CMNDChuHo = TimChuHoSHK(mashk);
                 string quanhe;
                 if (CMNDChuHo == txtCMNDA.Text)
                     quanhe = "Vo";
@@ -47,18 +47,32 @@ namespace DoAn_Nhom7
             else
                 MessageBox.Show("Có người đang ở tình trạng độc thân");
         }
-
+        public string TimMaSHK(string cmnd)
+        {
+            string sqlStr = "SELECT maSoHoKhau FROM ThanhVienSoHoKhau WHERE CMNDChuHo = '" + cmnd + "' or CMNDThanhVien= '" + cmnd + "'";
+            return dbconnection.TimMaSHK(cmnd, sqlStr);
+        }
+        public string TimChuHoSHK(string mashk)
+        {
+            string sqlStr = "SELECT CMNDChuHo FROM SoHoKhau WHERE maSoHoKhau = '" + mashk + "'";
+            return dbconnection.TimChuHoSHK(mashk, sqlStr);
+        }
         private void txtCMNDA_KeyDown(object sender, KeyEventArgs e)
         {              
             if (e.KeyCode == Keys.Enter)
             {
                 hnDao.LapDayThongTin_LyHon(txtCMNDA.Text, txtTenA, txtNamSinhA, txtCuTruA);
-                txtCMNDB.Text = dbconnection.CMNDVoChong(txtCMNDA.Text);
+                txtCMNDB.Text = CMNDVoChong(txtCMNDA.Text);
                 if (txtCMNDB.Text != "")
                     hnDao.LapDayThongTin_LyHon(txtCMNDB.Text, txtTenB, txtNamSinhB, txtCuTruB);
                 else
                     MessageBox.Show("Không tìm thấy vợ");
             }
+        }
+        public string CMNDVoChong(string cmnd)
+        {
+            string sqlStr = "Select * from CongDan where cmnd = '" + cmnd + "'";
+            return dbconnection.CMNDVoChong(cmnd, sqlStr);
         }
         private void DangKyLyHon_Load(object sender, EventArgs e)
         {

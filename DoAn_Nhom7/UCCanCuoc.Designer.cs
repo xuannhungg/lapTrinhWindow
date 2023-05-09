@@ -51,6 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.rDNu = new System.Windows.Forms.RadioButton();
             this.rDNam = new System.Windows.Forms.RadioButton();
             this.txtQuocTich = new System.Windows.Forms.TextBox();
@@ -75,7 +76,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +130,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(779, 455);
+            this.btnThem.Location = new System.Drawing.Point(779, 431);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 77;
@@ -140,7 +140,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(689, 455);
+            this.btnSua.Location = new System.Drawing.Point(689, 431);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 76;
@@ -150,7 +150,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(599, 455);
+            this.btnXoa.Location = new System.Drawing.Point(599, 431);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 75;
@@ -282,7 +282,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.rDNu);
             this.panel2.Controls.Add(this.rDNam);
@@ -327,11 +328,20 @@
             this.panel2.Controls.Add(this.lblNgayCap);
             this.panel2.Controls.Add(this.lblTamTru);
             this.panel2.Controls.Add(this.txtTamTru);
-            this.panel2.Location = new System.Drawing.Point(12, 15);
+            this.panel2.Location = new System.Drawing.Point(27, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1129, 529);
+            this.panel2.Size = new System.Drawing.Size(863, 463);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label21.Location = new System.Drawing.Point(3, 83);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(231, 15);
+            this.label21.TabIndex = 88;
+            this.label21.Text = "*Nhập cmnd và click enter để điền nhanh";
             // 
             // rDNu
             // 
@@ -466,6 +476,8 @@
             // 
             // dTPNgayCap
             // 
+            this.dTPNgayCap.CustomFormat = "dd/MM/yyyy";
+            this.dTPNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTPNgayCap.Location = new System.Drawing.Point(699, 54);
             this.dTPNgayCap.Name = "dTPNgayCap";
             this.dTPNgayCap.Size = new System.Drawing.Size(155, 22);
@@ -521,7 +533,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(27, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 529);
+            this.panel1.Size = new System.Drawing.Size(839, 455);
             this.panel1.TabIndex = 2;
             // 
             // label2
@@ -542,16 +554,6 @@
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 47;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label21.Location = new System.Drawing.Point(3, 83);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(231, 15);
-            this.label21.TabIndex = 88;
-            this.label21.Text = "*Nhập cmnd và click enter để điền nhanh";
-            // 
             // UCCanCuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -559,8 +561,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UCCanCuoc";
-            this.Size = new System.Drawing.Size(1158, 662);
-            this.Load += new System.EventHandler(this.UCCanCuoc_Load);
+            this.Size = new System.Drawing.Size(911, 526);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

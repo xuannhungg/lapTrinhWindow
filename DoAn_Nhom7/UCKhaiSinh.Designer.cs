@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
             this.txtCMNDMe = new System.Windows.Forms.TextBox();
             this.txtCMNDCha = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -86,7 +87,6 @@
             this.txtTinhThanhPho = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -121,6 +121,16 @@
             this.panel3.Size = new System.Drawing.Size(424, 177);
             this.panel3.TabIndex = 89;
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label30.Location = new System.Drawing.Point(3, 3);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(434, 15);
+            this.label30.TabIndex = 66;
+            this.label30.Text = "Nhập cmnd cha và nhấn enter để điền nhanh. Lưu ý: người này phải đã kết hôn";
+            // 
             // txtCMNDMe
             // 
             this.txtCMNDMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -136,6 +146,7 @@
             this.txtCMNDCha.Name = "txtCMNDCha";
             this.txtCMNDCha.Size = new System.Drawing.Size(130, 24);
             this.txtCMNDCha.TabIndex = 107;
+            this.txtCMNDCha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCMNDCha_KeyDown);
             // 
             // label29
             // 
@@ -204,7 +215,6 @@
             this.txtTenCha.Name = "txtTenCha";
             this.txtTenCha.Size = new System.Drawing.Size(130, 24);
             this.txtTenCha.TabIndex = 99;
-            this.txtTenCha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenCha_KeyDown);
             // 
             // label19
             // 
@@ -290,7 +300,9 @@
             // 
             // tpNgSinh
             // 
+            this.tpNgSinh.CustomFormat = "dd/MM/yyyy";
             this.tpNgSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tpNgSinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tpNgSinh.Location = new System.Drawing.Point(77, 88);
             this.tpNgSinh.Name = "tpNgSinh";
             this.tpNgSinh.Size = new System.Drawing.Size(146, 24);
@@ -348,7 +360,9 @@
             // 
             // tpDangKy
             // 
+            this.tpDangKy.CustomFormat = "dd/MM/yyyy";
             this.tpDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tpDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tpDangKy.Location = new System.Drawing.Point(571, 183);
             this.tpDangKy.Name = "tpDangKy";
             this.tpDangKy.Size = new System.Drawing.Size(276, 24);
@@ -686,16 +700,6 @@
             this.label1.Size = new System.Drawing.Size(443, 25);
             this.label1.TabIndex = 54;
             this.label1.Text = "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label30.Location = new System.Drawing.Point(3, 3);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(466, 16);
-            this.label30.TabIndex = 66;
-            this.label30.Text = "Nhập cmnd cha và nhấn enter để điền nhanh. Lưu ý: người này phải đã kết hôn";
             // 
             // UCKhaiSinh
             // 

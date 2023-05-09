@@ -51,6 +51,7 @@
             this.Name = "FKhaiTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KHAI TỬ";
+            this.Load += new System.EventHandler(this.FKhaiTu_Load);
             this.ResumeLayout(false);
 
         }

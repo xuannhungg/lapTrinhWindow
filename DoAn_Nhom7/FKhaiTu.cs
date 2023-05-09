@@ -22,5 +22,10 @@ namespace DoAn_Nhom7
         {
 
         }
+
+        private void FKhaiTu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
